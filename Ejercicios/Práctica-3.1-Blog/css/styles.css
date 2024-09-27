@@ -1,0 +1,51 @@
+body {
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+}
+
+.container {
+    border: 10px solid rgb(189, 188, 188);
+    background-color: rgb(189, 188, 188);
+    width: 650px;
+    justify-content: center;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+}
+
+hr {
+    margin-top: 30px;
+    border: 1px solid black;
+}
+
+.content {
+    border: 1px solid black;
+    width: 70%;
+    background-color: darkgray;
+}
+
+.sidebar {
+    width: 25%;
+    float: right;
+}
+
+.footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.caja {
+    width: 70px;
+    border: 1px solid black;
+
+}
