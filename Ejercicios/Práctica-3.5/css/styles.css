@@ -1,0 +1,105 @@
+body{
+    background-color: cadetblue;
+}
+
+h3 {
+    text-align: left;
+}
+
+.contenedor {
+    width: 47%;
+    background-color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.bloque1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.caja1 {
+    border: 1px solid black;
+    border-radius: 17px 19px 7px 40px;
+    padding: 0px 50px;
+}
+
+.caja2 {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 0px 50px;
+}
+
+.caja3 {
+    border: 1px solid black;
+    padding: 0px 60px;
+    border-radius: 30px;
+    background: linear-gradient(180deg, white, cadetblue 80px);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.caja4 {
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 0px 50px;
+    background: radial-gradient(rgb(255, 247, 247), cadetblue);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.caja5 {
+    border: 1px solid black;
+    padding: 0px 50px;
+    border-radius: 30px;
+}
+
+.caja6 {
+    border: 1px solid black;
+    padding: 0px 60px;
+}
+
+
+.bloque2 {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.caja7 {
+    padding: 0px 50px;
+    border-radius: 20px;
+    border: 1px solid;
+    box-shadow: 8px 7px 7px cadetblue;
+}
+
+.caja8 {
+    padding: 0px 50px;
+    border-radius: 30px;
+    border: 1px solid black;
+}
+
+.caja9 {
+    border: 1px solid black;
+    padding: 0px 40px;
+    border-radius: 30px;
+    text-shadow: 5px 3px 3px cadetblue;
+
+}
+
+.caja10 {
+    border: 1px solid black;
+    padding: 0px 40px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, white, cadetblue 70%);
+}
+
+hr {
+    color: cadetblue;
+}
