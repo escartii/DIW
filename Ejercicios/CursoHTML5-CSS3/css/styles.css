@@ -1,5 +1,5 @@
 body {
-    background-image: url("../imgs/old_map.png");
+    background: linear-gradient(#e94d2b, #f8e8e8)
 }
 
 .contenedor {
@@ -11,7 +11,8 @@ body {
 .titulo {
     width: auto;
     border: 1px solid black;
-    background-color: #313b44;
+    border-radius: 10px 10px 0px 0px;
+    background: linear-gradient( #0476b9 , #1ca5dc);
     display: flex;
     align-items: center;
     gap: 20px
@@ -32,7 +33,7 @@ body {
 }
 
 .contenidos {
-    background-image: url("../imgs/red015.jpg");
+    background: linear-gradient(#ddc038, #f6da30);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -44,7 +45,7 @@ body {
 }
 
 .contenedorTablas {
-    background-image: url("../imgs/lgrey008.jpg");
+    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -62,6 +63,13 @@ body {
     text-align: center;
     justify-content: center;
     background-color: #313b44;
-    padding: 15px;
+    padding: 5px;
     color: white;
+    border-radius: 0px 0px 20px 20px;
+    background: linear-gradient( #0476b9 , #1ca5dc);
+}
+
+article {
+    border: 60px solid;
+    border-image: url(../imgs/movil.png) 80 50 70 50;
 }
