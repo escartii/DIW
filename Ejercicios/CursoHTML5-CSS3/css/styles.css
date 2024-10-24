@@ -124,7 +124,7 @@ section:nth-of-type(3) .chincheta {
     padding: 10px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 10;
-    width: 150px; /* Aumentamos el ancho para que quepan las palabras */
+    width: 150px;
 }
 
 /* Triángulo sobre el primer elemento */
@@ -161,3 +161,4 @@ section:nth-of-type(3) .chincheta {
     display: block;
     height: auto; /* Aumentamos la altura para mejorar la visibilidad */
 }
+
