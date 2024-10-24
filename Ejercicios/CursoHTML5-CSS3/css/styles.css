@@ -73,3 +73,11 @@ article {
     border: 60px solid;
     border-image: url(../imgs/movil.png) 80 50 70 50;
 }
+/* Rotación del primero */
+section:first-child {
+    transform: rotate(-2deg);
+}
+/* Rotación del último */
+section:last-child {
+    transform: rotate(5deg);
+}
