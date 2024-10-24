@@ -81,3 +81,28 @@ section:first-child {
 section:last-child {
     transform: rotate(5deg);
 }
+
+.chincheta {
+    position: absolute; /* Posición absoluta para la chincheta */
+    width: 35px;
+    height: 49px;
+    background-image: url(../imgs/chincheta.png); /* Ruta de la imagen */
+    background-size: cover; /* Ajuste de la imagen */
+}
+/* Chincheta para el primer artículo (izquierda) */
+section:nth-of-type(1) .chincheta {
+    left: 340px;
+    top: 0px;
+}
+
+/* Chincheta para el segundo artículo (centrada) */
+section:nth-of-type(2) .chincheta {
+    left: 49%;
+    top: 255px;
+}
+
+/* Chincheta para el tercer artículo (derecha) */
+section:nth-of-type(3) .chincheta {
+    top: 0px;
+    right: 342px; /* Ajusta este valor según lo necesites */
+}
