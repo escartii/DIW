@@ -1,21 +1,21 @@
 body {
-    background: linear-gradient(#e94d2b, #f8e8e8)
+    background: linear-gradient(#e94d2b, #f8e8e8);
 }
 
 .contenedor {
     display: flex;
     flex-direction: column;
-    margin: 10px
+    margin: 10px;
 }
 
 header {
     width: auto;
     border: 1px solid black;
     border-radius: 10px 10px 0px 0px;
-    background: linear-gradient( #0476b9 , #1ca5dc);
+    background: linear-gradient(#0476b9, #1ca5dc);
     display: flex;
     align-items: center;
-    gap: 20px
+    gap: 20px;
 }
 
 header h1 {
@@ -35,13 +35,14 @@ header img {
 nav {
     background: linear-gradient(#ddc038, #f6da30);
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
+    position: relative;
 }
 
 .marcador {
     margin-top: 15px;
     color: white;
+    position: relative;
 }
 
 .contenedorTablas {
@@ -66,29 +67,32 @@ footer {
     padding: 5px;
     color: white;
     border-radius: 0px 0px 20px 20px;
-    background: linear-gradient( #0476b9 , #1ca5dc);
+    background: linear-gradient(#0476b9, #1ca5dc);
 }
 
 article {
     border: 60px solid;
     border-image: url(../imgs/movil.png) 80 50 70 50;
 }
+
 /* Rotación del primero */
 section:first-child {
     transform: rotate(-2deg);
 }
+
 /* Rotación del último */
 section:last-child {
     transform: rotate(5deg);
 }
 
 .chincheta {
-    position: absolute; /* Posición absoluta para la chincheta */
+    position: absolute;
     width: 35px;
     height: 49px;
-    background-image: url(../imgs/chincheta.png); /* Ruta de la imagen */
-    background-size: cover; /* Ajuste de la imagen */
+    background-image: url(../imgs/chincheta.png);
+    background-size: cover;
 }
+
 /* Chincheta para el primer artículo (izquierda) */
 section:nth-of-type(1) .chincheta {
     left: 340px;
@@ -104,5 +108,56 @@ section:nth-of-type(2) .chincheta {
 /* Chincheta para el tercer artículo (derecha) */
 section:nth-of-type(3) .chincheta {
     top: 0px;
-    right: 342px; /* Ajusta este valor según lo necesites */
+    right: 342px;
+}
+
+/* Estilos del menú desplegable */
+.videos .dropdown {
+    display: none;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e34c26;
+    border-radius: 5px;
+    list-style: none;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    width: 150px; /* Aumentamos el ancho para que quepan las palabras */
+}
+
+/* Triángulo sobre el primer elemento */
+.videos .dropdown::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #e34c26;
+}
+
+.videos .dropdown li {
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    background-color: #e34c26;
+}
+
+.videos .dropdown li:nth-child(odd) {
+    background-color: #f06529;
+}
+
+.videos .dropdown li:hover {
+    background-color: #ff7e42;
+}
+
+/* Mostrar el menú cuando se pasa el ratón sobre .videos o el menú */
+.videos:hover .dropdown,
+.videos .dropdown:hover {
+    display: block;
+    height: auto; /* Aumentamos la altura para mejorar la visibilidad */
 }
