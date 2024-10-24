@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love Cats Rescue Paiporta</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos para el aside y footer */
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .content {
+            display: flex;
+        }
+
+        aside {
+            width: 200px;
+            /* Ancho del aside */
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 0;
+            /* Margen superior eliminado */
+        }
+
+
+        .main {
+            flex-grow: 1;
+            /* Permite que el contenido principal ocupe el espacio restante */
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
@@ -18,94 +59,97 @@
         </ul>
     </nav>
 
-    <!-- Contenedor principal del encabezado -->
-    <div class="header">
-        <div class="header-content">
-            <h1 class="main-heading">Love Cats Rescue <br> Paiporta, Valencia</h1>
-        </div>
-        <div class="header-image">
-            <img src="./img/gatos.png" alt="Gatos" />
+    <!-- Contenedor principal -->
+    <div class="content">
+        <!-- Aside -->
+        <aside>
+            <h3>Opciones</h3>
+            <ul>
+                <li><a href="#adoptar">Adoptar</a></li>
+                <li><a href="#donar">Donar</a></li>
+                <li><a href="#voluntariado">Voluntariado</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </aside>
+
+        <!-- Sección principal -->
+        <div class="main">
+            <!-- Contenedor principal del encabezado -->
+            <div class="header">
+                <div class="header-content">
+                    <h1 class="main-heading">Love Cats Rescue <br> Paiporta, Valencia</h1>
+                </div>
+                <div class="header-image">
+                    <img src="./img/gatos.png" alt="Gatos" />
+                </div>
+            </div>
+
+            <!-- Sección de tarjetas -->
+            <div class="cards-container">
+                <!-- Tarjeta 1 -->
+                <div class="card">
+                    <div class="image-container">
+                        <img src="./img/gatos.png" alt="Gafas">
+                        <span class="status">EN ADOPCIÓN</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Gafas</h3>
+                        <p><span class="icon">🐾</span> Macho <span class="icon">🐱</span> Cachorro</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="card">
+                    <div class="image-container">
+                        <img src="./img/gatetes.png" alt="Karol">
+                        <span class="status">EN ADOPCIÓN</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Karol</h3>
+                        <p><span class="icon">🐾</span> Hembra <span class="icon">🐱</span> Cachorro</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="image-container">
+                        <img src="./img/gatetes.png" alt="Gafas">
+                        <span class="status">EN ADOPCIÓN</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Gafas</h3>
+                        <p><span class="icon">🐾</span> Macho <span class="icon">🐱</span> Cachorro</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="image-container">
+                        <img src="./img/gatetes.png" alt="Gafas">
+                        <span class="status">EN ADOPCIÓN</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Gafas</h3>
+                        <p><span class="icon">🐾</span> Macho <span class="icon">🐱</span> Cachorro</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="image-container">
+                        <img src="./img/gatetes.png" alt="Gafas">
+                        <span class="status">EN ADOPCIÓN</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Gafas</h3>
+                        <p><span class="icon">🐾</span> Macho <span class="icon">🐱</span> Cachorro</p>
+                    </div>
+                </div>
+                <!-- Repetir tarjetas según sea necesario -->
+            </div>
         </div>
     </div>
 
-    <!-- Sección de tarjetas -->
-    <div class="cards-container">
-        <!-- Tarjeta 1 -->
-        <div class="card">
-            <div class="image-container">
-                <img src="./img/gatos.png" alt="Gafas">
-                <span class="status">EN ADOPCIÓN</span>
-            </div>
-            <div class="card-content">
-                <h3>Gafas</h3>
-                <p><span class="icon">🐾</span> Macho <span class="icon">🐱</span> Cachorro</p>
-            </div>
-        </div>
-        <!-- Tarjeta 2 -->
-        <div class="card">
-            <div class="image-container">
-                <img src="./img/gatetes.png" alt="Karol">
-                <span class="status">EN ADOPCIÓN</span>
-            </div>
-            <div class="card-content">
-                <h3>Karol</h3>
-                <p><span class="icon">🐾</span> Hembra <span class="icon">🐱</span> Cachorro</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="image-container">
-                <img src="./img/gatetes.png" alt="Gafas">
-                <span class="status">EN ADOPCIÓN</span>
-            </div>
-            <div class="card-content">
-                <h3>Gafas</h3>
-                <p><span class="icon">🐾</span> Macho <span class="icon">🐱</span> Cachorro</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="image-container">
-                <img src="./img/gatetes.png" alt="Gafas">
-                <span class="status">EN ADOPCIÓN</span>
-            </div>
-            <div class="card-content">
-                <h3>Gafas</h3>
-                <p><span class="icon">🐾</span> Macho <span class="icon">🐱</span> Cachorro</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="image-container">
-                <img src="./img/gatetes.png" alt="Gafas">
-                <span class="status">EN ADOPCIÓN</span>
-            </div>
-            <div class="card-content">
-                <h3>Gafas</h3>
-                <p><span class="icon">🐾</span> Macho <span class="icon">🐱</span> Cachorro</p>
-            </div>
-        </div>
-        <!-- Repetir tarjetas según sea necesario -->
-    </div>
-
-
-    <div class="stats-container">
-        <div class="stat-item">
-            <span class="stat-value">+11.000</span>
-            <p>gasolineras comparadas</p>
-        </div>
-        <div class="stat-item">
-            <span class="stat-value">15%</span>
-            <p>de ahorro promedio en combustible</p>
-        </div>
-        <div class="stat-item">
-            <span class="stat-value">+400</span>
-            <p>usuarios satisfechos</p>
-        </div>
-        <div class="stat-item">
-            <span class="stat-value">Actualización cada 4h</span>
-            <p>precios actualizados constantemente</p>
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Love Cats Rescue Paiporta. Todos los derechos reservados.</p>
+    </footer>
 </body>
+
 </html>
