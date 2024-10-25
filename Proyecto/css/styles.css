@@ -5,6 +5,8 @@
     --color-fondo: #0f172a;
     --color-texto: #f8fafc;
     --color-acento: #22d3ee;
+    --color-fondo-sidebar: #1e293b;
+    --color-texto-sidebar: #94a3b8;
 }
 
 /* Reset CSS */
@@ -42,6 +44,7 @@ p {
     position: fixed;
     width: 100%;
     z-index: 999;
+    top: 0; /* Aseguramos que el navbar esté pegado arriba */
 }
 
 .nav-container {
@@ -158,9 +161,59 @@ p {
     }
 }
 
+/* Contenedor principal */
+.main-container {
+    /* Eliminamos el margen superior para evitar que el navbar se desplace */
+    /* margin-top: 70px; */ /* Comentamos o eliminamos esta línea */
+}
+
+/* Contenido con aside */
+.content-with-aside {
+    display: flex;
+    padding: 2rem;
+}
+
+/* Sección principal */
+main {
+    flex: 3;
+}
+
+/* Aside */
+.sidebar {
+    flex: 1;
+    background-color: var(--color-fondo-sidebar);
+    padding: 2rem;
+    margin-left: 2rem;
+    border-radius: 8px;
+}
+
+.sidebar .widget {
+    margin-bottom: 2rem;
+}
+
+.sidebar h3 {
+    color: var(--color-acento);
+    margin-bottom: 1rem;
+}
+
+.sidebar ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.5rem;
+    color: var(--color-texto-sidebar);
+}
+
+.sidebar p {
+    color: var(--color-texto-sidebar);
+    margin-bottom: 1rem;
+}
+
 /* Sobre Nosotros */
 .sobre-nosotros {
-    padding: 4rem 2rem;
+    padding: 2rem 0;
 }
 
 .sobre-nosotros .contenedor {
@@ -221,7 +274,7 @@ p {
 
 /* Gatos en Adopción */
 .gatos-adopcion {
-    padding: 4rem 2rem;
+    padding: 2rem 0;
     background-color: #1e293b;
 }
 
@@ -434,8 +487,13 @@ footer {
         font-size: 2.5rem;
     }
 
-    .sobre-nosotros .contenedor {
+    .content-with-aside {
         flex-direction: column;
+    }
+
+    .sidebar {
+        margin-left: 0;
+        margin-top: 2rem;
     }
 
     .contacto-contenedor {
