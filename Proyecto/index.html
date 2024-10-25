@@ -1,155 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Cats Rescue Paiporta</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Estilos para el aside y footer */
-        body {
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-        }
-
-        .content {
-            display: flex;
-        }
-
-        aside {
-            width: 200px;
-            /* Ancho del aside */
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-top: 0;
-            /* Margen superior eliminado */
-        }
-
-
-        .main {
-            flex-grow: 1;
-            /* Permite que el contenido principal ocupe el espacio restante */
-            padding: 20px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>LoveCatsRescue - Paiporta</title>
+    <!-- Fuente personalizada -->
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
-
 <body>
-    <!-- Navbar -->
+    <!-- Navegación -->
     <nav class="navbar">
-        <div class="navbar-logo">MiLogo</div>
-        <ul class="navbar-menu">
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#services">Servicios</a></li>
-            <li><a href="#about">Sobre Nosotros</a></li>
-            <li><a href="#contact">Contacto</a></li>
-        </ul>
-    </nav>
-
-    <!-- Contenedor principal -->
-    <div class="content">
-        <!-- Aside -->
-        <aside>
-            <h3>Opciones</h3>
-            <ul>
-                <li><a href="#adoptar">Adoptar</a></li>
-                <li><a href="#donar">Donar</a></li>
-                <li><a href="#voluntariado">Voluntariado</a></li>
+        <div class="nav-container">
+            <a href="#" class="logo"><span>L</span>ove<span> C</span>ats<span> R</span>escue<span> P</span>aiporta</a>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#gatos">Gatos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
-        </aside>
-
-        <!-- Sección principal -->
-        <div class="main">
-            <!-- Contenedor principal del encabezado -->
-            <div class="header">
-                <div class="header-content">
-                    <h1 class="main-heading">Love Cats Rescue <br> Paiporta, Valencia</h1>
-                </div>
-                <div class="header-image">
-                    <img src="./img/gatos.png" alt="Gatos" />
-                </div>
-            </div>
-
-            <!-- Sección de tarjetas -->
-            <div class="cards-container">
-                <!-- Tarjeta 1 -->
-                <div class="card">
-                    <div class="image-container">
-                        <img src="./img/gatos.png" alt="Gafas">
-                        <span class="status">EN ADOPCIÓN</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Gafas</h3>
-                        <p><span class="icon">🐾</span> Macho <span class="icon">🐱</span> Cachorro</p>
-                    </div>
-                </div>
-                <!-- Tarjeta 2 -->
-                <div class="card">
-                    <div class="image-container">
-                        <img src="./img/gatetes.png" alt="Karol">
-                        <span class="status">EN ADOPCIÓN</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Karol</h3>
-                        <p><span class="icon">🐾</span> Hembra <span class="icon">🐱</span> Cachorro</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="image-container">
-                        <img src="./img/gatetes.png" alt="Gafas">
-                        <span class="status">EN ADOPCIÓN</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Gafas</h3>
-                        <p><span class="icon">🐾</span> Macho <span class="icon">🐱</span> Cachorro</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="image-container">
-                        <img src="./img/gatetes.png" alt="Gafas">
-                        <span class="status">EN ADOPCIÓN</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Gafas</h3>
-                        <p><span class="icon">🐾</span> Macho <span class="icon">🐱</span> Cachorro</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="image-container">
-                        <img src="./img/gatetes.png" alt="Gafas">
-                        <span class="status">EN ADOPCIÓN</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Gafas</h3>
-                        <p><span class="icon">🐾</span> Macho <span class="icon">🐱</span> Cachorro</p>
-                    </div>
-                </div>
-                <!-- Repetir tarjetas según sea necesario -->
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- Footer -->
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-content">
+            <h1>Encuentra a tu <span>compañero felino</span></h1>
+            <p>Adopta un gato y cambia una vida hoy mismo.</p>
+            <a href="#gatos" class="btn-secundario">Ver Gatos en Adopción</a>
+        </div>
+        <div class="hero-image">
+            <img src="./img/cat.png" alt="Gato Futurista">
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="sobre-nosotros">
+        <div class="contenedor">
+            <div class="texto">
+                <h2>Sobre <span>Nosotros</span></h2>
+                <p>Somos una organización dedicada a rescatar y encontrar hogares para gatos necesitados. Creemos en segundas oportunidades y en el amor que estos felinos pueden traer a tu vida.</p>
+                <a href="#contacto" class="btn-secundario">Contáctanos</a>
+            </div>
+            <br>
+            <div class="imagen">
+                <img src="./img/paw.png" alt="Patita de gato">
+            </div>
+        </div>
+    </section>
+
+    <!-- Gatos en Adopción -->
+    <section id="gatos" class="gatos-adopcion">
+        <h2>Nuestros <span>Gatos</span></h2>
+        <div class="tarjetas-gatos">
+            <div class="tarjeta">
+                <img src="./img/gatetes.png" alt="Gato 1">
+                <h3>Michifú</h3>
+                <p>Género: Macho</p>
+                <button class="btn-adoptar">¡Adóptame!</button>
+            </div>
+            <div class="tarjeta">
+                <img src="./img/gatetes.png" alt="Gato 2">
+                <h3>Luna</h3>
+                <p>Género: Hembra</p>
+                <button class="btn-adoptar">¡Adóptame!</button>
+            </div>
+            <div class="tarjeta">
+                <img src="./img/gatetes.png" alt="Gato 3">
+                <h3>Simón</h3>
+                <p>Género: Macho</p>
+                <button class="btn-adoptar">¡Adóptame!</button>
+            </div>
+            <!-- Agrega más tarjetas según sea necesario -->
+        </div>
+    </section>
+
+    <!-- Llamado a la Acción -->
+    <section class="cta-section">
+        <h2>¿Puedes echarnos una patita?</h2>
+        <p>Tu apoyo marca la diferencia en la vida de estos felinos.</p>
+        <a href="#contacto" class="btn-primario">Haz una Donación</a>
+    </section>
+
+    <!-- Sección de contacto -->
+    <section id="contacto" class="contacto">
+        <h2>Contáctanos</h2>
+        <div class="contacto-contenedor">
+            <form>
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu email" required>
+                <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="contacto-info">
+                <h3>Información de Contacto</h3>
+                <p><strong>Email:</strong> info@catadopt.com</p>
+                <p><strong>Teléfono:</strong> +34 600 123 456</p>
+                <p><strong>Dirección:</strong> Calle Felina 123, Madrid, España</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
     <footer>
-        <p>&copy; 2024 Love Cats Rescue Paiporta. Todos los derechos reservados.</p>
+        <div class="footer-contenedor">
+            <p>&copy; 2023 CatAdopt. Todos los derechos reservados.</p>
+            <div class="redes-sociales">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+        </div>
     </footer>
-</body>
 
+    <!-- Script para el menú responsive -->
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('nav-menu_visible');
+        });
+    </script>
+</body>
 </html>
