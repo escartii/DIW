@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Michifú - LoveCatsRescue</title>
+    <!-- Fuente personalizada -->
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap">
+    <link rel="stylesheet" href="./css/gatos.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span>Love</span> Cats Rescue<span> Paiporta</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
+                <li class="dropdown">
+                    <a href="#">Gatos</a>
+                    <span class="arrow-down"></span>
+                    <ul class="dropdown-menu">
+                        <li><a href="gato1.html">Michifú</a></li>
+                        <li><a href="gato2.html">Luna</a></li>
+                        <li><a href="gato3.html">Simón</a></li>
+                        <!-- Agrega más gatos según sea necesario -->
+                    </ul>
+                </li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="gato-detalle">
+        <div class="contenedor">
+            <h1>Michifú</h1>
+            <div class="gato-info">
+                <div class="gato-galeria">
+                    <img src="./img/gatetes.png" alt="Michifú" id="imagen-principal">
+                    <div class="galeria-miniaturas">
+                        <img src="./img/gatetes.png" alt="Michifú" onclick="cambiarImagen(this)">
+                        <img src="./img/gatetes.png" alt="Michifú" onclick="cambiarImagen(this)">
+                        <img src="./img/gatetes.png" alt="Michifú" onclick="cambiarImagen(this)">
+                    </div>
+                </div>
+                <div class="gato-descripcion">
+                    <p><strong>Edad:</strong> 2 años</p>
+                    <p><strong>Género:</strong> Macho 🐾</p>
+                    <p><strong>Vacunas:</strong> Al día ✅</p>
+                    <p><strong>Esterilizado:</strong> Sí ✅</p>
+                    <p><strong>Descripción:</strong></p>
+                    <p>Michifú es un gato cariñoso y juguetón que busca un hogar lleno de amor. Le encanta jugar con pelotas y dormir en lugares soleados.</p>
+                    <a href="#contacto" class="btn-adoptar">¡Quiero Adoptar a Michifú!</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-contenedor">
+            <p>&copy; 2024 Love Cats Rescue Paiporta. Todos los derechos reservados.</p>
+            <div class="redes-sociales">
+                <a href="https://www.facebook.com/asociacionlovecats/" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/lovecats_rescue/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

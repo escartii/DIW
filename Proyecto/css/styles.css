@@ -5,6 +5,8 @@
     --color-fondo: #0f172a;
     --color-texto: #f8fafc;
     --color-acento: #22d3ee;
+    --color-fondo-sidebar: #1e293b;
+    --color-texto-sidebar: #94a3b8;
 }
 
 /* Reset CSS */
@@ -42,6 +44,7 @@ p {
     position: fixed;
     width: 100%;
     z-index: 999;
+    top: 0;
 }
 
 .nav-container {
@@ -97,6 +100,51 @@ p {
     border-radius: 5px;
 }
 
+/* Estilos para el menú desplegable */
+.nav-menu .dropdown {
+    position: relative;
+}
+
+.nav-menu .dropdown > a {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(15, 23, 42, 0.9);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    min-width: 150px;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    z-index: 999;
+}
+
+
+.nav-menu .dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.nav-menu .dropdown-menu a {
+    padding: 0.75rem 1.5rem;
+    display: block;
+    color: var(--color-texto);
+    transition: background-color 0.3s;
+}
+
+.nav-menu .dropdown-menu a:hover {
+    background-color: #1e293b;
+}
+
+.nav-menu .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 /* Hero Section */
 .hero-section {
     display: flex;
@@ -136,31 +184,70 @@ p {
     background-color: var(--color-secundario);
 }
 
-.hero-image {
-    flex: 1;
+.btn-secundario {
+    background-color: var(--color-acento);
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn-secundario:hover {
+    background-color: #06b6d4;
+}
+
+/* Contenedor principal */
+.main-container {
+    padding-top: 70px;
+}
+
+/* Contenido con aside */
+.content-with-aside {
     display: flex;
-    justify-content: center;
+    padding: 2rem;
 }
 
-.hero-image img {
-    width: 80%;
-    max-width: 400px;
-    animation: flotar 6s ease-in-out infinite;
+/* Sección principal */
+main {
+    flex: 3;
 }
 
-/* Animación de flotación */
-@keyframes flotar {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+/* Aside */
+.sidebar {
+    flex: 1;
+    background-color: var(--color-fondo-sidebar);
+    padding: 2rem;
+    margin-left: 2rem;
+    border-radius: 8px;
+}
+
+.sidebar .widget {
+    margin-bottom: 2rem;
+}
+
+.sidebar h3 {
+    color: var(--color-acento);
+    margin-bottom: 1rem;
+}
+
+.sidebar ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.5rem;
+    color: var(--color-texto-sidebar);
+}
+
+.sidebar p {
+    color: var(--color-texto-sidebar);
+    margin-bottom: 1rem;
 }
 
 /* Sobre Nosotros */
 .sobre-nosotros {
-    padding: 4rem 2rem;
+    padding: 2rem 0;
 }
 
 .sobre-nosotros .contenedor {
@@ -206,22 +293,9 @@ p {
     }
 }
 
-/* Botón Secundario */
-.btn-secundario {
-    background-color: var(--color-acento);
-    color: #000;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-}
-
-.btn-secundario:hover {
-    background-color: #06b6d4;
-}
-
 /* Gatos en Adopción */
 .gatos-adopcion {
-    padding: 4rem 2rem;
+    padding: 2rem 0;
     background-color: #1e293b;
 }
 
@@ -276,9 +350,9 @@ p {
     padding: 0.75rem;
     width: calc(100% - 2rem);
     margin: 0 1rem 1rem;
-    border: none;
+    text-align: center;
+    display: block;
     border-radius: 8px;
-    cursor: pointer;
     transition: background-color 0.3s;
 }
 
@@ -434,8 +508,13 @@ footer {
         font-size: 2.5rem;
     }
 
-    .sobre-nosotros .contenedor {
+    .content-with-aside {
         flex-direction: column;
+    }
+
+    .sidebar {
+        margin-left: 0;
+        margin-top: 2rem;
     }
 
     .contacto-contenedor {
