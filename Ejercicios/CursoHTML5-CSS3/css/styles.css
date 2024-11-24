@@ -162,3 +162,38 @@ section:nth-of-type(3) .chincheta {
     height: auto; /* Aumentamos la altura para mejorar la visibilidad */
 }
 
+
+#reproductor {
+    position: relative;
+    width: 850px;
+    margin: 20px auto;
+    background: white;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#medio {
+    width: 720px;
+    height: 400px;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+/* Barra de progreso */
+#barra {
+    width: 705px;
+    margin: 5px auto;
+    height: 16px;
+    padding: 2px;
+    border: 1px solid #CCCCCC;
+    background: #EEEEEE;
+    position: relative;
+}
+
+#progreso {
+    position: absolute;
+    width: 0;
+    height: 16px;
+    background: rgba(0, 0, 150, 0.2);
+}
