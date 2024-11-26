@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap');
+
+/* Fondo de la sección */
+main {
+    background: url('../imgs/fondoForm.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Contenedor del formulario */
+#contenedorFormulario {
+    position: relative;
+    display: inline-block;
+    margin: 50px;
+    padding: 20px 50px;
+    width: 600px;
+    background: rgba(200, 200, 200, 0.7);
+    text-align: left;
+    box-shadow: 3px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Título */
+#contenedorFormulario h1 {
+    position: absolute;
+    top: -16px;
+    left: 490px;
+    background: rgba(255, 255, 255, 0.7);
+    font-family: 'Aguafina Script', cursive;
+    color: #333;
+    padding: 0 10px;
+    letter-spacing: 5px;
+    text-shadow: 0px 0px 2px #777;
+}
+
+/* Campos del formulario */
+form input,
+form textarea {
+    display: inline-block;
+    width: 90%;
+    padding: 10px 45px;
+    margin-bottom: 15px;
+    border: 1px solid #e5e5e5;
+    font-weight: bold;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3), inset 0px 0px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in;
+}
+
+#nombre {
+    background: url('../imgs/icon-nombre.png') no-repeat 10px center;
+}
+
+#email {
+    background: url('../imgs/icon-correo.png') no-repeat 10px center;
+}
+
+#mensaje {
+    height: 150px;
+    background: url('../imgs/icon-mensaje.png') no-repeat 10px center;
+}
+
+/* Validación */
+input:valid {
+    background-image: url('../imgs/valid.png');
+}
+
+input:invalid {
+    background-image: url('../imgs/invalid.png');
+}
+
+/* Botón */
+button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    background: linear-gradient(to bottom, #5e5e5e, #2a2a2a);
+    color: white;
+    border: 1px solid #434343;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(to top, #5e5e5e, #2a2a2a);
+}

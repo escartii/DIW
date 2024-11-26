@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap">
+</head>
+
+<body>
+    <div class="container-principal">
+        <header>
+            <img src="./imgs/logo.png" alt="Logo">
+            <h1 class="tit">Curso de HTML5 y CSS3</h1>
+        </header>
+
+        <nav>
+            <div class="marcador">
+                <img src="imgs/book.png" alt="Book">
+                <p class="cont"><a href="index.html">Contenidos</a></p>
+            </div>
+            <div class="marcador">
+                <img src="imgs/film.png" alt="Film">
+                <p class="cont"><a href="videos.html">Vídeos</a></p>
+            </div>
+            <div class="marcador">
+                <img src="imgs/mail.png" alt="Mail">
+                <p class="cont">Contacto</p>
+            </div>
+        </nav>
+
+        <main>
+            <div id="contenedorFormulario">
+                <h1>Contáctenos</h1>
+                <form>
+                    <input type="text" id="nombre" name="nombre" list="nombres" placeholder="Escriba su nombre" required>
+                    <datalist id="nombres">
+                        <option value="Alex"></option>
+                        <option value="Juan"></option>
+                        <option value="Ana"></option>
+                        <option value="Pedro"></option>
+                    </datalist>
+                    <label for="nombre"></label>
+
+                    <input type="email" id="email" name="email" placeholder="Escriba su email" required>
+                    <label for="email"></label>
+
+                    <textarea id="mensaje" name="mensaje" placeholder="Su mensaje..." required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <p>Diseño de interfaces web - 2DAW</p>
+        </footer>
+    </div>
+</body>
+
+</html>
