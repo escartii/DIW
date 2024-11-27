@@ -71,6 +71,7 @@ footer {
 }
 
 article {
+    position: relative;
     border: 60px solid;
     border-image: url(../imgs/movil.png) 80 50 70 50;
 }
@@ -95,20 +96,21 @@ section:last-child {
 
 /* Chincheta para el primer artículo (izquierda) */
 section:nth-of-type(1) .chincheta {
-    left: 340px;
-    top: 0px;
+    left: 0px;
+    top: -80px;
 }
 
 /* Chincheta para el segundo artículo (centrada) */
 section:nth-of-type(2) .chincheta {
     left: 49%;
-    top: 255px;
+    top: -80px;
 }
 
 /* Chincheta para el tercer artículo (derecha) */
 section:nth-of-type(3) .chincheta {
     top: 0px;
     right: 342px;
+    top: -80px;
 }
 
 /* Estilos del menú desplegable */
@@ -231,3 +233,91 @@ main {
     box-shadow: inset 2px 2px 10px rgba(67, 66, 66, 0.9);
 }
 
+/* Logo animado */
+header img {
+    animation: rotateLogo 5s infinite;
+}
+
+/* Definición de la animación */
+@keyframes rotateLogo {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animación de la primera chincheta */
+@keyframes mueveChincheta1 {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 199px;
+    }
+}
+
+/* Animación de la segunda chincheta */
+@keyframes mueveChincheta2 {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 120px;
+    }
+}
+
+/* Animación de la tercera chincheta */
+@keyframes mueveChincheta3 {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 30px;
+    }
+}
+
+/* Rotación del primer artículo */
+@keyframes animArticle1 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-2deg);
+    }
+}
+
+/* Rotación del tercer artículo */
+@keyframes animArticle3 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(2deg);
+    }
+}
+
+/* Clases para las animaciones */
+.anim-chincheta1 {
+    animation: mueveChincheta1 1s forwards;
+}
+
+.anim-article1 {
+    animation: animArticle1 0.5s forwards;
+}
+
+.anim-chincheta2 {
+    animation: mueveChincheta2 1s forwards;
+}
+
+.anim-chincheta3 {
+    animation: mueveChincheta3 1s forwards;
+}
+
+.anim-article3 {
+    animation: animArticle3 0.5s forwards;
+}
