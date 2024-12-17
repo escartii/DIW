@@ -1,5 +1,6 @@
 body {
     background: linear-gradient(#e94d2b, #f8e8e8);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .contenedor {
@@ -10,15 +11,15 @@ body {
 
 header {
     width: auto;
-    border: 1px solid black;
-    border-radius: 10px 10px 0px 0px;
-    background: linear-gradient(#0476b9, #1ca5dc);
+    border-radius: 15px 15px 0px 0px;
+    background: linear-gradient(#0476b9, #ffffff);
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
 header h1 {
+    font-family: "fuentePrincipal";
     color: white;
 }
 
@@ -26,17 +27,24 @@ header img {
     margin-left: 5px;
 }
 
-.linea {
-    height: 7px;
-    width: auto;
-    background-color: black;
-}
-
 nav {
     background: linear-gradient(#ddc038, #f6da30);
     display: flex;
     justify-content: space-evenly;
     position: relative;
+    font-family: "fuentePrincipal";
+    text-shadow: 1px 1px 0px #f06529;
+    /* Quito el color azul de la etiqueta <a> (enlace) */	
+    a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+
+}
+
+nav a:hover {
+    color: #ff7e42;
+    text-shadow: 0px 0px 5px #ff7e42; 
 }
 
 .marcador {
@@ -320,4 +328,14 @@ header img {
 
 .anim-article3 {
     animation: animArticle3 0.5s forwards;
+}
+
+@font-face {
+    font-family: "fuentePrincipal";
+    src: url("../fuentes/Luckiest_Guy/LuckiestGuy-Regular.ttf");
+}
+
+@font-face {
+    font-family: "fuenteSecundaria";
+    src: url("../fuentes/Abel/Abel-Regular.ttf");
 }
