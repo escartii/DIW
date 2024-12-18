@@ -1,0 +1,138 @@
+/* archivo: css/caso4.css */
+
+/* Reinicio de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del nav */
+nav {
+    background-color: #2f2d2c;
+    width: 100%;
+    height: 60px;
+    position: fixed; /* Fija el nav en la parte superior */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que el nav esté por encima de otros elementos */
+}
+
+/* Contenedor del nav */
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Checkbox oculto */
+#menu-toggle {
+    display: none;
+}
+
+/* Icono de menú (hamburguesa) */
+.menu-icon {
+    display: none; /* Oculto por defecto */
+    font-size: 1.8em;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* Mostrar el icono de menú en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Muestra el icono de menú */
+    }
+
+    /* Lista de enlaces de navegación */
+    .nav-links {
+        position: absolute;
+        top: 60px; /* Debajo del nav */
+        left: 0;
+        width: 100%;
+        background-color: #2f2d2c;
+        flex-direction: column;
+        display: none; /* Oculta el menú por defecto */
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    /* Mostrar el menú cuando el checkbox está checked */
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+        opacity: 1;
+        max-height: 500px; /* Ajusta según la cantidad de elementos */
+    }
+
+    /* Cambiar el icono de hamburguesa a 'X' cuando el menú está abierto */
+    #menu-toggle:checked + .menu-icon::before {
+        content: '✖'; /* Icono de 'X' */
+    }
+
+    /* Ocultar el icono de hamburguesa cuando el menú está abierto */
+    #menu-toggle:checked + .menu-icon::after {
+        content: '';
+    }
+
+    /* Icono de menú cuando está cerrado */
+    .menu-icon::before {
+        content: '\2630'; /* Unicode para hamburguesa */
+    }
+
+    /* Icono de menú cuando está abierto */
+    #menu-toggle:checked + .menu-icon::before {
+        content: '\2715'; /* Unicode para 'X' */
+    }
+
+    /* Animación suave para el icono */
+    .menu-icon {
+        transition: content 0.3s ease;
+    }
+}
+
+/* Lista de enlaces de navegación en pantallas grandes */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d3d7eb;
+}
+
+/* Estilos adicionales para accesibilidad */
+.menu-icon:focus {
+    outline: 2px solid #ffffff;
+}

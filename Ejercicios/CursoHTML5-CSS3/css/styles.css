@@ -37,7 +37,7 @@ nav {
     /* Quito el color azul de la etiqueta <a> (enlace) */	
     a {
         text-decoration: none;
-        color: rgb(255, 255, 255);
+        color: white;
     }
 
 }
@@ -218,9 +218,6 @@ main nav input[type="button"] {
     transition: background-color 0.3s ease;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-
-
 
 /* Etiqueta de volumen */
 main nav label {
