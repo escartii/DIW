@@ -1,6 +1,9 @@
+/* General */
 body {
     background: linear-gradient(#e94d2b, #f8e8e8);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
 }
 
 .contenedor {
@@ -16,30 +19,35 @@ header {
     display: flex;
     align-items: center;
     gap: 20px;
+    padding: 10px;
 }
 
 header h1 {
     font-family: "fuentePrincipal";
     color: white;
+    margin: 0;
 }
 
 header img {
     margin-left: 5px;
+    width: 80px; /* Ajusta el tamaño según necesites */
+    height: auto;
 }
 
 nav {
     background: linear-gradient(#ddc038, #f6da30);
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     position: relative;
     font-family: "fuentePrincipal";
     text-shadow: 1px 1px 0px #f06529;
-    /* Quito el color azul de la etiqueta <a> (enlace) */	
-    a {
-        text-decoration: none;
-        color: white;
-    }
+    padding: 10px;
+}
 
+nav a {
+    text-decoration: none;
+    color: white;
 }
 
 nav a:hover {
@@ -51,6 +59,14 @@ nav a:hover {
     margin-top: 15px;
     color: white;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.marcador img {
+    max-width: 100%;
+    height: auto;
 }
 
 .contenedorTablas {
@@ -58,6 +74,7 @@ nav a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 section {
@@ -66,13 +83,16 @@ section {
     background-color: white;
     margin: 30px;
     padding: 25px;
+    flex: 1 1 300px; /* Hace que las secciones sean responsivas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 footer {
     text-align: center;
     justify-content: center;
     background-color: #313b44;
-    padding: 5px;
+    padding: 20px;
     color: white;
     border-radius: 0px 0px 20px 20px;
     background: linear-gradient(#0476b9, #1ca5dc);
@@ -82,6 +102,15 @@ article {
     position: relative;
     border: 60px solid;
     border-image: url(../imgs/movil.png) 80 50 70 50;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Responsividad para imágenes */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Rotación del primero */
@@ -116,8 +145,7 @@ section:nth-of-type(2) .chincheta {
 
 /* Chincheta para el tercer artículo (derecha) */
 section:nth-of-type(3) .chincheta {
-    top: 0px;
-    right: 342px;
+    right: 0px;
     top: -80px;
 }
 
@@ -137,7 +165,6 @@ section:nth-of-type(3) .chincheta {
     width: 150px;
 }
 
-/* Triángulo sobre el primer elemento */
 .videos .dropdown::before {
     content: "";
     position: absolute;
@@ -165,13 +192,56 @@ section:nth-of-type(3) .chincheta {
     background-color: #ff7e42;
 }
 
-/* Mostrar el menú cuando se pasa el ratón sobre .videos o el menú */
 .videos:hover .dropdown,
 .videos .dropdown:hover {
     display: block;
-    height: auto; /* Aumentamos la altura para mejorar la visibilidad */
+    height: auto; /* Aumenta la altura para mejorar la visibilidad */
 }
 
+/* Botón del menú */
+#menu-toggle {
+    display: none;
+    background-color: #e94d2b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px auto;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    nav .marcador {
+        display: none;
+        width: 100%;
+    }
+
+    nav.active .marcador {
+        display: flex;
+    }
+
+    .videos .dropdown {
+        position: static;
+        transform: none;
+        width: 100%;
+    }
+
+    .videos .dropdown::before {
+        display: none;
+    }
+}
 
 /* Contenedor principal del reproductor */
 #reproductor {
@@ -183,13 +253,9 @@ section:nth-of-type(3) .chincheta {
     background: white;
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 2px solid black;
     box-shadow: inset 2px 2px 10px rgba(67, 66, 66, 0.9);
 }
-
-/* Estilo del video */
-
 
 /* Contenedor de los botones */
 main nav {
@@ -225,17 +291,6 @@ main nav label {
     margin-top: 15px;
     color: #333;
     text-align: center;
-}
-
-main {
-    width: 100%;
-    background-color: #ffffff;
-}
-
-
-#reproductor {
-    border: 2px solid black;
-    box-shadow: inset 2px 2px 10px rgba(67, 66, 66, 0.9);
 }
 
 /* Logo animado */
@@ -336,4 +391,3 @@ header img {
     font-family: "fuenteSecundaria";
     src: url("../fuentes/Abel/Abel-Regular.ttf");
 }
-

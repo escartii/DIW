@@ -13,21 +13,23 @@
             <h1>Curso de HTML5 y CSS3</h1>
         </header>
         <nav>
+            <!-- Botón para el menú desplegable en dispositivos móviles -->
+            <button id="menu-toggle">Menú</button>
             <div class="marcador">
-                <img src="./imgs/book.png" alt="Contenidos">
+                <img src="./imgs/book.png" alt="Contenidos" class="responsive-img">
                 <a href=""><p>Contenidos</p></a>
             </div>
             <div class="marcador videos">
-                <img src="./imgs/film.png" alt="Vídeos">
+                <img src="./imgs/film.png" alt="Vídeos" class="responsive-img">
                 <a href="./videos.html"><p>Vídeos</p></a>
                 <ul class="dropdown">
-                    <li>Video 1</li>
-                    <li>Video 2</li>
-                    <li>Video 3</li>
+                    <li><a href="#">Video 1</a></li>
+                    <li><a href="#">Video 2</a></li>
+                    <li><a href="#">Video 3</a></li>
                 </ul>
             </div>
             <div class="marcador">
-                <img src="./imgs/mail.png" alt="Contacto">
+                <img src="./imgs/mail.png" alt="Contacto" class="responsive-img">
                 <a href="./contacto.html"><p>Contacto</p></a>
             </div>
         </nav>
@@ -35,7 +37,7 @@
             <section>
                 <article class="article1">
                     <div class="chincheta chincheta1"></div>
-                    <img src="./imgs/html5.png" alt="HTML5">
+                    <img src="./imgs/html5.png" alt="HTML5" class="responsive-img">
                     <h2>HTML</h2>
                     <hr>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, nemo quasi fugit saepe placeat, asperiores similique eligendi ex ullam quia sequi quas officiis quam, maxime totam laudantium deserunt vero. Tempore.</p>
@@ -45,7 +47,7 @@
             <section>
                 <article class="article2">
                     <div class="chincheta chincheta2"></div>
-                    <img src="./imgs/css3.png" alt="CSS3">
+                    <img src="./imgs/css3.png" alt="CSS3" class="responsive-img">
                     <h2>CSS</h2>
                     <hr>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat suscipit optio odit facilis, sit perspiciatis voluptatum! Animi quasi quaerat officiis fugit porro consectetur non laboriosam dicta, voluptatem adipisci mollitia ducimus.</p>
@@ -55,7 +57,7 @@
             <section>
                 <article class="article3">
                     <div class="chincheta chincheta3"></div>
-                    <img src="./imgs/javascript.png" alt="JavaScript">
+                    <img src="./imgs/javascript.png" alt="JavaScript" class="responsive-img">
                     <h2>JavaScript</h2>
                     <hr>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatum impedit consectetur similique velit laborum sapiente enim voluptas. Totam aliquid dolor dolorum in atque odit non cumque debitis expedita reiciendis.</p>
@@ -70,5 +72,6 @@
         </footer>
     </div>
     <script src="./js/animacion.js"></script>
+    <script src="./js/menu.js"></script> <!-- Nuevo archivo JS para el menú -->
 </body>
 </html>
