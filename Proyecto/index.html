@@ -11,20 +11,29 @@
     <!-- Navegación -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo"><span>Love</span> Cats Rescue<span> Paiporta</span></a>
+            <a href="index.html" class="logo">Love <span>Cats</span> Rescue<span> Paiporta</span></a>
             <ul class="nav-menu">
+                <!-- Enlaces ancla dentro de la misma página -->
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
+                
+                <!-- Desplegable de gatos -->
                 <li class="dropdown">
-                    <a href="#gatos">Gatos</a>
+                    <!-- El enlace principal no tiene #gatos, sino un # o un link
+                         vacío, para que abra el desplegable sin cambiar de página. -->
+                    <a href="#">Gatos</a>
                     <span class="arrow-down"></span>
                     <ul class="dropdown-menu">
+                        <!-- Nuevo enlace a la página de “Todos los gatos” -->
+                        <li><a href="adopta.html">Ver Todos</a></li>
+                        <!-- Enlaces a gatos destacados (los que ya tenías) -->
                         <li><a href="gato1.html">Michifú</a></li>
                         <li><a href="gato2.html">Luna</a></li>
                         <li><a href="gato3.html">Simón</a></li>
-                        <!-- Agrega más gatos según sea necesario -->
+                        <!-- Agrega más gatos o secciones según sea necesario -->
                     </ul>
                 </li>
+
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             <div class="nav-toggle">
@@ -38,23 +47,29 @@
     <!-- Contenedor principal -->
     <div class="main-container">
         <!-- Hero Section -->
-        <section id="inicio" class="hero-section">
+        <section id="inicio" class="hero-section fade-in">
             <div class="hero-content">
                 <h1>Encuentra a tu <span>compañero felino</span></h1>
                 <p>Adopta un gato y cambia una vida hoy mismo.</p>
+                
+                <!-- OPCIONAL: En lugar de ir a #gatos en la misma página,
+                     puedes dirigir directamente a tu nueva página con todos los gatos. -->
+                <!-- <a href="todos-los-gatos.html" class="btn-secundario">Ver Gatos en Adopción</a> -->
+                
+                <!-- O lo dejas como estaba, para que apunte a la sección #gatos: -->
                 <a href="#gatos" class="btn-secundario">Ver Gatos en Adopción</a>
             </div>
         </section>
 
         <!-- Sección principal con aside -->
-        <div class="content-with-aside">
+        <div class="content-with-aside fade-in">
             <!-- Sección principal -->
             <main>
                 <!-- Sobre Nosotros -->
-                <section id="nosotros" class="sobre-nosotros">
+                <section id="nosotros" class="sobre-nosotros fade-in">
                     <div class="contenedor">
                         <div class="texto">
-                            <h2>Sobre <span>Nosotros</span></h2>
+                            <h2 class="titulo2">Sobre <span>Nosotros</span></h2>
                             <p>Somos una organización dedicada a rescatar y encontrar hogares para gatos necesitados. Creemos en segundas oportunidades y en el amor que estos felinos pueden traer a tu vida.</p>
                             <br><br>
                             <a href="#contacto" class="btn-secundario">Contáctanos</a>
@@ -66,35 +81,35 @@
                     </div>
                 </section>
 
-                <!-- Gatos en Adopción -->
-                <section id="gatos" class="gatos-adopcion">
-                    <h2>Nuestros <span>Gatos</span></h2>
+                <!-- Gatos en Adopción (destacados en la página principal) -->
+                <section id="gatos" class="gatos-adopcion fade-in">
+                    <h2>Nuestros <span>Gatos Destacados</span></h2>
                     <div class="tarjetas-gatos">
-                        <div class="tarjeta">
+                        <div class="tarjeta fade-in">
                             <img src="./img/gatetes.png" alt="Gato 1">
                             <h3>Michifú</h3>
                             <p>Género: Macho 🐾</p>
                             <a href="gato1.html" class="btn-adoptar">¡Adóptame!</a>
                         </div>
-                        <div class="tarjeta">
+                        <div class="tarjeta fade-in">
                             <img src="./img/gatetes.png" alt="Gato 2">
                             <h3>Luna</h3>
                             <p>Género: Hembra 🐾</p>
                             <a href="gato2.html" class="btn-adoptar">¡Adóptame!</a>
                         </div>
-                        <div class="tarjeta">
+                        <div class="tarjeta fade-in">
                             <img src="./img/gatetes.png" alt="Gato 3">
                             <h3>Simón</h3>
                             <p>Género: Macho 🐾</p>
                             <a href="gato3.html" class="btn-adoptar">¡Adóptame!</a>
                         </div>
-                        <!-- Agrega más tarjetas según sea necesario -->
+                        <!-- Agrega más tarjetas de gatos destacados si quieres -->
                     </div>
                 </section>
             </main>
 
             <!-- Aside con consejos y testimonios -->
-            <aside class="sidebar">
+            <aside class="sidebar fade-in">
                 <div class="widget">
                     <h3>Consejos para Cuidar a tu Gato</h3>
                     <ul>
@@ -105,6 +120,7 @@
                         <li>Mantén su arenero limpio y accesible.</li>
                     </ul>
                 </div>
+                <img src="./img/homer.gif" alt="Gato en adopción - Homer" width="60%">
                 <div class="widget">
                     <h3>Testimonios</h3>
                     <p>"Adoptar a Luna ha sido la mejor decisión. Ella llena nuestros días de alegría." - María G.</p>
@@ -115,30 +131,10 @@
     </div>
 
     <!-- Llamado a la Acción -->
-    <section class="cta-section">
+    <section class="cta-section fade-in">
         <h2>¿Puedes echarnos una patita?</h2>
         <p>Tu apoyo marca la diferencia en la vida de estos felinos.</p>
         <a href="https://www.teaming.net/asociacionlovecats" class="btn-primario" target="_blank">Haz una Donación</a>
-    </section>
-
-    <!-- Sección de contacto -->
-    <section id="contacto" class="contacto">
-        <h2>Contáctanos</h2>
-        <div class="contacto-contenedor">
-            <form>
-                <input type="text" name="nombre" placeholder="Tu nombre" required>
-                <input type="email" name="email" placeholder="Tu email" required>
-                <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-            <div class="contacto-info">
-                <h3>Información de Contacto</h3>
-                <br>
-                <p><strong>Email:</strong> info@lovecatsrescue.com</p>
-                <br>
-                <p><strong>Teléfono:</strong> +34 600 123 456</p>
-            </div>
-        </div>
     </section>
 
     <!-- Pie de página -->

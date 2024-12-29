@@ -125,7 +125,6 @@ p {
     z-index: 999;
 }
 
-
 .nav-menu .dropdown-menu li:last-child {
     border-bottom: none;
 }
@@ -147,15 +146,23 @@ p {
 
 /* Hero Section */
 .hero-section {
+    /* Cambios para centrar vertical y horizontalmente */
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+
+    /* Si deseas que ocupe toda la pantalla, descomenta la siguiente línea: */
+    /* min-height: 100vh; */
+
+    text-align: center; /* Para centrar el texto */
     padding: 8rem 2rem 4rem;
     background: linear-gradient(135deg, #1e293b 0%, #111827 100%);
 }
 
 .hero-content {
-    flex: 1;
+    /* Quita el flex: 1 si lo usabas; no es necesario para centrar */
+    /* flex: 1; */
 }
 
 .hero-content h1 {
@@ -471,6 +478,9 @@ footer {
     color: var(--color-acento);
 }
 
+.texto {
+    text-align: center;
+}
 /* Responsividad */
 @media (max-width: 768px) {
     .nav-menu {
@@ -496,7 +506,7 @@ footer {
     }
 
     .hero-section {
-        flex-direction: column;
+        /* Para móviles, sigue centrado pero con menos padding arriba si lo deseas */
         padding-top: 6rem;
     }
 
