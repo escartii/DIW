@@ -54,6 +54,7 @@ p {
     padding: 1rem 2rem;
 }
 
+/* Logo */
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -63,6 +64,28 @@ p {
     color: var(--color-acento);
 }
 
+/* Checkbox Hack:
+   Ocultamos el input y usamos label para togglear */
+.menu-toggle {
+    display: none;
+}
+
+/* Ícono de menú (hamburguesa) */
+.nav-toggle {
+    display: none; /* Se mostrará en pantallas pequeñas con media query */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    height: 3px;
+    width: 25px;
+    background: var(--color-texto);
+    margin-bottom: 4px;
+    border-radius: 5px;
+}
+
+/* Menú principal */
 .nav-menu {
     list-style: none;
     display: flex;
@@ -73,6 +96,7 @@ p {
     position: relative;
 }
 
+/* Efecto subrayado en hover */
 .nav-menu a::after {
     content: '';
     display: block;
@@ -86,21 +110,7 @@ p {
     width: 100%;
 }
 
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.nav-toggle span {
-    height: 3px;
-    width: 25px;
-    background: var(--color-texto);
-    margin-bottom: 4px;
-    border-radius: 5px;
-}
-
-/* Estilos para el menú desplegable */
+/* Dropdown */
 .nav-menu .dropdown {
     position: relative;
 }
@@ -146,23 +156,13 @@ p {
 
 /* Hero Section */
 .hero-section {
-    /* Cambios para centrar vertical y horizontalmente */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    /* Si deseas que ocupe toda la pantalla, descomenta la siguiente línea: */
-    /* min-height: 100vh; */
-
-    text-align: center; /* Para centrar el texto */
+    text-align: center;
     padding: 8rem 2rem 4rem;
     background: linear-gradient(135deg, #1e293b 0%, #111827 100%);
-}
-
-.hero-content {
-    /* Quita el flex: 1 si lo usabas; no es necesario para centrar */
-    /* flex: 1; */
 }
 
 .hero-content h1 {
@@ -478,11 +478,13 @@ footer {
     color: var(--color-acento);
 }
 
-.texto {
-    text-align: center;
-}
 /* Responsividad */
 @media (max-width: 768px) {
+    /* Mostramos el ícono hamburguesa y ocultamos el menú */
+    .nav-toggle {
+        display: flex;
+    }
+
     .nav-menu {
         position: fixed;
         top: 70px;
@@ -497,16 +499,12 @@ footer {
         transition: right 0.3s;
     }
 
-    .nav-menu.nav-menu_visible {
+    /* Cuando el checkbox está activo => movemos el menú a la vista */
+    .menu-toggle:checked ~ .nav-menu {
         right: 0;
     }
 
-    .nav-toggle {
-        display: flex;
-    }
-
     .hero-section {
-        /* Para móviles, sigue centrado pero con menos padding arriba si lo deseas */
         padding-top: 6rem;
     }
 

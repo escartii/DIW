@@ -2,23 +2,44 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <!-- Para que la página sea responsive en móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Todos los Gatos - LoveCatsRescue</title>
+
   <!-- Fuente personalizada (opcional, la misma que uses en tu página principal) -->
   <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  
   <!-- Vinculamos el mismo CSS que ya tienes -->
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-  <!-- Navegación (puedes copiar la misma que ya tienes) -->
+  <!-- Navegación -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">Love <span>Cats</span> Rescue<span> Paiporta</span></a>
+      <a href="index.html" class="logo">
+        Love <span>Cats</span> Rescue<span> Paiporta</span>
+      </a>
       <ul class="nav-menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="index.html#nosotros">Nosotros</a></li>
-        <li><a href="todos-los-gatos.html" style="color: var(--color-acento)">Ver Todos los Gatos</a></li>
-        <li><a href="index.html#contacto">Contacto</a></li>
+        <!-- Enlaces ancla dentro de la misma página (o a otras secciones) -->
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        
+        <!-- Desplegable de gatos -->
+        <li class="dropdown">
+          <a href="#">Gatos</a>
+          <span class="arrow-down"></span>
+          <ul class="dropdown-menu">
+            <li><a href="adopta.html">Ver Todos</a></li>
+            <li><a href="gato1.html">Michifú</a></li>
+            <li><a href="gato2.html">Luna</a></li>
+            <li><a href="gato3.html">Simón</a></li>
+          </ul>
+        </li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
+
+      <!-- Icono del menú hamburguesa (responsive) -->
       <div class="nav-toggle">
         <span></span>
         <span></span>
@@ -27,8 +48,8 @@
     </div>
   </nav>
 
-  <!-- Contenido principal -->
-  <div class="main-container" style="padding-top:100px;">
+  <!-- Contenedor principal (sin style inline) -->
+  <div class="main-container">
     <section id="todos-los-gatos" class="gatos-adopcion fade-in">
       <h2>Todos <span>los Gatos</span></h2>
       
@@ -37,12 +58,9 @@
 
         <!-- Tarjeta 1 -->
         <div class="tarjeta fade-in">
-          <!-- Ajusta la ruta de imagen a la que desees -->
           <img src="./img/gatos/negra.jpg" alt="Gata Negra">
           <h3>Negra</h3>
           <p>Ubicación: Valencia</p>
-          <!-- Puedes poner aquí su género, edad, etc. -->
-          <!-- <p>Género: Hembra 🐾</p> -->
           <a href="#" class="btn-adoptar">¡Adóptame!</a>
         </div>
 
@@ -51,7 +69,6 @@
           <img src="./img/gatos/roy.jpg" alt="Gato Roy">
           <h3>Roy</h3>
           <p>Ubicación: Valencia</p>
-          <!-- <p>Género: Macho 🐾</p> -->
           <a href="#" class="btn-adoptar">¡Adóptame!</a>
         </div>
 
@@ -135,13 +152,13 @@
           <a href="#" class="btn-adoptar">¡Adóptame!</a>
         </div>
 
-        <!-- Agrega aquí más tarjetas según requieras -->
+        <!-- Agrega más tarjetas según requieras -->
 
       </div> <!-- Fin .tarjetas-gatos -->
     </section>
   </div>
 
-  <!-- Pie de página (puedes copiar el mismo que en tu página principal) -->
+  <!-- Pie de página (mismo que en tu página principal) -->
   <footer>
     <div class="footer-contenedor">
       <p>&copy; 2024 Love Cats Rescue Paiporta. Todos los derechos reservados.</p>
