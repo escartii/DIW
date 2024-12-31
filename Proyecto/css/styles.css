@@ -478,6 +478,10 @@ footer {
     color: var(--color-acento);
 }
 
+.texto {
+    text-align: center;
+}
+
 /* Responsividad */
 @media (max-width: 768px) {
     /* Mostramos el ícono hamburguesa y ocultamos el menú */
