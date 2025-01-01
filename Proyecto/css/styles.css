@@ -454,33 +454,31 @@ main {
     margin-bottom: 0.5rem;
 }
 
-/* Pie de página */
+/* Pie de Página */
 footer {
-    background-color: #0f172a;
-    padding: 2rem;
-    color: #94a3b8;
+    padding: 1rem 2rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .footer-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .redes-sociales a {
-    margin-left: 1rem;
-    color: var(--color-texto);
+    margin: 0 0.5rem;
+    color: var(--color-acento);
     transition: color 0.3s;
 }
 
 .redes-sociales a:hover {
-    color: var(--color-acento);
+    color: var(--color-texto);
 }
-
-.texto {
-    text-align: center;
-}
+  
 
 /* Responsividad */
 @media (max-width: 768px) {

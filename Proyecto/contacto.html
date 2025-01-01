@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | LoveCatsRescue - Paiporta</title>
+    <!-- Fuente personalizada -->
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- LOGO -->
+            <a href="index.html" class="logo">Love <span>Cats</span> Rescue<span> Paiporta</span></a>
+
+            <!-- Checkbox Hack: input oculto que controlará el menú -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+            <!-- Label que hace de ícono hamburguesa (toggle) -->
+            <label for="menu-toggle" class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Menú principal -->
+            <ul class="nav-menu">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
+
+                <!-- Desplegable de gatos -->
+                <li class="dropdown">
+                    <a href="#">Gatos</a>
+                    <span class="arrow-down"></span>
+                    <ul class="dropdown-menu">
+                        <li><a href="adopta.html">Ver Todos</a></li>
+                        <li><a href="gato1.html">Michifú</a></li>
+                        <li><a href="gato2.html">Luna</a></li>
+                        <li><a href="gato3.html">Simón</a></li>
+                    </ul>
+                </li>
+                <!-- Enlace directo a Contacto -->
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenedor principal (margen superior para que el contenido no quede tras la navbar) -->
+    <div class="main-container">
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="contacto fade-in">
+            <h2>Contáctanos</h2>
+            <p style="text-align: center;">
+                Si tienes alguna pregunta, deseas adoptar o simplemente quieres más información,
+                ¡estamos aquí para ayudarte!
+            </p>
+
+            <!-- Contenedor flex para formulario e info -->
+            <div class="contacto-contenedor">
+                <!-- Formulario -->
+                <form action="#" method="POST">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje..."
+                        required></textarea>
+
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <!-- Pie de página -->
+            <footer>
+                <div class="footer-contenedor">
+                    <p>&copy; 2024 Love Cats Rescue Paiporta. Todos los derechos reservados.</p>
+                    <div class="redes-sociales">
+                        <a href="https://www.facebook.com/asociacionlovecats/" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/lovecats_rescue/" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </div>
+</body>
+
+</html>
