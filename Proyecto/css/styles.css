@@ -338,6 +338,11 @@ main {
     margin-bottom: 2rem;
 }
 
+.widget-img {
+    margin-left: 80px;
+    max-width: 50%;
+}
+
 .sidebar h3 {
     color: var(--color-acento);
     margin-bottom: 1rem;
