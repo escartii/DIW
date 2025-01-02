@@ -270,3 +270,214 @@ footer {
         text-align: center;
     }
 }
+
+/* gatos.css */
+
+/* Evitar conflictos asegurando la especificidad */
+/* Contenedor con barra lateral */
+.content-with-aside {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0; /* Añadido para espaciar el contenido */
+}
+
+/* Contenido principal dentro del contenedor */
+.main-content {
+    flex: 3;
+}
+
+/* Barra Lateral */
+.sidebar {
+    margin-top: 50px;
+    flex: 1;
+    background-color: var(--color-fondo-sidebar);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.sidebar .widget {
+    margin-bottom: 2rem;
+}
+
+.sidebar h3 {
+    color: var(--color-acento);
+    margin-bottom: 1rem;
+}
+
+.sidebar ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.5rem;
+    color: var(--color-texto-sidebar);
+}
+
+.sidebar p {
+    color: var(--color-texto-sidebar);
+    margin-bottom: 1rem;
+}
+
+/* Imagen con Marco */
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.image-container img#imagen-principal {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.image-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite interactuar con la imagen debajo */
+    /* Asegúrate de que frame.png tenga transparencia donde sea necesario */
+}
+
+/* Galería de Miniaturas */
+.galeria-miniaturas {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    justify-content: center;
+}
+
+.galeria-miniaturas img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.galeria-miniaturas img:hover {
+    border-color: var(--color-acento);
+}
+
+/* Detalle del Gato */
+.gato-detalle {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gato-detalle h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-texto);
+}
+
+.gato-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.gato-galeria {
+    flex: 1;
+    min-width: 280px;
+}
+
+.gato-descripcion {
+    flex: 1;
+    color: #94a3b8;
+    padding: 0;
+}
+
+.gato-descripcion p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.gato-descripcion strong {
+    color: var(--color-texto);
+}
+
+.btn-adoptar {
+    margin-top: 0.5rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-acento);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-adoptar:hover {
+    background-color: darken(var(--color-acento), 10%);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .content-with-aside {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    .gato-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .gato-descripcion {
+        text-align: center;
+    }
+
+    /* Menú desplegable para móviles */
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 200px;
+        height: calc(100% - 70px);
+        background-color: rgba(15, 23, 42, 0.9);
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding-top: 2rem;
+        transition: right 0.3s;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .gato-detalle h1 {
+        font-size: 2rem;
+    }
+
+    .gato-descripcion p {
+        font-size: 0.9rem;
+    }
+
+    .sidebar h3,
+    .gato-descripcion p,
+    .widget p {
+        font-size: 1rem;
+    }
+}

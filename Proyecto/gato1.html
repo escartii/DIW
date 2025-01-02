@@ -10,56 +10,92 @@
 </head>
 <body>
     <!-- Navegación -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo"><span>Love</span> Cats Rescue<span> Paiporta</span></a>
-            <ul class="nav-menu">
-                <li><a href="index.html#inicio">Inicio</a></li>
-                <li><a href="index.html#nosotros">Nosotros</a></li>
-                <li class="dropdown">
-                    <a href="#">Gatos</a>
-                    <span class="arrow-down"></span>
-                    <ul class="dropdown-menu">
-                        <li><a href="gato1.html">Michifú</a></li>
-                        <li><a href="gato2.html">Luna</a></li>
-                        <li><a href="gato3.html">Simón</a></li>
-                        <!-- Agrega más gatos según sea necesario -->
-                    </ul>
-                </li>
-                <li><a href="index.html#contacto">Contacto</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar">
+    <div class="nav-container">
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+            <img src="./img/logo.png" alt="Logo de Love Cats Rescue Paiporta">
+            Love <span>Cats</span> Rescue<span> Paiporta</span>
+        </a>
+
+        <!-- Checkbox Hack: input oculto que controlará el menú -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <!-- Label que hace de ícono hamburguesa (toggle) -->
+        <label for="menu-toggle" class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        
+        <!-- Menú principal -->
+        <ul class="nav-menu">
+            <!-- Enlaces ancla dentro de la misma página -->
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            
+            <!-- Desplegable de gatos -->
+            <li class="dropdown">
+                <a href="#">Gatos</a>
+                <span class="arrow-down"></span>
+                <ul class="dropdown-menu">
+                    <li><a href="adopta.html">Ver Todos</a></li>
+                    <li><a href="gato1.html">Michifú</a></li>
+                    <li><a href="gato2.html">Luna</a></li>
+                    <li><a href="gato3.html">Simón</a></li>
+                </ul>
+            </li>
+            <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+</nav>
+
 
     <!-- Contenido principal -->
     <main class="gato-detalle">
-        <div class="contenedor">
-            <br><br>
-            <h1>Michifú</h1>
-            <div class="gato-info">
-                <div class="gato-galeria">
-                    <img src="./img/gatetes.png" alt="Michifú" id="imagen-principal">
-                    <div class="galeria-miniaturas">
-                        <img src="./img/gatetes.png" alt="Michifú" onclick="cambiarImagen(this)">
-                        <img src="./img/gatetes.png" alt="Michifú" onclick="cambiarImagen(this)">
-                        <img src="./img/gatetes.png" alt="Michifú" onclick="cambiarImagen(this)">
+        <div class="contenedor content-with-aside">
+            <div class="main-content">
+                <br><br>
+                <h1>Michifú</h1>
+                <div class="gato-info">
+                    <div class="gato-galeria">
+                        <div class="image-container">
+                            <img src="./img/gatetes.png" alt="Michifú" id="imagen-principal">
+                        </div>
+                        <div class="galeria-miniaturas">
+                            <img src="./img/gatetes.png" alt="Michifú" onclick="cambiarImagen(this)">
+                            <img src="./img/gatetes.png" alt="Michifú" onclick="cambiarImagen(this)">
+                            <img src="./img/gatetes.png" alt="Michifú" onclick="cambiarImagen(this)">
+                        </div>
+                    </div>
+                    <div class="gato-descripcion">
+                        <p><strong>Edad:</strong> 2 años</p>
+                        <p><strong>Género:</strong> Macho 🐾</p>
+                        <p><strong>Vacunas:</strong> Al día ✅</p>
+                        <p><strong>Esterilizado:</strong> Sí ✅</p>
+                        <p><strong>Descripción:</strong></p>
+                        <p>Michifú es un gato cariñoso y juguetón que busca un hogar lleno de amor. Le encanta jugar con pelotas y dormir en lugares soleados.</p>
+                        <br><br>
+                        <a href="./contacto.html" class="btn-adoptar">¡Quiero Adoptar a Michifú!</a>
                     </div>
                 </div>
-                <div class="gato-descripcion">
-                    <p><strong>Edad:</strong> 2 años</p>
-                    <p><strong>Género:</strong> Macho 🐾</p>
-                    <p><strong>Vacunas:</strong> Al día ✅</p>
-                    <p><strong>Esterilizado:</strong> Sí ✅</p>
-                    <p><strong>Descripción:</strong></p>
-                    <p>Michifú es un gato cariñoso y juguetón que busca un hogar lleno de amor. Le encanta jugar con pelotas y dormir en lugares soleados.</p>
-                    <a href="./contacto.html" class="btn-adoptar">¡Quiero Adoptar a Michifú!</a>
-                </div>
             </div>
+            <!-- Barra Lateral -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3>Consejos para Adoptar</h3>
+                    <ul>
+                        <li>Prepara tu hogar antes de la llegada.</li>
+                        <li>Proporciona alimentos de calidad.</li>
+                        <li>Visitas regulares al veterinario.</li>
+                    </ul>
+                </div>
+                <img src="./img/homer.gif" alt="Gato en adopción - Homer" width="60%">
+                <div class="widget">
+                    <h3>Testimonios</h3>
+                    <p>"Adoptamos a Luna y ha sido una experiencia maravillosa. ¡Gracias Love Cats Rescue!" - María</p>
+                </div>
+            </aside>
         </div>
     </main>
 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/sobre-nosotros.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <img src="./img/logo.png" alt="Logo Love Cats Rescue Paiporta">
+                Love <span> Cats</span> Rescue <span>Paiporta</span>
+            </a>
+
+            <!-- Checkbox Hack: input oculto que controlará el menú -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+            <!-- Label que hace de ícono hamburguesa (toggle) -->
+            <label for="menu-toggle" class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <!-- Menú principal -->
+            <ul class="nav-menu">
+                <!-- Enlaces ancla dentro de la misma página -->
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                
+                <!-- Desplegable de gatos -->
+                <li class="dropdown">
+                    <a href="#">Gatos</a>
+                    <span class="arrow-down"></span>
+                    <ul class="dropdown-menu">
+                        <li><a href="adopta.html">Ver Todos</a></li>
+                        <li><a href="gato1.html">Michifú</a></li>
+                        <li><a href="gato2.html">Luna</a></li>
+                        <li><a href="gato3.html">Simón</a></li>
+                    </ul>
+                </li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Galería de Fotos -->
+    <section class="galeria-sobre-nosotros" id="inicio">
+        <img src="./img/dana1.jpeg" alt="Gatete 1">
+        <img src="./img/dana2.jpeg" alt="Gatete 2">
+        <img src="./img/dana3.jpeg" alt="Gatete 3">
+        <img src="./img/dana4.jpeg" alt="Gatete 4">
+        <!-- Puedes añadir más imágenes si lo deseas -->
+    </section>
+
+    <!-- Nuestra Misión -->
+    <section class="mision" id="nosotros">
+        <div class="contenido-mision">
+            <h2>Nuestra Misión</h2>
+            <p>
+                En Love Cats Rescue Paiporta, nuestra misión es rescatar, cuidar y encontrar hogares amorosos para gatos necesitados en nuestra comunidad. Nos comprometemos a proporcionar atención médica, alimentación adecuada y un entorno seguro para todos nuestros felinos.
+            </p>
+        </div>
+    </section>
+
+    <!-- Nuestro Equipo -->
+    <section class="equipo">
+        <div class="contenido-equipo">
+            <h2>Conoce a Nuestro Equipo</h2>
+            <div class="miembros-equipo">
+                <div class="miembro">
+                    <img src="./img/equipo1.jpg" alt="Miembro 1">
+                    <h3>Ana García</h3>
+                    <p>Fundadora y Coordinadora</p>
+                </div>
+                <div class="miembro">
+                    <img src="./img/equipo2.jpg" alt="Miembro 2">
+                    <h3>Carlos López</h3>
+                    <p>Veterinario</p>
+                </div>
+                <div class="miembro">
+                    <img src="./img/equipo3.jpg" alt="Miembro 3">
+                    <h3>María Fernández</h3>
+                    <p>Voluntaria</p>
+                </div>
+                <!-- Añade más miembros según sea necesario -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Video de Presentación -->
+    <section class="video-presentation">
+        <div class="contenido-video">
+            <h2>Mira Nuestro Video</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tu_video_aqui" 
+                        title="Video de Love Cats Rescue Paiporta" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-contenedor">
+            <p>&copy; 2024 Love Cats Rescue Paiporta. Todos los derechos reservados.</p>
+            <div class="redes-sociales">
+                <a href="https://www.facebook.com/asociacionlovecats/" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/lovecats_rescue/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

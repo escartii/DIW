@@ -13,7 +13,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <!-- LOGO -->
-            <a href="index.html" class="logo">Love <span>Cats</span> Rescue<span> Paiporta</span></a>
+            <a href="index.html" class="logo">
+                <img src="./img/logo.png" alt="Logo Love Cats Rescue Paiporta">
+                Love <span> Cats</span> Rescue <span>Paiporta</span>
+            </a>
 
             <!-- Checkbox Hack: input oculto que controlará el menú -->
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
@@ -33,8 +36,13 @@
                 
                 <!-- Desplegable de gatos -->
                 <li class="dropdown">
-                    <a href="#">Gatos</a>
-                    <span class="arrow-down"></span>
+                    <!-- Checkbox para controlar el submenú en responsive -->
+                    <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
+                    
+                    <!-- Label que actúa como botón para togglear el submenú -->
+                    <label for="dropdown-toggle">Gatos <span class="arrow-down"></span></label>
+                    
+                    <!-- Menú desplegable -->
                     <ul class="dropdown-menu">
                         <li><a href="adopta.html">Ver Todos</a></li>
                         <li><a href="gato1.html">Michifú</a></li>
@@ -46,9 +54,10 @@
             </ul>
         </div>
     </nav>
-
+    
     <!-- Contenedor principal -->
     <div class="main-container">
+        <br>
         <!-- Hero Section -->
         <section id="inicio" class="hero-section fade-in">
             <div class="hero-content">
@@ -69,11 +78,11 @@
                             <h2>Sobre <span>Nosotros</span></h2>
                             <p>Somos una organización dedicada a rescatar y encontrar hogares para gatos necesitados. Creemos en segundas oportunidades y en el amor que estos felinos pueden traer a tu vida.</p>
                             <br><br>
-                            <a href="#contacto" class="btn-secundario">Contáctanos</a>
+                            <a href="./sobre-nosotros.html" class="btn-secundario">Leer más </a>
                         </div>
                         <br>
                         <div class="imagen">
-                            <img src="./img/paw.png" alt="Patita de gato">
+                            <img src="./img/paw2.png" alt="Patita de gato">
                         </div>
                     </div>
                 </section>
@@ -129,7 +138,7 @@
     <!-- Llamado a la Acción -->
     <section class="cta-section fade-in">
         <h2>¿Puedes echarnos una patita?</h2>
-        <p>Tu apoyo marca la diferencia en la vida de estos felinos.</p>
+        <p>Gracias a vuestras donaciones, nuestras colonias pueden comer todos los días.</p>
         <a href="https://www.teaming.net/asociacionlovecats" class="btn-primario" target="_blank">Haz una Donación</a>
     </section>
 

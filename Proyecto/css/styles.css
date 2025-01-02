@@ -1,12 +1,11 @@
-/* Variables de colores */
 :root {
-    --color-primario: #4f46e5;
-    --color-secundario: #6366f1;
-    --color-fondo: #0f172a;
-    --color-texto: #f8fafc;
-    --color-acento: #22d3ee;
-    --color-fondo-sidebar: #1e293b;
-    --color-texto-sidebar: #94a3b8;
+    --color-primario: #4f46e5; /* Morado principal */
+    --color-secundario: #6366f1; /* Morado secundario */
+    --color-fondo: #ffffff;     /* Fondo blanco para toda la web */
+    --color-texto: #000000;     /* Texto en color negro */
+    --color-acento: #22c55e;    /* Verde vibrante para resaltar */
+    --color-fondo-sidebar: #ffffff; /* Fondo blanco para la barra lateral */
+    --color-texto-sidebar: #000000; /* Texto negro en la barra lateral */
 }
 
 /* Reset CSS */
@@ -40,7 +39,7 @@ p {
 
 /* Navegación */
 .navbar {
-    background-color: rgba(15, 23, 42, 0.9);
+    background-color: var(--color-fondo); /* Fondo blanco */
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -56,23 +55,31 @@ p {
 
 /* Logo */
 .logo {
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+.logo img {
+    height: 40px; 
+    width: auto;
+    margin-right: 0.5rem;
+    margin-bottom: 20px;
 }
 
 .logo span {
     color: var(--color-acento);
 }
 
-/* Checkbox Hack:
-   Ocultamos el input y usamos label para togglear */
+/* Checkbox Hack */
 .menu-toggle {
     display: none;
 }
 
 /* Ícono de menú (hamburguesa) */
 .nav-toggle {
-    display: none; /* Se mostrará en pantallas pequeñas con media query */
+    display: none; 
     flex-direction: column;
     cursor: pointer;
 }
@@ -125,7 +132,8 @@ p {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: rgba(15, 23, 42, 0.9);
+    /* Antes estaba en oscuro, ahora blanco para mantener coherencia */
+    background-color: var(--color-fondo);
     padding: 0;
     margin: 0;
     list-style: none;
@@ -133,6 +141,10 @@ p {
     border-radius: 0 0 8px 8px;
     overflow: hidden;
     z-index: 999;
+}
+
+.dropdown-toggle {
+    display: none;
 }
 
 .nav-menu .dropdown-menu li:last-child {
@@ -147,11 +159,104 @@ p {
 }
 
 .nav-menu .dropdown-menu a:hover {
-    background-color: #1e293b;
+    background-color: #f1f5f9; /* Un ligero gris al hacer hover */
 }
 
 .nav-menu .dropdown:hover .dropdown-menu {
     display: block;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 200px;
+        height: calc(100% - 70px);
+        /* Fondo blanco para el menú móvil */
+        background-color: var(--color-fondo);
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding-top: 2rem;
+        transition: right 0.3s;
+    }
+
+    .menu-toggle:checked ~ .nav-menu {
+        right: 0;
+    }
+
+    .hero-section {
+        padding-top: 6rem;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .content-with-aside {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    .contacto-contenedor {
+        flex-direction: column;
+    }
+
+    .nav-menu .dropdown-menu {
+        left: auto;  
+        right: 0;    
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .sobre-nosotros .texto h2,
+    .gatos-adopcion h2,
+    .cta-section h2,
+    .contacto h2 {
+        font-size: 2rem;
+    }
+}
+
+.checkbox {
+    display: none;
+}
+
+/* Flecha hacia abajo */
+.arrow-down {
+    border: solid var(--color-texto);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+    margin-left: 0.5rem;
+}
+
+/* Rotar la flecha cuando el dropdown está activo */
+.dropdown-toggle:checked + label .arrow-down {
+    transform: rotate(-135deg);
 }
 
 /* Hero Section */
@@ -162,7 +267,8 @@ p {
     align-items: center;
     text-align: center;
     padding: 8rem 2rem 4rem;
-    background: linear-gradient(135deg, #1e293b 0%, #111827 100%);
+    /* Fondo blanco en lugar de gradiente */
+    background-color: var(--color-fondo);
 }
 
 .hero-content h1 {
@@ -193,14 +299,14 @@ p {
 
 .btn-secundario {
     background-color: var(--color-acento);
-    color: #000;
+    color: #ffffff;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     transition: background-color 0.3s;
 }
 
 .btn-secundario:hover {
-    background-color: #06b6d4;
+    background-color: var(--color-secundario);
 }
 
 /* Contenedor principal */
@@ -255,6 +361,7 @@ main {
 /* Sobre Nosotros */
 .sobre-nosotros {
     padding: 2rem 0;
+    text-align: center;
 }
 
 .sobre-nosotros .contenedor {
@@ -303,7 +410,9 @@ main {
 /* Gatos en Adopción */
 .gatos-adopcion {
     padding: 2rem 0;
-    background-color: #1e293b;
+    /* Fondo blanco en lugar de #1e293b */
+    background-color: var(--color-fondo);
+    border-radius: 8px;
 }
 
 .gatos-adopcion h2 {
@@ -324,11 +433,14 @@ main {
 }
 
 .tarjeta {
-    background-color: #0f172a;
+    /* Fondo blanco en lugar de #0f172a */
+    background-color: var(--color-fondo);
     border-radius: 10px;
     width: 250px;
     overflow: hidden;
     transition: transform 0.3s;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
 .tarjeta:hover {
@@ -348,11 +460,11 @@ main {
 
 .tarjeta p {
     margin: 0 1rem 1rem;
-    color: #94a3b8;
+    color: #555; /* Ajusta si quieres un tono más oscuro/clarito */
 }
 
 .btn-adoptar {
-    background-color: var(--color-primario);
+    background-color: var(--color-acento);
     color: #fff;
     padding: 0.75rem;
     width: calc(100% - 2rem);
@@ -371,7 +483,8 @@ main {
 .cta-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
+    /* Fondo blanco en lugar de gradiente */
+    background-color: var(--color-fondo);
 }
 
 .cta-section h2 {
@@ -386,16 +499,18 @@ main {
 
 .cta-section .btn-primario {
     background-color: var(--color-acento);
-    color: #000;
+    color: #ffffff;
 }
 
 .cta-section .btn-primario:hover {
-    background-color: #06b6d4;
+    background-color: var(--color-secundario)
 }
 
 /* Sección de Contacto */
 .contacto {
     padding: 4rem 2rem;
+    /* Fondo blanco (si lo prefieres, se mantiene) */
+    background-color: var(--color-fondo);
 }
 
 .contacto h2 {
@@ -420,9 +535,10 @@ main {
 .contacto form input,
 .contacto form textarea {
     padding: 0.75rem;
-    border: 2px solid #1e293b;
+    border: 2px solid #ccc;
     border-radius: 8px;
-    background-color: #0f172a;
+    /* Fondo blanco */
+    background-color: var(--color-fondo);
     color: var(--color-texto);
 }
 
@@ -442,7 +558,7 @@ main {
 
 .contacto-info {
     flex: 1;
-    color: #94a3b8;
+    color: #555; /* Ajusta al gusto */
 }
 
 .contacto-info h3 {
@@ -458,6 +574,7 @@ main {
 footer {
     padding: 1rem 2rem;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-fondo);
 }
 
 .footer-contenedor {
@@ -478,11 +595,9 @@ footer {
 .redes-sociales a:hover {
     color: var(--color-texto);
 }
-  
 
-/* Responsividad */
+/* Responsividad (repetido para footer si fuera necesario) */
 @media (max-width: 768px) {
-    /* Mostramos el ícono hamburguesa y ocultamos el menú */
     .nav-toggle {
         display: flex;
     }
@@ -493,7 +608,7 @@ footer {
         right: -100%;
         width: 200px;
         height: calc(100% - 70px);
-        background-color: rgba(15, 23, 42, 0.9);
+        background-color: var(--color-fondo);
         flex-direction: column;
         align-items: center;
         gap: 2rem;
@@ -501,7 +616,6 @@ footer {
         transition: right 0.3s;
     }
 
-    /* Cuando el checkbox está activo => movemos el menú a la vista */
     .menu-toggle:checked ~ .nav-menu {
         right: 0;
     }
@@ -530,6 +644,11 @@ footer {
     .contacto-contenedor {
         flex-direction: column;
     }
+
+    .nav-menu .dropdown-menu {
+        left: auto;   
+        right: 0;    
+    }
 }
 
 @media (max-width: 480px) {
@@ -547,4 +666,19 @@ footer {
     .contacto h2 {
         font-size: 2rem;
     }
+}
+
+.checkbox {
+    display: none;
+}
+
+/* Flecha hacia abajo */
+.arrow-down {
+    border: solid var(--color-texto);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+    margin-left: 0.5rem;
 }
