@@ -73,6 +73,10 @@ p {
     color: var(--color-acento);
 }
 
+p span {
+    color: var(--color-acento);
+}
+
 /* Checkbox Hack */
 .menu-toggle {
     display: none;
