@@ -634,7 +634,7 @@ footer {
 }
 
 .btn-donacion-gato:hover {
-    background-color: var(--color-primario);  /* Morado principal al hacer hover */
+    background-color: var(--color-acento);  /* Morado principal al hacer hover */
 }
 
 
