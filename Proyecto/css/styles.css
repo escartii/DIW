@@ -30,6 +30,7 @@ a {
 
 h1, h2, h3 {
     font-weight: 700;
+    font-family: 'Cascadia Code', sans-serif;
 }
 
 p {
