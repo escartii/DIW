@@ -637,8 +637,6 @@ footer {
     background-color: var(--color-acento);  /* Morado principal al hacer hover */
 }
 
-
-
 /* Responsividad (repetido para footer si fuera necesario) */
 @media (max-width: 768px) {
     .nav-toggle {
@@ -724,4 +722,16 @@ footer {
     transform: rotate(45deg);
     transition: transform 0.3s;
     margin-left: 0.5rem;
+}
+
+/* Cuando el dropdown está abierto, cambiar el fondo de los elementos impares */
+.nav-menu .dropdown-menu li:nth-child(odd) {
+    background-color: #f3f4f6; /* Gris claro para los elementos impares */
+}
+
+/* Menú móvil - Aplicar el mismo cambio para el menú desplegable */
+@media (max-width: 768px) {
+    .menu-toggle:checked ~ .nav-menu .dropdown-menu li:nth-child(odd) {
+        background-color: #f3f4f6; /* Gris claro para los elementos impares */
+    }
 }
