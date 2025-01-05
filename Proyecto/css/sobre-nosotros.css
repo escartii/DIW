@@ -81,7 +81,9 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ 
 }
+
 
 .miembro img {
     width: 100%;
@@ -123,7 +125,12 @@
     align-items: center;
     max-width: 800px;
     margin: 0 auto;
+    
+    border: 25px solid transparent;
+    border-image: url(../img/comida.png) 150 round;
+    border-radius: 15px;
 }
+
 
 /* Responsividad para dispositivos móviles */
 @media (max-width: 768px) {
