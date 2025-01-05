@@ -547,10 +547,10 @@ main {
 
 /* Formulario de contacto */
 form {
-    max-width: 600px; /* Limita el ancho máximo del formulario */
-    width: 100%; /* Asegura que el formulario sea responsivo */
-    margin: 0 auto; /* Centra el formulario horizontalmente */
-    padding: 3.8rem; /* Añade un poco de espacio interno */
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3.8rem;
 }
 
 
