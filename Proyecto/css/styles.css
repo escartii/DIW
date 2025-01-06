@@ -753,21 +753,6 @@ footer {
     }
 }
 
-.checkbox {
-    display: none;
-}
-
-/* Flecha hacia abajo */
-.arrow-down {
-    border: solid var(--color-texto);
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transform: rotate(45deg);
-    transition: transform 0.3s;
-    margin-left: 0.5rem;
-}
-
 /* Cuando el dropdown está abierto, cambiar el fondo de los elementos impares */
 .nav-menu .dropdown-menu li:nth-child(odd) {
     background-color: #f3f4f6; /* Gris claro para los elementos impares */
