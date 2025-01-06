@@ -764,3 +764,11 @@ footer {
         background-color: #f3f4f6; /* Gris claro para los elementos impares */
     }
 }
+
+.breadcrumb-minimal {
+    margin-top: 100px; /* O lo que necesites */
+    position: relative;
+    z-index: 999;
+    text-align: center;
+  }
+  

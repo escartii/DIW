@@ -1,70 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <!-- Para que la página sea responsive en móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Todos los Gatos - LoveCatsRescue</title>
-
-  <!-- Fuente personalizada (opcional, la misma que uses en tu página principal) -->
   <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
-  
-  <!-- Vinculamos el mismo CSS que ya tienes -->
   <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
- <!-- Navegación -->
- <nav class="navbar">
-  <div class="nav-container">
+  <!-- Navegación -->
+  <nav class="navbar">
+    <div class="nav-container">
       <!-- LOGO -->
       <a href="index.html" class="logo">
-          <img src="./img/logo.png" alt="Logo Love Cats Rescue Paiporta">
-          Love <span> Cats</span> Rescue <span>Paiporta</span>
+        <img src="./img/logo.png" alt="Logo Love Cats Rescue Paiporta">
+        Love <span> Cats</span> Rescue <span>Paiporta</span>
       </a>
-
-      <!-- Checkbox Hack: input oculto que controlará el menú -->
       <input type="checkbox" id="menu-toggle" class="menu-toggle">
-
-      <!-- Label que hace de ícono hamburguesa (toggle) -->
       <label for="menu-toggle" class="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </label>
-      
+
       <!-- Menú principal -->
       <ul class="nav-menu">
-          <!-- Enlaces ancla dentro de la misma página -->
-          <li><a href="./index.html">Inicio</a></li>
-          <li><a href="./sobre-nosotros.html">Nosotros</a></li>
-          
-          <!-- Desplegable de gatos -->
-          <li class="dropdown">
-              <!-- Checkbox para controlar el submenú en responsive -->
-              <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
-              
-              <!-- Label que actúa como botón para togglear el submenú -->
-              <label for="dropdown-toggle">Gatos</label>
-              
-              <!-- Menú desplegable -->
-              <ul class="dropdown-menu">
-                  <li><a href="adopta.html">Ver Todos</a></li>
-                  <li><a href="gato1.html">Michifú</a></li>
-                  <li><a href="gato2.html">Luna</a></li>
-                  <li><a href="gato3.html">Simón</a></li>
-              </ul>
-          </li>
-          <li><a href="./contacto.html">Contacto</a></li>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./sobre-nosotros.html">Nosotros</a></li>
+
+        <!-- Desplegable de los gatos -->
+        <li class="dropdown">
+          <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
+          <label for="dropdown-toggle">Gatos</label>
+
+          <!-- Menú desplegable -->
+          <ul class="dropdown-menu">
+            <li><a href="adopta.html">Ver Todos</a></li>
+            <li><a href="gato1.html">Michifú</a></li>
+            <li><a href="gato2.html">Luna</a></li>
+            <li><a href="gato3.html">Simón</a></li>
+          </ul>
+        </li>
+        <li><a href="./contacto.html">Contacto</a></li>
       </ul>
-  </div>
-</nav>
+    </div>
+  </nav>
 
   <!-- Contenedor principal -->
   <div class="main-container">
     <section id="todos-los-gatos" class="gatos-adopcion fade-in">
       <h2>Todos <span>los Gatos</span></h2>
-      
+
       <!-- Contenedor de tarjetas de gatos -->
       <div class="tarjetas-gatos">
 
@@ -170,14 +160,15 @@
   <!-- Footer -->
   <footer>
     <div class="footer-contenedor">
-        <p>&copy; 2024 Love Cats Rescue Paiporta. Todos los derechos reservados.</p>
-        <div class="redes-sociales">
-            <a href="https://www.facebook.com/asociacionlovecats/" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/lovecats_rescue/" target="_blank">Instagram</a>
-            <a href="estilos.html" target="_blank">GUÍA CSS</a>
-            <a href="https://escartii.github.io/Portfolio-dev/" target="_blank">Álvaro Escartí</a>
-        </div>
+      <p>&copy; 2024 Love Cats Rescue Paiporta. Todos los derechos reservados.</p>
+      <div class="redes-sociales">
+        <a href="https://www.facebook.com/asociacionlovecats/" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/lovecats_rescue/" target="_blank">Instagram</a>
+        <a href="estilos.html" target="_blank">GUÍA CSS</a>
+        <a href="https://escartii.github.io/Portfolio-dev/" target="_blank">Álvaro Escartí</a>
+      </div>
     </div>
-</footer>
+  </footer>
 </body>
+
 </html>

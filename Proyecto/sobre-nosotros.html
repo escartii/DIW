@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/sobre-nosotros.css">
 </head>
+
 <body>
     <!-- Navegación -->
     <nav class="navbar">
@@ -26,21 +28,21 @@
                 <span></span>
                 <span></span>
             </label>
-            
+
             <!-- Menú principal -->
             <ul class="nav-menu">
                 <!-- Enlaces ancla dentro de la misma página -->
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./sobre-nosotros.html">Nosotros</a></li>
-                
+
                 <!-- Desplegable de gatos -->
                 <li class="dropdown">
                     <!-- Checkbox para controlar el submenú en responsive -->
                     <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
-                    
+
                     <!-- Label que actúa como botón para togglear el submenú -->
                     <label for="dropdown-toggle">Gatos</label>
-                    
+
                     <!-- Menú desplegable -->
                     <ul class="dropdown-menu">
                         <li><a href="adopta.html">Ver Todos</a></li>
@@ -53,7 +55,12 @@
             </ul>
         </div>
     </nav>
-    
+
+    <!-- MIGAS DE PAN MINIMALISTAS -->
+    <nav class="breadcrumb-minimal">
+        <a href="index.html">Inicio</a> &gt; <span>Sobre Nosotros</span>
+    </nav>
+
     <!-- Galería de Fotos -->
     <section class="galeria-sobre-nosotros" id="inicio">
         <img src="./img/dana1.jpeg" alt="Gatete 1">
@@ -68,7 +75,9 @@
         <div class="contenido-mision">
             <h2>Nuestra Misión</h2>
             <p>
-                En Love Cats Rescue Paiporta, nuestra misión es rescatar, cuidar y encontrar hogares amorosos para gatos necesitados en nuestra comunidad. Nos comprometemos a proporcionar atención médica, alimentación adecuada y un entorno seguro para todos nuestros felinos.
+                En Love Cats Rescue Paiporta, nuestra misión es rescatar, cuidar y encontrar hogares amorosos para gatos
+                necesitados en nuestra comunidad. Nos comprometemos a proporcionar atención médica, alimentación
+                adecuada y un entorno seguro para todos nuestros felinos.
             </p>
         </div>
     </section>
@@ -98,30 +107,30 @@
         </div>
     </section>
 
-    
+
     <!-- Video de Presentación -->
-<section class="video-presentation">
-    <div class="contenido-video">
-        <h2>Mira Nuestro Video</h2>
-        <div class="video-container">
-            <!-- Video -->
-            <video width="100%" height="auto" controls>
-                <source src="./video/gato.mp4" type="video/mp4">
-                Tu navegador no soporta la etiqueta de video.
-            </video>
-        </div>
-        <br>
-        <div class="audio-container">
-            <!-- Audio -->
-            <h3>Escucha Nuestro Gatos</h3>
+    <section class="video-presentation">
+        <div class="contenido-video">
+            <h2>Mira Nuestro Video</h2>
+            <div class="video-container">
+                <!-- Video -->
+                <video width="100%" height="auto" controls>
+                    <source src="./video/gato.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
             <br>
-            <audio controls>
-                <source src="./audio/sonido-gato.mp3" type="audio/mp3">
-                Tu navegador no soporta la etiqueta de audio.
-            </audio>
+            <div class="audio-container">
+                <!-- Audio -->
+                <h3>Escucha Nuestro Gatos</h3>
+                <br>
+                <audio controls>
+                    <source src="./audio/sonido-gato.mp3" type="audio/mp3">
+                    Tu navegador no soporta la etiqueta de audio.
+                </audio>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- Pie de página -->
@@ -137,4 +146,5 @@
         </div>
     </footer>
 </body>
+
 </html>
