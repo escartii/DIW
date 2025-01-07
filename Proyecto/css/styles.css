@@ -22,6 +22,14 @@ body {
     scroll-behavior: smooth;
 }
 
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url('../fonts/CascadiaCode.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 a {
     text-decoration: none;
     color: inherit;
@@ -47,7 +55,6 @@ p {
     width: 100%;
     z-index: 999;
     top: 0;
-    
 }
 
 .nav-container {
