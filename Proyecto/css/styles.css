@@ -24,7 +24,7 @@ body {
 
 @font-face {
     font-family: 'Cascadia Code';
-    src: url('../fonts/CascadiaCode.otf') format('opentype');
+    src: url('../fuentes/CascadiaCode.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
