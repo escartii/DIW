@@ -212,25 +212,6 @@ img {
     background-color: darken(var(--color-acento), 10%);
 }
 
-/* Pie de Página */
-footer {
-    padding: 1rem 2rem;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--color-fondo); /* Ensure footer has background */
-}
-
-.footer-contenedor {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
 .redes-sociales a {
     margin: 0 0.5rem;
     color: var(--color-acento);
