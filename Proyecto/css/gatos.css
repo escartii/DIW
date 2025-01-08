@@ -67,7 +67,7 @@ img {
     position: relative;
 }
 
-/* Efecto subrayado en hover */
+/* Efecto subrayado en hover para enlaces principales */
 .nav-menu a::after {
     content: '';
     display: block;
@@ -75,11 +75,75 @@ img {
     height: 2px;
     background: var(--color-acento);
     transition: width 0.3s;
+    margin: 0 auto; /* Centrar el subrayado */
 }
 
-.nav-menu a:hover::after {
+.nav-menu a:hover::after,
+.nav-menu a.active::after { /* También aplica a la página activa */
     width: 100%;
 }
+
+/* Efecto de color de fondo en hover para enlaces del menú desplegable */
+.nav-menu .dropdown-menu a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: var(--color-acento);
+    transition: width 0.3s;
+    margin: 0 auto;
+}
+
+.nav-menu .dropdown-menu a:hover::after,
+.nav-menu .dropdown-menu a.active::after { /* También aplica a la página activa */
+    width: 100%;
+}
+
+/* --- Estilos Existentes --- */
+/* (Incluidos en tu CSS proporcionado) */
+
+/* ... otros estilos ... */
+
+/* --- Nuevos Estilos para Elementos Activos --- */
+
+/* Estilo para el label "Gatos" cuando el dropdown está activo */
+.nav-menu .dropdown.active > label {
+    color: var(--color-acento); /* Cambia el color del texto */
+    font-weight: 700; /* Negrita para resaltar */
+}
+
+/* Opcional: Estilizar la flecha cuando el dropdown está activo */
+.nav-menu .dropdown.active > label .arrow-down {
+    transform: rotate(-135deg); /* Rotar la flecha */
+    /* Asegúrate de que la transición está definida para una rotación suave */
+    transition: transform 0.3s;
+    color: var(--color-acento); /* Cambiar color si es necesario */
+}
+
+/* Estilo para el enlace activo dentro del menú desplegable */
+.nav-menu .dropdown-menu a.active {
+    background-color: var(--color-acento);
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* Estilo para el enlace activo en dispositivos móviles */
+@media (max-width: 768px) {
+    .nav-menu .dropdown.active > label {
+        background-color: var(--color-acento);
+        color: #fff;
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-menu .dropdown-menu a.active {
+        background-color: var(--color-acento);
+        color: #fff;
+        border-radius: 4px;
+    }
+}
+
+
 
 /* Dropdown */
 .nav-menu .dropdown {

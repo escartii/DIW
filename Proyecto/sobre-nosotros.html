@@ -11,50 +11,51 @@
 
 <body>
     <!-- Navegación -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <!-- LOGO -->
-            <a href="index.html" class="logo">
-                <img src="./img/logo.png" alt="Logo Love Cats Rescue Paiporta">
-                Love <span> Cats</span> Rescue <span>Paiporta</span>
-            </a>
+<nav class="navbar">
+    <div class="nav-container">
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+            <img src="./img/logo.webp" alt="Logo Love Cats Rescue Paiporta">
+            Love <span> Cats</span> Rescue <span>Paiporta</span>
+        </a>
 
-            <!-- Checkbox Hack: input oculto que controlará el menú -->
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <!-- Checkbox Hack: input oculto que controlará el menú -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
-            <!-- Label que hace de ícono hamburguesa (toggle) -->
-            <label for="menu-toggle" class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
+        <!-- Label que hace de ícono hamburguesa (toggle) -->
+        <label for="menu-toggle" class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
-            <!-- Menú principal -->
-            <ul class="nav-menu">
-                <!-- Enlaces ancla dentro de la misma página -->
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./sobre-nosotros.html">Nosotros</a></li>
+        <!-- Menú principal -->
+        <ul class="nav-menu">
+            <!-- Enlaces ancla dentro de la misma página -->
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./sobre-nosotros.html" class="active">Nosotros</a></li>
 
-                <!-- Desplegable de gatos -->
-                <li class="dropdown">
-                    <!-- Checkbox para controlar el submenú en responsive -->
-                    <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
+            <!-- Desplegable de gatos -->
+            <li class="dropdown">
+                <!-- Checkbox para controlar el submenú en responsive -->
+                <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
 
-                    <!-- Label que actúa como botón para togglear el submenú -->
-                    <label for="dropdown-toggle">Gatos</label>
+                <!-- Label que actúa como botón para togglear el submenú -->
+                <label for="dropdown-toggle">Gatos</label>
 
-                    <!-- Menú desplegable -->
-                    <ul class="dropdown-menu">
-                        <li><a href="adopta.html">Ver Todos</a></li>
-                        <li><a href="gato1.html">Michifú</a></li>
-                        <li><a href="gato2.html">Luna</a></li>
-                        <li><a href="gato3.html">Simón</a></li>
-                    </ul>
-                </li>
-                <li><a href="./contacto.html">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
+                <!-- Menú desplegable -->
+                <ul class="dropdown-menu">
+                    <li><a href="adopta.html">Ver Todos</a></li>
+                    <li><a href="gato1.html">Michifú</a></li>
+                    <li><a href="gato2.html">Luna</a></li>
+                    <li><a href="gato3.html">Simón</a></li>
+                </ul>
+            </li>
+            <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+</nav>
+
 
     <!-- MIGAS DE PAN MINIMALISTAS -->
     <nav class="breadcrumb-minimal">
@@ -63,10 +64,10 @@
 
     <!-- Galería de Fotos -->
     <section class="galeria-sobre-nosotros" id="inicio">
-        <img src="./img/dana1.jpeg" alt="Gatete 1">
-        <img src="./img/dana2.jpeg" alt="Gatete 2">
-        <img src="./img/dana3.jpeg" alt="Gatete 3">
-        <img src="./img/dana4.jpeg" alt="Gatete 4">
+        <img src="./img/dana1.webp" alt="Gatete 1">
+        <img src="./img/dana2.webp" alt="Gatete 2">
+        <img src="./img/dana3.webp" alt="Gatete 3">
+        <img src="./img/dana4.webp" alt="Gatete 4">
         <!-- Puedes añadir más imágenes si lo deseas -->
     </section>
 
@@ -88,25 +89,23 @@
             <h2>Conoce a Nuestro Equipo</h2>
             <div class="miembros-equipo">
                 <div class="miembro">
-                    <img src="./img/persona1.jpg" alt="Miembro 1">
-                    <h3>Ana García</h3>
-                    <p>Fundadora y Coordinadora</p>
+                    <img src="./img/personal.webp" alt="Miembro 1">
+                    <h3>Álvaro Escartí</h3>
+                    <p>Fundador y Coordinador</p>
                 </div>
                 <div class="miembro">
-                    <img src="./img/persona2.jpg" alt="Miembro 2">
-                    <h3>María Fernández</h3>
-                    <p>Veterinaria</p>
+                    <img src="./img/personal.webp" alt="Miembro 2">
+                    <h3>Álvaro Escartí</h3>
+                    <p>Veterinario</p>
                 </div>
                 <div class="miembro">
-                    <img src="./img/persona3.jpg" alt="Miembro 3">
-                    <h3>Carlos López</h3>
+                    <img src="./img/personal.webp" alt="Miembro 3">
+                    <h3>Álvaro Escartí</h3>
                     <p>Voluntario</p>
                 </div>
-                <!-- Añade más miembros según sea necesario -->
             </div>
         </div>
     </section>
-
 
     <!-- Video de Presentación -->
     <section class="video-presentation">
@@ -131,8 +130,7 @@
             </div>
         </div>
     </section>
-
-
+    
     <!-- Pie de página -->
     <footer>
         <div class="footer-contenedor">
@@ -146,5 +144,4 @@
         </div>
     </footer>
 </body>
-
 </html>

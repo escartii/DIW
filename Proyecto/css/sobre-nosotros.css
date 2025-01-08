@@ -127,7 +127,7 @@
     margin: 0 auto;
     
     border: 25px solid transparent;
-    border-image: url(../img/comida.png) 150 round;
+    border-image: url(../img/comida.webp) 150 round;
     border-radius: 15px;
 }
 

@@ -118,7 +118,7 @@ p span {
     position: relative;
 }
 
-/* Efecto subrayado en hover */
+/* Efecto subrayado en hover para enlaces principales */
 .nav-menu a::after {
     content: '';
     display: block;
@@ -126,16 +126,30 @@ p span {
     height: 2px;
     background: var(--color-acento);
     transition: width 0.3s;
+    margin: 0 auto; /* Centrar el subrayado */
 }
 
-.nav-menu a:hover::after {
+.nav-menu a:hover::after,
+.nav-menu a.active::after { /* También aplica a la página activa */
     width: 100%;
 }
 
-/* Dropdown */
-.nav-menu .dropdown {
-    position: relative;
+/* Efecto de color de fondo en hover para enlaces del menú desplegable */
+.nav-menu .dropdown-menu a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: var(--color-acento);
+    transition: width 0.3s;
+    margin: 0 auto;
 }
+
+.nav-menu .dropdown-menu a:hover::after,
+.nav-menu .dropdown-menu a.active::after { /* También aplica a la página activa */
+    width: 100%;
+}
+
 
 .nav-menu .dropdown > a {
     display: flex;
