@@ -5,56 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros</title>
-    <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/sobre-nosotros.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" type="image/x-icon" href="./img/logo.webp">
 </head>
 
 <body>
     <!-- Navegación -->
-<nav class="navbar">
-    <div class="nav-container">
-        <!-- LOGO -->
-        <a href="index.html" class="logo">
-            <img src="./img/logo.webp" alt="Logo Love Cats Rescue Paiporta">
-            Love <span> Cats</span> Rescue <span>Paiporta</span>
-        </a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <img src="./img/logo.webp" alt="Logo Love Cats Rescue Paiporta">
+                Love <span> Cats</span> Rescue <span>Paiporta</span>
+            </a>
 
-        <!-- Checkbox Hack: input oculto que controlará el menú -->
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <!-- Checkbox Hack: input oculto que controlará el menú -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
-        <!-- Label que hace de ícono hamburguesa (toggle) -->
-        <label for="menu-toggle" class="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
+            <!-- Label que hace de ícono hamburguesa (toggle) -->
+            <label for="menu-toggle" class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
 
-        <!-- Menú principal -->
-        <ul class="nav-menu">
-            <!-- Enlaces ancla dentro de la misma página -->
-            <li><a href="./index.html">Inicio</a></li>
-            <li><a href="./sobre-nosotros.html" class="active">Nosotros</a></li>
-
-            <!-- Desplegable de gatos -->
-            <li class="dropdown">
-                <!-- Checkbox para controlar el submenú en responsive -->
-                <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
-
-                <!-- Label que actúa como botón para togglear el submenú -->
-                <label for="dropdown-toggle">Gatos</label>
-
-                <!-- Menú desplegable -->
-                <ul class="dropdown-menu">
-                    <li><a href="adopta.html">Ver Todos</a></li>
-                    <li><a href="gato1.html">Michifú</a></li>
-                    <li><a href="gato2.html">Luna</a></li>
-                    <li><a href="gato3.html">Simón</a></li>
-                </ul>
-            </li>
-            <li><a href="./contacto.html">Contacto</a></li>
-        </ul>
-    </div>
-</nav>
+            <!-- Menú principal -->
+            <ul class="nav-menu">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./sobre-nosotros.html" class="active">Nosotros</a></li>
+                <li class="dropdown">
+                    <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
+                    <label for="dropdown-toggle">Gatos</label>
+                    <ul class="dropdown-menu">
+                        <li><a href="adopta.html">Ver Todos</a></li>
+                        <li><a href="michifu.html">Michifú</a></li>
+                        <li><a href="luna.html">Luna</a></li>
+                        <li><a href="simon.html">Simón</a></li>
+                    </ul>
+                </li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
 
 
     <!-- MIGAS DE PAN MINIMALISTAS -->
@@ -68,7 +61,6 @@
         <img src="./img/dana2.webp" alt="Gatete 2">
         <img src="./img/dana3.webp" alt="Gatete 3">
         <img src="./img/dana4.webp" alt="Gatete 4">
-        <!-- Puedes añadir más imágenes si lo deseas -->
     </section>
 
     <!-- Nuestra Misión -->
@@ -130,7 +122,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Pie de página -->
     <footer>
         <div class="footer-contenedor">
@@ -144,4 +136,5 @@
         </div>
     </footer>
 </body>
+
 </html>

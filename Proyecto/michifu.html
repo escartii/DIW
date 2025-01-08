@@ -8,59 +8,61 @@
     <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/gatos.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" type="image/x-icon" href="./img/logo.webp">
 </head>
 
 <body>
     <!-- Navegación -->
-<nav class="navbar">
-    <div class="nav-container">
-        <!-- LOGO -->
-        <a href="index.html" class="logo">
-            <img src="./img/logo.webp" alt="Logo Love Cats Rescue Paiporta">
-            Love <span> Cats</span> Rescue <span>Paiporta</span>
-        </a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <img src="./img/logo.webp" alt="Logo Love Cats Rescue Paiporta">
+                Love <span> Cats</span> Rescue <span>Paiporta</span>
+            </a>
 
-        <!-- Checkbox Hack: input oculto que controlará el menú -->
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <!-- Checkbox Hack: input oculto que controlará el menú -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
-        <!-- Label que hace de ícono hamburguesa (toggle) -->
-        <label for="menu-toggle" class="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
+            <!-- Label que hace de ícono hamburguesa (toggle) -->
+            <label for="menu-toggle" class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
 
-        <!-- Menú principal -->
-        <ul class="nav-menu">
-            <!-- Enlaces ancla dentro de la misma página -->
-            <li><a href="./index.html">Inicio</a></li>
-            <li><a href="./sobre-nosotros.html">Nosotros</a></li>
+            <!-- Menú principal -->
+            <ul class="nav-menu">
+                <!-- Enlaces ancla dentro de la misma página -->
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./sobre-nosotros.html">Nosotros</a></li>
 
-            <!-- Desplegable de gatos -->
-            <li class="dropdown">
-                <!-- Checkbox para controlar el submenú en responsive -->
-                <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
+                <!-- Desplegable de gatos -->
+                <li class="dropdown active">
+                    <!-- Checkbox para controlar el submenú en responsive -->
+                    <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
 
-                <!-- Label que actúa como botón para togglear el submenú -->
-                <label for="dropdown-toggle" class="active">Gatos</label>
+                    <!-- Label que actúa como botón para togglear el submenú -->
+                    <label for="dropdown-toggle" class="active">Gatos</label>
 
-                <!-- Menú desplegable -->
-                <ul class="dropdown-menu">
-                    <li><a href="adopta.html">Ver Todos</a></li>
-                    <li><a href="gato1.html">Michifú</a></li>
-                    <li><a href="gato2.html">Luna</a></li>
-                    <li><a href="gato3.html">Simón</a></li>
-                </ul>
-            </li>
-            <li><a href="./contacto.html">Contacto</a></li>
-        </ul>
-    </div>
-</nav>
+                    <!-- Menú desplegable -->
+                    <ul class="dropdown-menu">
+                        <li><a href="adopta.html">Ver Todos</a></li>
+                        <li><a href="michifu.html">Michifú</a></li>
+                        <li><a href="luna.html">Luna</a></li>
+                        <li><a href="simon.html">Simón</a></li>
+                    </ul>
+                </li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- MIGAS DE PAN MINIMALISTAS -->
     <nav class="breadcrumb-minimal">
-        <a href="index.html">Inicio</a> &gt; <span>Luna</span>
+        <a href="index.html">Inicio</a> &gt; <span>Michifú</span>
     </nav>
+
 
     <!-- Contenido principal -->
     <main class="gato-detalle">
@@ -71,12 +73,12 @@
                 <div class="gato-info">
                     <div class="gato-galeria">
                         <div class="image-container">
-                            <img src="./img/gatos/michifu1.webp" alt="Michifú" id="imagen-principal">
+                            <img src="./img/gatos/michifu2.webp" alt="Michifú" id="imagen-principal">
                         </div>
                         <div class="galeria-miniaturas">
-                            <img src="./img/gatos/michifu1.webp" alt="Michifú" onclick="cambiarImagen(this)">
-                            <img src="./img/gatos/michifu1.webp" alt="Michifú" onclick="cambiarImagen(this)">
-                            <img src="./img/gatos/michifu1.webp" alt="Michifú" onclick="cambiarImagen(this)">
+                            <img src="./img/gatos/michifu2.webp" alt="Michifú" onclick="cambiarImagen(this)">
+                            <img src="./img/gatos/michifu2.webp" alt="Michifú" onclick="cambiarImagen(this)">
+                            <img src="./img/gatos/michifu2.webp" alt="Michifú" onclick="cambiarImagen(this)">
                         </div>
                     </div>
                     <div class="gato-descripcion">

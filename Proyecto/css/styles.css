@@ -8,14 +8,14 @@
     --color-texto-sidebar: #000000; /* Texto negro en la barra lateral */
 }
 
-/* Reset CSS */
+/* Quitar estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos generales */
+/* Estilos Body */
 body {
     font-family: 'Inter', sans-serif;
     color: var(--color-texto);
@@ -29,23 +29,19 @@ body {
     font-style: normal;
 }
 
-
 a {
     text-decoration: none;
     color: inherit;
-    
 }
 
 h1, h2, h3 {
     font-weight: 700;
     font-family: 'Cascadia Code', sans-serif;
-    
 }
 
 p {
     font-weight: 400;
     line-height: 1.6;
-    
 }
 
 /* Navegación */
@@ -53,7 +49,7 @@ p {
     background-color: var(--color-fondo); /* Fondo blanco */
     position: fixed;
     width: 100%;
-    z-index: 999;
+    z-index: 2000;
     top: 0;
 }
 
@@ -62,6 +58,7 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    overflow: visible;
 }
 
 /* Logo */
@@ -87,12 +84,10 @@ p span {
     color: var(--color-acento);
 }
 
-/* Checkbox Hack */
 .menu-toggle {
     display: none;
 }
 
-/* Ícono de menú (hamburguesa) */
 .nav-toggle {
     display: none; 
     flex-direction: column;
@@ -107,7 +102,12 @@ p span {
     border-radius: 5px;
 }
 
-/* Menú principal */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+}
+
 .nav-menu {
     list-style: none;
     display: flex;
@@ -118,24 +118,7 @@ p span {
     position: relative;
 }
 
-/* Efecto subrayado en hover para enlaces principales */
 .nav-menu a::after {
-    content: '';
-    display: block;
-    width: 0%;
-    height: 2px;
-    background: var(--color-acento);
-    transition: width 0.3s;
-    margin: 0 auto; /* Centrar el subrayado */
-}
-
-.nav-menu a:hover::after,
-.nav-menu a.active::after { /* También aplica a la página activa */
-    width: 100%;
-}
-
-/* Efecto de color de fondo en hover para enlaces del menú desplegable */
-.nav-menu .dropdown-menu a::after {
     content: '';
     display: block;
     width: 0%;
@@ -145,23 +128,17 @@ p span {
     margin: 0 auto;
 }
 
-.nav-menu .dropdown-menu a:hover::after,
-.nav-menu .dropdown-menu a.active::after { /* También aplica a la página activa */
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
     width: 100%;
 }
 
-
-.nav-menu .dropdown > a {
-    display: flex;
-    align-items: center;
-}
-
+/* Dropdown Menu */
 .nav-menu .dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    /* Antes estaba en oscuro, ahora blanco para mantener coherencia */
     background-color: var(--color-fondo);
     padding: 0;
     margin: 0;
@@ -169,17 +146,25 @@ p span {
     min-width: 150px;
     border-radius: 0 0 8px 8px;
     overflow: hidden;
-    z-index: 999;
+    z-index: 2100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el dropdown */
 }
 
 .dropdown-toggle {
     display: none;
 }
 
-.nav-menu .dropdown-menu li:last-child {
-    border-bottom: none;
+/* Asegurar que el contenedor del dropdown tenga posición relativa */
+.nav-menu .dropdown {
+    position: relative;
 }
 
+/* Mostrar el dropdown en hover */
+.nav-menu .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilo de los enlaces dentro del dropdown */
 .nav-menu .dropdown-menu a {
     padding: 0.75rem 1.5rem;
     display: block;
@@ -191,29 +176,42 @@ p span {
     background-color: #f1f5f9; /* Un ligero gris al hacer hover */
 }
 
-.nav-menu .dropdown:hover .dropdown-menu {
-    display: block;
+/* Estilo para el enlace activo dentro del menú desplegable */
+.nav-menu .dropdown-menu a.active {
+    background-color: var(--color-acento);
+    color: #fff;
+    border-radius: 4px;
+}
+
+.nav-menu .dropdown.active > label {
+    color: var(--color-acento); /* Cambia el color del texto */
+    font-weight: 700; /* Negrita para resaltar */
+}
+
+/* Estilo para el enlace activo en dispositivos móviles */
+@media (max-width: 768px) {
+    .nav-menu .dropdown-menu a.active {
+        background-color: var(--color-acento);
+        color: #fff;
+        border-radius: 4px;
+    }
 }
 
 /* Media Queries para Responsividad */
 @media (max-width: 768px) {
-    .nav-toggle {
-        display: flex;
-    }
-
     .nav-menu {
         position: fixed;
         top: 70px;
         right: -100%;
         width: 200px;
         height: calc(100% - 70px);
-        /* Fondo blanco para el menú móvil */
         background-color: var(--color-fondo);
         flex-direction: column;
         align-items: center;
         gap: 2rem;
         padding-top: 2rem;
         transition: right 0.3s;
+        z-index: 1999; /* Asegurado que el menú móvil esté por debajo del dropdown */
     }
 
     .menu-toggle:checked ~ .nav-menu {
@@ -249,6 +247,11 @@ p span {
         left: auto;  
         right: 0;    
     }
+
+    /* Cuando el dropdown está abierto en mobile, cambiar el fondo de los elementos impares */
+    .menu-toggle:checked ~ .nav-menu .dropdown-menu li:nth-child(odd) {
+        background-color: #f3f4f6; /* Gris claro para los elementos impares */
+    }
 }
 
 @media (max-width: 480px) {
@@ -272,22 +275,6 @@ p span {
     display: none;
 }
 
-/* Flecha hacia abajo */
-.arrow-down {
-    border: solid var(--color-texto);
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transform: rotate(45deg);
-    transition: transform 0.3s;
-    margin-left: 0.5rem;
-}
-
-/* Rotar la flecha cuando el dropdown está activo */
-.dropdown-toggle:checked + label .arrow-down {
-    transform: rotate(-135deg);
-}
-
 /* Hero Section */
 .hero-section {
     display: flex;
@@ -296,8 +283,7 @@ p span {
     align-items: center;
     text-align: center;
     padding: 8rem 2rem 4rem;
-    /* Fondo blanco en lugar de gradiente */
-    background-color: var(--color-fondo);
+    background-color: var(--color-fondo); /* Fondo blanco */
 }
 
 .hero-content h1 {
@@ -444,8 +430,7 @@ main {
 /* Gatos en Adopción */
 .gatos-adopcion {
     padding: 2rem 0;
-    /* Fondo blanco en lugar de #1e293b */
-    background-color: var(--color-fondo);
+    background-color: var(--color-fondo); /* Fondo blanco */
     border-radius: 8px;
 }
 
@@ -467,8 +452,7 @@ main {
 }
 
 .tarjeta {
-    /* Fondo blanco en lugar de #0f172a */
-    background-color: var(--color-fondo);
+    background-color: var(--color-fondo); /* Fondo blanco */
     border-radius: 10px;
     width: 250px;
     overflow: hidden;
@@ -517,8 +501,7 @@ main {
 .cta-section {
     padding: 4rem 2rem;
     text-align: center;
-    /* Fondo blanco en lugar de gradiente */
-    background-color: var(--color-fondo);
+    background-color: var(--color-fondo); /* Fondo blanco */
 }
 
 .cta-section h2 {
@@ -543,8 +526,7 @@ main {
 /* Sección de Contacto */
 .contacto {
     padding: 4rem 2rem;
-    /* Fondo blanco (si lo prefieres, se mantiene) */
-    background-color: var(--color-fondo);
+    background-color: var(--color-fondo); /* Fondo blanco */
 }
 
 .contacto h2 {
@@ -573,7 +555,6 @@ form {
     margin: 0 auto;
     padding: 3.8rem;
 }
-
 
 /* Estilos generales para los inputs y textarea */
 .contacto form input,
@@ -699,10 +680,10 @@ footer {
 }
 
 .btn-donacion-gato:hover {
-    background-color: var(--color-acento);  /* Morado principal al hacer hover */
+    background-color: var(--color-acento);  /* Cambiado para mantener coherencia */
 }
 
-/* Responsividad (repetido para footer si fuera necesario) */
+/* Responsividad */
 @media (max-width: 768px) {
     .nav-toggle {
         display: flex;
@@ -720,6 +701,7 @@ footer {
         gap: 2rem;
         padding-top: 2rem;
         transition: right 0.3s;
+        z-index: 1999; /* Asegurado que el menú móvil esté por debajo del dropdown */
     }
 
     .menu-toggle:checked ~ .nav-menu {
@@ -752,8 +734,13 @@ footer {
     }
 
     .nav-menu .dropdown-menu {
-        left: auto;   
+        left: auto;  
         right: 0;    
+    }
+
+    /* Cuando el dropdown está abierto en mobile, cambiar el fondo de los elementos impares */
+    .menu-toggle:checked ~ .nav-menu .dropdown-menu li:nth-child(odd) {
+        background-color: #f3f4f6; /* Gris claro para los elementos impares */
     }
 }
 
@@ -779,17 +766,10 @@ footer {
     background-color: #f3f4f6; /* Gris claro para los elementos impares */
 }
 
-/* Menú móvil - Aplicar el mismo cambio para el menú desplegable */
-@media (max-width: 768px) {
-    .menu-toggle:checked ~ .nav-menu .dropdown-menu li:nth-child(odd) {
-        background-color: #f3f4f6; /* Gris claro para los elementos impares */
-    }
-}
-
+/* Breadcrumb Minimal */
 .breadcrumb-minimal {
-    margin-top: 100px; /* O lo que necesites */
+    margin-top: 100px; /* Ajusta según necesites */
     position: relative;
-    z-index: 999;
+    z-index: 1999; /* Debajo del dropdown-menu */
     text-align: center;
-  }
-  
+}
