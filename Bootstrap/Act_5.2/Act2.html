@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Inicio</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    body {
+      margin: 0; /* Elimina el margen del body */
+      padding: 10px; /* Agrega un padding alrededor del body para asegurar espacio */
+    }
+    
+    .header, .footer {
+      background-color: #0fff23;
+    }
+    
+    .fila1 {
+      background-color: #4eb3f2;
+    }
+    
+    .fila2 {
+      background-color: #6b777f;
+    }
+    
+    .fila3 {
+      background-color: rgb(103, 205, 171);
+    }
+    
+    .fila4 {
+      background-color: #f38327;
+    }
+    
+    h1 {
+      color: black;
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    .container-fluid {
+      margin-right: 10px;
+    }
+    
+    .row > [class^="col"] {
+      border: 2px solid black;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    /* Uso aspect ratio para hacer las cajas mas cuadradas */
+    .fila1, .fila2, .fila3, .fila4 {
+      aspect-ratio: 8 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Actividad 5.2 ordenación</h1>
+  <div class="container-fluid">
+    <div class="row header">
+      <div class="col-12">Header</div>
+    </div>
+    
+    <div class="row mt-1">
+      <div class="col-md-3 col-sm-3 col-6 offset-md-3 fila1">1</div>
+      <div class="col-md-3 col-sm-3 col-6 fila1">2</div>
+      <div class="w-100 d-none d-md-block"></div>
+      <div class="col-md-3 col-sm-3 col-6 fila1">3</div>
+      <div class="col-md-3 col-sm-3 col-6 offset-md-6 fila1">4</div>
+    </div>
+    
+    <div class="row mt-1 gx-3">
+      <div class="col-6 col-sm-3 order-4 order-md-1 fila2">d</div>
+      <div class="col-6 col-sm-3 order-3 order-md-2 fila2">c</div>
+      <div class="col-6 col-sm-3 order-2 order-md-3 fila2">b</div>
+      <div class="col-6 col-sm-3 order-1 order-md-4 fila2">a</div>
+    </div>
+    
+    <div class="row mt-1">
+      <div class="col-12 d-none d-md-block fila3">Desktop</div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-12 d-none d-sm-block d-md-none fila3">Tablet</div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-12 d-sm-none fila3">Mobile</div>
+    </div>
+    
+    <div class="row mt-1 gx-3">
+      <div class="col-3 offset-3 offset-sm-0 offset-md-3 order-sm-2 order-md-1 d-none d-sm-block fila4">:C</div>
+      <div class="col-3 offset-4 offset-sm-3 offset-md-0 order-sm-1 order-md-2 fila4">:D</div>
+    </div>
+    
+    <div class="row mt-1">
+      <div class="col-12 footer">Footer</div>
+    </div>
+  </div>
+</body>
+</html>
