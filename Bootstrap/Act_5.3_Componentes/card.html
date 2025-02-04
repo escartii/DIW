@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tarjetas de Noticia - València Bàsquet</title>
+  <!-- Bootstrap CSS (v5.3) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Imagen de fondo para la web */
+    body {
+      background-image: url('./img/fontenta.jpg'); /* Cambia la ruta por la de tu imagen */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    /* Botón personalizado en naranja */
+    .btn-orange {
+      background-color: #FF6C0C;
+      border-color: #FF6C0C;
+    }
+
+    /* Hover: cambiar a un azul más oscuro */
+    .btn-orange:hover {
+      background-color: #004085;
+      border-color: #004085;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <!-- Tarjeta individual -->
+    <h1 class="mb-4 text-white text-center">Noticia Destacada: València Bàsquet</h1>
+    <div class="card mb-5">
+      <img src="./img/ValenciaBasket.png" class="card-img-top" alt="Imagen de València Bàsquet" style="width: 20%; display: block; margin: 0 auto;">
+      <div class="card-body">
+        <h5 class="card-title">València Bàsquet se prepara para la nueva temporada</h5>
+        <h6 class="card-subtitle mb-2 text-muted">La emoción crece en la ciudad</h6>
+        <p class="card-text">
+          El equipo de València Bàsquet ha presentado sus planes y estrategias para afrontar la próxima temporada. Los aficionados esperan un equipo renovado y lleno de energía que les brinde grandes emociones en la cancha.
+        </p>
+        <a href="https://www.valenciabasket.com" class="btn btn-primary btn-orange" target="_blank">Leer más</a>
+      </div>
+      <div class="card-footer text-muted">
+        Publicado el 04 de Febrero de 2025
+      </div>
+    </div>
+
+    <!-- Grupo de tarjetas -->
+    <h2 class="mb-4 text-white text-center">Otras Noticias de València Bàsquet</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Tarjeta 1 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="img/partidazo.png" class="card-img-top" alt="Noticia 1">
+          <div class="card-body">
+            <h5 class="card-title">Victoria histórica en la cancha</h5>
+            <h6 class="card-subtitle mb-2 text-muted">El triunfo que marcó el inicio de la temporada</h6>
+            <p class="card-text">
+              València Bàsquet consiguió una victoria inolvidable en un partido lleno de emociones y momentos clave que quedarán en la memoria de los aficionados.
+            </p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="https://www.valenciabasket.com" class="btn btn-primary btn-orange" target="_blank">Ver noticia</a>
+          </div>
+        </div>
+      </div>
+      <!-- Tarjeta 2 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="img/vb_femenino.png" class="card-img-top" alt="Noticia 2">
+          <div class="card-body">
+            <h5 class="card-title">Nuevos fichajes para potenciar el equipo</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Refuerzos de talla internacional</h6>
+            <p class="card-text">
+              La directiva ha anunciado la incorporación de destacados jugadores que se espera eleven el nivel competitivo del equipo en la próxima temporada.
+            </p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="https://www.valenciabasket.com" class="btn btn-primary btn-orange" target="_blank">Ver noticia</a>
+          </div>
+        </div>
+      </div>
+      <!-- Tarjeta 3 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="img/VLCB_30ANYS.png" class="card-img-top" alt="Noticia 3">
+          <div class="card-body">
+            <h5 class="card-title">Entrevista exclusiva con el entrenador</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Estrategia y visión a futuro</h6>
+            <p class="card-text">
+              En una entrevista exclusiva, el entrenador compartió sus ideas y tácticas para transformar al equipo y llevarlo a la cima del campeonato.
+            </p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="https://www.valenciabasket.com" class="btn btn-primary btn-orange" target="_blank">Ver noticia</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS y Popper (necesarios para algunos componentes de Bootstrap) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
