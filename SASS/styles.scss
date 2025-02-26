@@ -1,0 +1,59 @@
+// --------------------
+// Variables
+// --------------------
+$color-primario: orange;
+$color-secundario: green;
+$font-family-base: Arial, sans-serif;
+$font-size-base: 16px;
+$font-size-titulo: 2em;
+$font-size-subtitulo: 1.5em;
+
+// --------------------
+// Estilos generales
+// --------------------
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  margin: 20px;
+  
+  // Título principal (h1)
+  h1 {
+    color: $color-primario;
+    font-size: $font-size-titulo;
+    text-align: center; // Centrado del h1
+  }
+  
+  // h2 que NO esté dentro de .destacado (usando :not())
+  h2:not(.destacado h2) {
+    color: $color-secundario;
+    font-size: $font-size-subtitulo;
+    text-decoration: underline; // Subrayado para h2
+  }
+}
+
+// --------------------
+// Estilos para .destacado
+// --------------------
+.destacado {
+  // Subtítulo dentro de .destacado
+  h2 {
+    color: $color-primario;
+    font-size: $font-size-subtitulo;
+    text-decoration: underline; // Subrayado para h2 dentro de .destacado
+  }
+  
+  // Párrafos dentro de .destacado
+  p {
+    // Ejemplo de anidado de propiedades
+    font: {
+      size: 1rem;
+      weight: normal;
+    };
+    line-height: 1.5;
+    
+    // Pseudoelemento para la primera línea del párrafo
+    &::first-line {
+      font-style: italic;
+    }
+  }
+}
