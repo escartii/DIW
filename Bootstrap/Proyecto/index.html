@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Asociación Gatos de Paiporta</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./img/paw3.webp" type="image/webp">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Google Fonts -->
@@ -13,37 +15,49 @@
   <style>
     /* Variables de color para la temática azul */
     :root {
-      --primary-color: #1e90ff;   /* Dodger Blue */
-      --secondary-color: #104E8B; /* Dark Blue */
-      --accent-color: #87CEFA;    /* Light Sky Blue */
+      --primary-color: #1e90ff;
+      --secondary-color: #104E8B;
+      --accent-color: #87CEFA;
       --white: #ffffff;
       --text-color: #333;
+    }
+    
+    /* Dark mode: se activa al pulsar el toggle (checkbox) */
+    #darkModeToggle:checked ~ .page-content {
+      --primary-color: #bb86fc;
+      --secondary-color: #3700b3;
+      --accent-color: #03dac6;
+      --white: #121212;
+      --text-color: #e0e0e0;
+      background-color: var(--white);
+      color: var(--text-color);
     }
     
     /* Estilos globales */
     body {
       font-family: 'Space Grotesk', sans-serif;
-      background: var(--white);
-      color: var(--text-color);
       margin: 0;
       padding: 0;
     }
+    .page-content {
+      background: var(--white);
+      color: var(--text-color);
+    }
     
-    /* Todas las secciones con fondo blanco */
+    /* Secciones */
     section {
       background-color: var(--white) !important;
       padding-top: 2rem !important;
       padding-bottom: 2rem !important;
     }
     
-    /* Navbar siempre blanca, sin sombra ni borde */
+    /* Navbar */
     .navbar {
       background-color: var(--white) !important;
       border-bottom: none;
       box-shadow: none;
-      font-size: bold;
-      font-size: 1;
-      
+      font-weight: bold;
+      font-size: 1rem;
     }
     .navbar-brand, .nav-link {
       color: var(--text-color) !important;
@@ -52,25 +66,60 @@
       color: var(--primary-color) !important;
     }
     
-    /* Sección Hero con fondo blanco y sin separación del navbar */
+    /* Sección Hero: centrada en horizontal y vertical */
     .hero {
       background-color: var(--white) !important;
-      padding-top: 80px !important;
+      height: 100vh;              /* Ocupa el alto de la ventana */
+      margin: 0 auto;
+      display: flex;              /* Flexbox para centrar vertical y horizontal */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;         /* Texto centrado */
     }
     
-    /* Texto "Gatos de Paiporta" en azul contundente */
-    .aurora-text {
-      color: var(--primary-color);
+    /* Fade-in animation para elementos (solo CSS) */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInAnimation 1s forwards;
+    }
+    @keyframes fadeInAnimation {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
-    /* Botón de cambio de tema */
-    .theme-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background-color: var(--primary-color);
-      border: none;
-      color: var(--white);
+    /* Aurora Text Effect */
+    .hero-title {
+      font-size: 4vw;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 3;
+      max-width: 800px;
+    }
+    
+    .hero-title span.aurora {
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #fbc2eb, #ff9a9e);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: aurora-text 10s ease infinite;
+    }
+    
+    @keyframes aurora-text {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
     
     /* Botón CTA */
@@ -84,9 +133,9 @@
       color: var(--white);
     }
     
-    /* Estilos para el carrusel */
+    /* Carrusel */
     .carousel-caption {
-      background: rgba(16, 78, 139, 0.7); /* Fondo azul oscuro semitransparente */
+      background: rgba(16, 78, 139, 0.7);
       padding: 1rem;
       border-radius: 0.5rem;
     }
@@ -123,207 +172,243 @@
     a:hover {
       color: var(--secondary-color);
     }
+    
+    /* Toggle Dark Mode: Toggle switch puro en CSS */
+    .switch {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+      z-index: 1030;
+    }
+    .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      background-color: var(--primary-color);
+      border-radius: 34px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: .4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: var(--white);
+      border-radius: 50%;
+      transition: .4s;
+    }
+    input:checked + .slider {
+      background-color: var(--secondary-color);
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
   </style>
 </head>
 <body>
-  <!-- Botón de cambio de tema -->
-  <button class="theme-toggle btn btn-light">🌓</button>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand logo" href="#">
-        <span role="img" aria-label="Gato">🐱</span> AGP
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#inicio">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#actividades">Actividades</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#adopciones">Adopciones</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Sección Hero -->
-  <section id="inicio" class="hero d-flex align-items-center position-relative" style="height: 100vh;">
-    <!-- SVG con líneas dinámicas (opcional) -->
-    <svg class="dynamic-lines position-absolute w-100 h-100" viewBox="0 0 1440 800" fill="none" style="pointer-events: none; opacity: 0.8;">
-      <filter id="line-glow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="4" result="glow"/>
-        <feComposite operator="atop" in="glow" in2="SourceGraphic"/>
-      </filter>
-      <path class="line-path" d="M-200 400Q 720 300 1600 500" />
-      <path class="line-path" d="M1600 300Q 720 500 -200 400" />
-    </svg>
-    <div class="container position-relative" style="z-index: 2;">
-      <div class="row align-items-center">
-        <!-- Columna con el texto -->
-        <div class="col-md-7 text-center text-md-start">
-          <h1 class="display-1 fw-bold">
-            Bienvenidos a la asociación <span class="aurora-text">Gatos de Paiporta</span>
-          </h1>
-          <p class="lead mt-3">Cuidamos, protegemos y promovemos el bienestar de nuestros amigos felinos.</p>
-          <a href="#sobre-nosotros" class="cta-button btn btn-outline-light mt-4 px-4 py-2">Descubre cómo ayudar →</a>
-        </div>
-        <!-- Columna con el gif -->
-        <div class="col-md-4 text-center">
-          <img src="./img/homer.gif" alt="Gato en movimiento" class="img-fluid">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección para imagen en mobile -->
-  <section class="mobile-cat text-center my-2 d-lg-none">
-    <img src="./img/gato.png" alt="Gato de Paiporta" class="img-fluid" style="max-width: 70%;">
-  </section>
-
-  <!-- Sección de Mensaje Revelador -->
-  <section class="text-reveal position-relative" style="overflow: hidden;">
-    <div class="container position-relative">
-      <h2 class="reveal-text fw-bold" style="font-size: 4rem;">
-        ¡Cada gato<br>
-        merece un hogar<br>
-        <span class="yellow-span">lleno de amor!</span>
-      </h2>
-      <div class="cat-container position-absolute" style="right: -100px; top: 50%; transform: translateY(-50%);">
-        <img src="./img/gato.png" class="cat img-fluid" alt="Imagen de gato" style="width: 180px;">
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección de Actividades -->
-  <section class="featured-activities" id="actividades">
-    <div class="container">
-      <div class="row g-4">
-        <!-- Tarjeta de Actividad 1 -->
-        <div class="col-md-4">
-          <div class="activity-card p-4 rounded text-center h-100">
-            <div class="activity-icon mb-3 d-flex align-items-center justify-content-center mx-auto rounded" style="width: 60px; height: 60px;">
-              🐱
-            </div>
-            <h3 class="mt-3">Rescate y Cuidado</h3>
-            <p>Salvamos vidas y ofrecemos cuidados a gatos en situación de riesgo.</p>
-          </div>
-        </div>
-        <!-- Tarjeta de Actividad 2 -->
-        <div class="col-md-4">
-          <div class="activity-card p-4 rounded text-center h-100">
-            <div class="activity-icon mb-3 d-flex align-items-center justify-content-center mx-auto rounded" style="width: 60px; height: 60px;">
-              🏠
-            </div>
-            <h3 class="mt-3">Adopciones</h3>
-            <p>Fomentamos adopciones responsables para darles un hogar lleno de amor.</p>
-          </div>
-        </div>
-        <!-- Tarjeta de Actividad 3 -->
-        <div class="col-md-4">
-          <div class="activity-card p-4 rounded text-center h-100">
-            <div class="activity-icon mb-3 d-flex align-items-center justify-content-center mx-auto rounded" style="width: 60px; height: 60px;">
-              🎉
-            </div>
-            <h3 class="mt-3">Eventos y Talleres</h3>
-            <p>Organizamos actividades para concienciar y educar sobre el bienestar felino.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Carrusel de Galería Impactante -->
-  <section id="galeria" class="carousel slide" data-bs-ride="carousel">
-    <div class="container">
-      <h2 class="text-center mb-4">Galería Impactante</h2>
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" 
-                  class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" 
-                  aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" 
-                  aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner rounded">
-          <div class="carousel-item active">
-            <img src="./img/gato1.jpg" class="d-block w-100" alt="Gato 1">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>La fuerza del rescate</h5>
-              <p>Momentos que inspiran esperanza.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/gato2.jpg" class="d-block w-100" alt="Gato 2">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Amor en cada mirada</h5>
-              <p>La pasión por proteger cada vida felina.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/gato3.jpg" class="d-block w-100" alt="Gato 3">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Innovación y cuidado</h5>
-              <p>Transformamos el rescate en arte visual.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
+  <!-- Toggle Dark Mode: switch -->
+  <div class="switch">
+    <input type="checkbox" id="darkModeToggle">
+    <label for="darkModeToggle" class="slider"></label>
+  </div>
+  
+  <!-- Contenedor principal -->
+  <div class="page-content">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="./img/paw3.webp" alt="Logo" class="img-fluid" style="max-height: 50px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección Number Ticker / Contacto -->
-  <section class="number-ticker bg-light text-center" id="contacto">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="ticker-item">
-            <span class="count" data-target="150">0</span>+<br>
-            Gatos Rescatados
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="ticker-item">
-            <span class="count" data-target="120">0</span>+<br>
-            Adopciones Realizadas
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="ticker-item">
-            <span class="count" data-target="50">0</span>+<br>
-            Voluntarios Activos
-          </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#actividades">Actividades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#adopciones">Adopciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Bootstrap JS Bundle (incluye Popper) -->
+    </nav>
+  
+    <!-- Sección Hero (centrada en vertical y horizontal) -->
+    <section id="inicio" class="hero fade-in">
+      <div class="container">
+        <h1 class="hero-title fw-bold">
+          Bienvenidos a la asociación <span class="aurora">Gatos de Paiporta</span>
+        </h1>
+        <p class="lead mt-3">
+          Cuidamos, protegemos y promovemos el bienestar de nuestros amigos felinos.
+        </p>
+        <a href="#sobre-nosotros" class="cta-button btn btn-outline-light mt-4 px-4 py-2">
+          Descubre cómo ayudar →
+        </a>
+      </div>
+    </section>
+  
+    <!-- Sección para imagen en mobile -->
+    <section class="mobile-cat text-center my-2 fade-in">
+      <img src="./img/gato.png" alt="Gato de Paiporta" class="img-fluid" style="max-width: 70%;">
+    </section>
+  
+    <!-- Sección de Mensaje Revelador -->
+    <section class="text-reveal position-relative fade-in" style="overflow: hidden;">
+      <div class="container position-relative">
+        <h2 class="reveal-text fw-bold" style="font-size: 4rem; text-align: center;">
+          ¡Cada gato<br>
+          merece un hogar<br>
+          <span class="aurora">lleno de amor!</span>
+        </h2>
+        <div class="cat-container position-absolute" style="right: -100px; top: 50%; transform: translateY(-50%);">
+          <img src="./img/gato.png" class="cat img-fluid" alt="Imagen de gato" style="width: 180px;">
+        </div>
+      </div>
+    </section>
+  
+    <!-- Sección de Actividades -->
+    <section class="featured-activities fade-in" id="actividades">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Tarjeta de Actividad 1 -->
+          <div class="col-md-4">
+            <div class="activity-card p-4 rounded text-center">
+              <div class="activity-icon mb-3 d-flex align-items-center justify-content-center mx-auto rounded" style="width: 60px; height: 60px;">
+                🐱
+              </div>
+              <h3 class="mt-3">Rescate y Cuidado</h3>
+              <p>Salvamos vidas y ofrecemos cuidados a gatos en situación de riesgo.</p>
+            </div>
+          </div>
+          <!-- Tarjeta de Actividad 2 -->
+          <div class="col-md-4">
+            <div class="activity-card p-4 rounded text-center">
+              <div class="activity-icon mb-3 d-flex align-items-center justify-content-center mx-auto rounded" style="width: 60px; height: 60px;">
+                🏠
+              </div>
+              <h3 class="mt-3">Adopciones</h3>
+              <p>Fomentamos adopciones responsables para darles un hogar lleno de amor.</p>
+            </div>
+          </div>
+          <!-- Tarjeta de Actividad 3 -->
+          <div class="col-md-4">
+            <div class="activity-card p-4 rounded text-center">
+              <div class="activity-icon mb-3 d-flex align-items-center justify-content-center mx-auto rounded" style="width: 60px; height: 60px;">
+                🎉
+              </div>
+              <h3 class="mt-3">Eventos y Talleres</h3>
+              <p>Organizamos actividades para concienciar y educar sobre el bienestar felino.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Carrusel de Galería Impactante -->
+    <section id="galeria" class="carousel slide fade-in">
+      <div class="container">
+        <h2 class="text-center mb-4">Galería Impactante</h2>
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" 
+                    class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" 
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" 
+                    aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="./img/gato1.jpg" class="d-block w-100" alt="Gato 1">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>La fuerza del rescate</h5>
+                <p>Momentos que inspiran esperanza.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./img/gato2.jpg" class="d-block w-100" alt="Gato 2">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Amor en cada mirada</h5>
+                <p>La pasión por proteger cada vida felina.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./img/gato3.jpg" class="d-block w-100" alt="Gato 3">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Innovación y cuidado</h5>
+                <p>Transformamos el rescate en arte visual.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Sección Number Ticker / Contacto -->
+    <section class="number-ticker bg-light text-center fade-in" id="contacto">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="ticker-item">
+              <span class="count" data-target="150">150</span>+<br>
+              Gatos Rescatados
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ticker-item">
+              <span class="count" data-target="120">120</span>+<br>
+              Adopciones Realizadas
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ticker-item">
+              <span class="count" data-target="50">50</span>+<br>
+              Voluntarios Activos
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Bootstrap JS Bundle (solo para el carrusel) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Script personalizado -->
-  <script src="./script.js"></script>
+  <!-- Se ha eliminado cualquier otro JavaScript -->
 </body>
 </html>
