@@ -10,69 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="icon" href="./img/pet.png" type="image/png">
-  <style>
-    /* Estilos responsivos adicionales para el header */
-    @media (max-width: 768px) {
-      .splash h1.display-2 {
-        font-size: 2.5rem !important;
-        line-height: 1.2;
-      }
-      
-      .splash .lead {
-        font-size: 1rem;
-      }
-      
-      .splash-content {
-        padding: 1rem;
-      }
-      
-      .btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-      }
-    }
-    
-    /* Para dispositivos muy pequeños */
-    @media (max-width: 576px) {
-      .splash h1.display-2 {
-        font-size: 2rem !important;
-      }
-      
-      .highlight-gradient {
-        display: inline;
-      }
-    }
-    
-    /* Estilos de accesibilidad */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: #0d6efd;
-      color: white;
-      padding: 8px;
-      z-index: 100;
-      transition: top 0.3s;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
-
-    /* Mejora de contraste y foco */
-    a:focus, button:focus, input:focus, select:focus, textarea:focus {
-      outline: 3px solid #4d90fe !important;
-      outline-offset: 2px !important;
-    }
-
-    /* Tamaño mínimo para áreas táctiles */
-    .nav-link, .btn, select, input[type="radio"] + label, input[type="checkbox"] + label {
-      min-height: 44px;
-      min-width: 44px;
-      display: inline-flex;
-      align-items: center;
-    }
-  </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbarContent" data-bs-offset="70" tabindex="0">
   <!-- Barra de Navegación Mejorada -->
@@ -562,7 +499,7 @@
             <div class="carousel-item active">
               <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80" class="d-block w-100" alt="Gato jugando con un juguete en una alfombra">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Gato en acción</h5>
+                <h5 class="text-white">Gato en acción</h5>
                 <p>Descubre la elegancia y agilidad de nuestros felinos.</p>
                 <a href="adoptarGatos.html" class="btn btn-primary btn-sm">
                   <i class="bi bi-heart me-1" aria-hidden="true"></i>Adoptar
@@ -570,9 +507,9 @@
               </div>
             </div>
             <div class="carousel-item">
-              <img src="https://images.unsplash.com/photo-1595433707802-47e033e40a4f?auto=format&fit=crop&w=800&q=80" class="d-block w-100" alt="Gatito rescatado siendo atendido por un veterinario">
+              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80" class="d-block w-100" alt="Gato de ojos verdes mirando a la cámara">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Rescate y Cuidado</h5>
+                <h5 class="text-white">Rescate y Cuidado</h5>
                 <p>Cada gato merece una segunda oportunidad llena de amor.</p>
                 <a href="adoptarGatos.html" class="btn btn-primary btn-sm">
                   <i class="bi bi-heart me-1" aria-hidden="true"></i>Adoptar
@@ -582,7 +519,7 @@
             <div class="carousel-item">
               <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=800&q=80" class="d-block w-100" alt="Gato adoptado durmiendo cómodamente en su nuevo hogar">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Un hogar lleno de amor</h5>
+                <h5 class="text-white">Un hogar lleno de amor</h5>
                 <p>Nos dedicamos a crear hogares para cada uno de nuestros amigos felinos.</p>
                 <a href="adoptarGatos.html" class="btn btn-primary btn-sm">
                   <i class="bi bi-heart me-1" aria-hidden="true"></i>Adoptar
@@ -730,58 +667,58 @@
     </section>
   </main>
   
-  <!-- Footer Mejorado y Accesible -->
-  <footer role="contentinfo">
+  <!-- Footer Mejorado -->
+  <footer>
     <div class="container">
       <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
+        <div class="col-lg-4 col-md-6">
           <h5>Sobre Nosotros</h5>
           <p>Alianza Felina de Paiporta es una asociación sin ánimo de lucro dedicada al bienestar y protección de los gatos.</p>
-          <div class="social-links mt-3" aria-label="Redes sociales">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
-            <a href="#" aria-label="Twitter"><i class="bi bi-twitter" aria-hidden="true"></i></a>
-            <a href="#" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+          <div class="social-links mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
           </div>
         </div>
         
-        <div class="col-6 col-md-6 col-lg-2">
+        <div class="col-lg-2 col-md-6">
           <h5>Enlaces</h5>
           <ul class="list-unstyled">
-            <li><a href="#servicios" class="text-decoration-none text-white-50">Nuestra Misión</a></li>
-            <li><a href="#proyectos" class="text-decoration-none text-white-50">Proyectos</a></li>
-            <li><a href="#nosotros" class="text-decoration-none text-white-50">Sobre Nosotros</a></li>
+            <li><a href="index.html#servicios" class="text-decoration-none text-white-50">Nuestra Misión</a></li>
+            <li><a href="index.html#proyectos" class="text-decoration-none text-white-50">Proyectos</a></li>
+            <li><a href="index.html#nosotros" class="text-decoration-none text-white-50">Sobre Nosotros</a></li>
             <li><a href="adoptarGatos.html" class="text-decoration-none text-white-50">Adoptar</a></li>
             <li><a href="formulario.html" class="text-decoration-none text-white-50">Contacto</a></li>
           </ul>
         </div>
         
-        <div class="col-6 col-md-6 col-lg-3">
+        <div class="col-lg-3 col-md-6">
           <h5>Contacto</h5>
           <ul class="list-unstyled">
             <li class="d-flex mb-2">
-              <i class="bi bi-geo-alt-fill me-2 text-white-50" aria-hidden="true"></i>
+              <i class="bi bi-geo-alt-fill me-2 text-white-50"></i>
               <span class="text-white-50">Calle Valencia 123, Paiporta</span>
             </li>
             <li class="d-flex mb-2">
-              <i class="bi bi-envelope-fill me-2 text-white-50" aria-hidden="true"></i>
+              <i class="bi bi-envelope-fill me-2 text-white-50"></i>
               <span class="text-white-50">info@alianzafelinapaiporta.es</span>
             </li>
             <li class="d-flex">
-              <i class="bi bi-telephone-fill me-2 text-white-50" aria-hidden="true"></i>
+              <i class="bi bi-telephone-fill me-2 text-white-50"></i>
               <span class="text-white-50">+34 612 345 678</span>
             </li>
           </ul>
         </div>
         
-        <div class="col-md-6 col-lg-3">
+        <div class="col-lg-3 col-md-6">
           <h5>Boletín</h5>
           <p>Suscríbete para recibir actualizaciones</p>
-          <form class="mb-3" aria-label="Formulario de suscripción al boletín">
+          <form class="mb-3">
             <div class="input-group">
               <input type="email" class="form-control" placeholder="Tu email" aria-label="Email para boletín">
-              <button class="btn btn-primary" type="submit" aria-label="Enviar suscripción">
-                <i class="bi bi-send" aria-hidden="true"></i>
+              <button class="btn btn-primary" type="button">
+                <i class="bi bi-send"></i>
               </button>
             </div>
           </form>

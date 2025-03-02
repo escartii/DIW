@@ -306,13 +306,51 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 0 0.2rem rgba(126,87,194,0.25);
 }
 
-/* Footer estilizado */
+/* Footer mejorado */
 footer {
   background: var(--dark);
   color: var(--white);
-  padding: 2rem 0;
+  padding: 3rem 0 2rem;
+  margin-top: 4rem;
 }
 
+footer h5 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+footer h5::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+}
+
+footer p {
+  color: rgba(255,255,255,0.7);
+}
+
+footer .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+footer .social-links a:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
+}
 /* Modal estilizado */
 .modal-content {
   border-radius: 15px;
@@ -430,4 +468,66 @@ footer {
 
 .animate-fadeInUp {
   animation: fadeInUp 0.5s ease-out;
+}
+
+/* Estilos responsivos adicionales para el header */
+@media (max-width: 768px) {
+  .splash h1.display-2 {
+    font-size: 2.5rem !important;
+    line-height: 1.2;
+  }
+  
+  .splash .lead {
+    font-size: 1rem;
+  }
+  
+  .splash-content {
+    padding: 1rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Para dispositivos muy pequeños */
+@media (max-width: 576px) {
+  .splash h1.display-2 {
+    font-size: 2rem !important;
+  }
+  
+  .highlight-gradient {
+    display: inline;
+  }
+}
+
+/* Estilos de accesibilidad */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #0d6efd;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Mejora de contraste y foco */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 3px solid #4d90fe !important;
+  outline-offset: 2px !important;
+}
+
+/* Tamaño mínimo para áreas táctiles */
+.nav-link, .btn, select, input[type="radio"] + label, input[type="checkbox"] + label {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
 }
