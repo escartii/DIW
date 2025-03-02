@@ -1,0 +1,403 @@
+:root {
+    /* Paleta de colores unificada */
+    --primary: #7E57C2; /* Violeta cálido - color principal */
+    --primary-dark: #5E35B1; /* Violeta oscuro para hover */
+    --accent: #FF9E80; /* Naranja salmón - como nariz de gato */
+    --dark: #37474F; /* Gris azulado oscuro para textos */
+    --light: #F9F5FF; /* Lavanda muy claro para fondos */
+    --gray-light: #ECEFF1; /* Gris muy claro para cards */
+    --white: #ffffff;
+  }
+  
+  /* Estilos globales */
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    scroll-behavior: smooth;
+    line-height: 1.7;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: var(--dark);
+  }
+  
+  /* Navbar: fondo transparente con efecto glass */
+  .navbar {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(126,87,194,0.1);
+    padding: 0.75rem 0; /* Padding intermedio */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--primary) !important;
+  }
+  
+  /* Ajustar el tamaño de la imagen del logo */
+  .navbar-brand img {
+    height: 35px; /* Tamaño intermedio para el logo */
+  }
+  
+  .logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    color: var(--dark) !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    position: relative;
+  }
+  
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: 100%;
+  }
+  
+  .navbar-toggler {
+    border: 1px solid rgba(126,87,194,0.2);
+    padding: 0.4rem 0.6rem;
+  }
+  
+  /* Cambiar el color del ícono del toggler */
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(126,87,194,0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  
+  /* Sección Héroe: imagen de gatos con overlay morado */
+  .splash {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(60,59,61,0.9) 0%, rgba(118,46,241,0.8) 100%),
+                url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .bg-dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  
+  .floating-shape {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    filter: blur(80px);
+    z-index: 0;
+  }
+  .shape-1 { 
+    top: -100px; 
+    right: -100px; 
+    background: rgba(255,158,128,0.3); /* Toque naranja */
+  }
+  .shape-2 { 
+    bottom: -100px; 
+    left: -100px; 
+    background: rgba(147,112,219,0.3); /* Toque lavanda */
+  }
+  
+  .splash-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+  }
+  .splash h1 {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    line-height: 1.2;
+  }
+  .highlight-gradient {
+    color: var(--accent) !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
+  
+  /* Botón principal con nuevo color */
+  .btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  .btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(126,87,194,0.4);
+  }
+  
+  .btn-outline-primary {
+    color: var(--primary);
+    background-color: transparent;
+    border-color: var(--primary);
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  .btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(126,87,194,0.2);
+  }
+  
+  /* Secciones con diseño fresco */
+  .section {
+    background-color: var(--light);
+    color: var(--dark);
+    padding: 100px 0;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    color: var(--primary-dark);
+  }
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+  }
+  
+  .card-custom {
+    background: var(--white);
+    border: 1px solid rgba(126,87,194,0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  .card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(126,87,194,0.15);
+  }
+  
+  .icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(126,87,194,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .icon-box i {
+    font-size: 1.5rem;
+    color: var(--primary);
+  }
+  
+  .stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.8);
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(126,87,194,0.1);
+  }
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .team-member {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary);
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(126,87,194,0.2);
+  }
+  
+  /* Sección alternativa con fondo más oscuro */
+  .section-alt {
+    background-color: rgba(126,87,194,0.05);
+    border-top: 1px solid rgba(126,87,194,0.1);
+    border-bottom: 1px solid rgba(126,87,194,0.1);
+  }
+  
+  /* Formulario mejorado */
+  .form-control {
+    border: 1px solid rgba(126,87,194,0.2);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+  }
+  .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(126,87,194,0.25);
+  }
+  
+  /* Footer estilizado */
+  footer {
+    background: var(--dark);
+    color: var(--white);
+    padding: 2rem 0;
+  }
+  
+  /* Modal estilizado */
+  .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+  }
+  .modal-header {
+    border-bottom: 1px solid rgba(126,87,194,0.1);
+    background-color: rgba(126,87,194,0.05);
+    border-radius: 15px 15px 0 0;
+  }
+  .modal-footer {
+    border-top: 1px solid rgba(126,87,194,0.1);
+    background-color: rgba(126,87,194,0.02);
+    border-radius: 0 0 15px 15px;
+  }
+
+  .map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Relación 16:9 */
+    position: relative;
+    height: 0;
+  }
+  .map-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  /* Estilos del carrusel */
+  .carousel-item {
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .carousel-caption {
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  /* Nuevo estilo para el componente de Accordion */
+  .accordion-button:not(.collapsed) {
+    background-color: rgba(126,87,194,0.1);
+    color: var(--primary-dark);
+  }
+  
+  .accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(126,87,194,0.25);
+    border-color: var(--primary);
+  }
+  
+  /* Estilos para toasts */
+  .toast {
+    background-color: var(--white);
+    border-left: 4px solid var(--primary);
+  }
+  
+  .toast-header {
+    background-color: rgba(126,87,194,0.05);
+    color: var(--primary-dark);
+  }
+  
+  /* Estilo para badges */
+  .badge-primary {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  
+  .badge-accent {
+    background-color: var(--accent);
+    color: var(--dark);
+  }
+  
+  /* Nuevo offcanvas */
+  .offcanvas {
+    border-left: 4px solid var(--primary);
+  }
+  
+  .offcanvas-header {
+    background-color: rgba(126,87,194,0.05);
+  }
+  
+  /* Animaciones */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 0.5s ease-out;
+  }

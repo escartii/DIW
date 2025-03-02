@@ -7,419 +7,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      /* Paleta de colores unificada */
-      --primary: #7E57C2; /* Violeta cálido - color principal */
-      --primary-dark: #5E35B1; /* Violeta oscuro para hover */
-      --accent: #FF9E80; /* Naranja salmón - como nariz de gato */
-      --dark: #37474F; /* Gris azulado oscuro para textos */
-      --light: #F9F5FF; /* Lavanda muy claro para fondos */
-      --gray-light: #ECEFF1; /* Gris muy claro para cards */
-      --white: #ffffff;
-    }
-    
-    /* Estilos globales */
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      scroll-behavior: smooth;
-      line-height: 1.7;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      color: var(--dark);
-    }
-    
-    /* Navbar: fondo transparente con efecto glass */
-    .navbar {
-      background: rgba(255, 255, 255, 0.85) !important;
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(126,87,194,0.1);
-      padding: 0.75rem 0; /* Padding intermedio */
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-    }
-    
-    .navbar-brand {
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: var(--primary) !important;
-    }
-    
-    /* Ajustar el tamaño de la imagen del logo */
-    .navbar-brand img {
-      height: 35px; /* Tamaño intermedio para el logo */
-    }
-    
-    .logo-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: var(--primary);
-      color: white;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    
-    .nav-link {
-      color: var(--dark) !important;
-      padding: 0.5rem 1rem !important;
-      transition: all 0.3s ease;
-      font-weight: 500;
-      font-size: 0.95rem;
-      letter-spacing: 0.3px;
-      position: relative;
-    }
-    
-    .nav-link::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: width 0.3s ease;
-    }
-    
-    .nav-link:hover::before,
-    .nav-link.active::before {
-      width: 100%;
-    }
-    
-    .navbar-toggler {
-      border: 1px solid rgba(126,87,194,0.2);
-      padding: 0.4rem 0.6rem;
-    }
-    
-    /* Cambiar el color del ícono del toggler */
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(126,87,194,0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-    
-    /* Sección Héroe: imagen de gatos con overlay morado */
-    .splash {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-      background: linear-gradient(135deg, rgba(60,59,61,0.9) 0%, rgba(118,46,241,0.8) 100%),
-                  url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-    
-    .bg-dots {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-      background-size: 30px 30px;
-    }
-    
-    .floating-shape {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      filter: blur(80px);
-      z-index: 0;
-    }
-    .shape-1 { 
-      top: -100px; 
-      right: -100px; 
-      background: rgba(255,158,128,0.3); /* Toque naranja */
-    }
-    .shape-2 { 
-      bottom: -100px; 
-      left: -100px; 
-      background: rgba(147,112,219,0.3); /* Toque lavanda */
-    }
-    
-    .splash-content {
-      position: relative;
-      z-index: 2;
-      padding: 2rem;
-    }
-    .splash h1 {
-      font-size: 5rem;
-      margin-bottom: 1.5rem;
-      color: var(--white);
-      line-height: 1.2;
-    }
-    .highlight-gradient {
-      color: var(--accent) !important;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    }
-    
-    /* Botón principal con nuevo color */
-    .btn-primary {
-      background-color: var(--primary);
-      color: var(--white);
-      border-color: var(--primary);
-      padding: 0.6rem 1.5rem;
-      font-weight: 500;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-      background-color: var(--primary-dark);
-      border-color: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(126,87,194,0.4);
-    }
-    
-    .btn-outline-primary {
-      color: var(--primary);
-      background-color: transparent;
-      border-color: var(--primary);
-      padding: 0.6rem 1.5rem;
-      font-weight: 500;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-    .btn-outline-primary:hover {
-      background-color: var(--primary);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(126,87,194,0.2);
-    }
-    
-    /* Secciones con diseño fresco */
-    .section {
-      background-color: var(--light);
-      color: var(--dark);
-      padding: 100px 0;
-    }
-    
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
-      position: relative;
-      display: inline-block;
-      color: var(--primary-dark);
-    }
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: var(--accent);
-    }
-    
-    .card-custom {
-      background: var(--white);
-      border: 1px solid rgba(126,87,194,0.1);
-      border-radius: 15px;
-      padding: 2rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    .card-custom:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(126,87,194,0.15);
-    }
-    
-    .icon-box {
-      width: 60px;
-      height: 60px;
-      background: rgba(126,87,194,0.1);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-    }
-    .icon-box i {
-      font-size: 1.5rem;
-      color: var(--primary);
-    }
-    
-    .stat-card {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(255,255,255,0.8);
-      border-radius: 15px;
-      margin-bottom: 1rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      border: 1px solid rgba(126,87,194,0.1);
-    }
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    
-    .team-member {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .team-member img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-      border: 3px solid var(--primary);
-      object-fit: cover;
-      box-shadow: 0 5px 15px rgba(126,87,194,0.2);
-    }
-    
-    /* Sección alternativa con fondo más oscuro */
-    .section-alt {
-      background-color: rgba(126,87,194,0.05);
-      border-top: 1px solid rgba(126,87,194,0.1);
-      border-bottom: 1px solid rgba(126,87,194,0.1);
-    }
-    
-    /* Formulario mejorado */
-    .form-control {
-      border: 1px solid rgba(126,87,194,0.2);
-      border-radius: 8px;
-      padding: 0.8rem 1rem;
-      transition: all 0.3s ease;
-    }
-    .form-control:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 0.2rem rgba(126,87,194,0.25);
-    }
-    
-    /* Footer estilizado */
-    footer {
-      background: var(--dark);
-      color: var(--white);
-      padding: 2rem 0;
-    }
-    
-    /* Modal estilizado */
-    .modal-content {
-      border-radius: 15px;
-      border: none;
-      box-shadow: 0 15px 50px rgba(0,0,0,0.1);
-    }
-    .modal-header {
-      border-bottom: 1px solid rgba(126,87,194,0.1);
-      background-color: rgba(126,87,194,0.05);
-      border-radius: 15px 15px 0 0;
-    }
-    .modal-footer {
-      border-top: 1px solid rgba(126,87,194,0.1);
-      background-color: rgba(126,87,194,0.02);
-      border-radius: 0 0 15px 15px;
-    }
-
-    .map-responsive {
-      overflow: hidden;
-      padding-bottom: 56.25%; /* Relación 16:9 */
-      position: relative;
-      height: 0;
-    }
-    .map-responsive iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    
-    /* Estilos del carrusel */
-    .carousel-item {
-      height: 400px;
-      overflow: hidden;
-    }
-    
-    .carousel-item img {
-      height: 100%;
-      object-fit: cover;
-      width: 100%;
-    }
-    
-    .carousel-caption {
-      background: rgba(0,0,0,0.4);
-      backdrop-filter: blur(5px);
-      padding: 15px;
-      border-radius: 10px;
-    }
-    
-    /* Nuevo estilo para el componente de Accordion */
-    .accordion-button:not(.collapsed) {
-      background-color: rgba(126,87,194,0.1);
-      color: var(--primary-dark);
-    }
-    
-    .accordion-button:focus {
-      box-shadow: 0 0 0 0.25rem rgba(126,87,194,0.25);
-      border-color: var(--primary);
-    }
-    
-    /* Estilos para toasts */
-    .toast {
-      background-color: var(--white);
-      border-left: 4px solid var(--primary);
-    }
-    
-    .toast-header {
-      background-color: rgba(126,87,194,0.05);
-      color: var(--primary-dark);
-    }
-    
-    /* Estilo para badges */
-    .badge-primary {
-      background-color: var(--primary);
-      color: var(--white);
-    }
-    
-    .badge-accent {
-      background-color: var(--accent);
-      color: var(--dark);
-    }
-    
-    /* Nuevo offcanvas */
-    .offcanvas {
-      border-left: 4px solid var(--primary);
-    }
-    
-    .offcanvas-header {
-      background-color: rgba(126,87,194,0.05);
-    }
-    
-    /* Animaciones */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .animate-fadeInUp {
-      animation: fadeInUp 0.5s ease-out;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="icon" href="./img/pet.png" type="image/png">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbarContent" data-bs-offset="70" tabindex="0">
   <!-- Barra de Navegación Mejorada -->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container d-flex justify-content-between align-items-center">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <div class="logo-icon me-2">AF</div>
+        <img src="./img/pet.png" alt="Logo Alianza Felina" class="me-2" style="height: 40px; width: auto;">
         <span>Alianza Felina Paiporta</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -574,20 +170,7 @@
             </div>
             <h3>Adopción</h3>
             <p>Facilitamos adopciones responsables, asegurando el bienestar de nuestros gatos en sus nuevos hogares.</p>
-            <!-- Nuevo: Badge de disponibilidad -->
-            <span class="badge bg-success mb-3">
-              <i class="bi bi-check-circle me-1"></i>Disponible ahora
-            </span>
             <a href="adoptarGatos.html" class="btn btn-outline-primary mt-2">Adoptar <i class="bi bi-arrow-right ms-1"></i></a>
-            
-            <!-- Nuevo: Progress bar de efectividad -->
-            <div class="mt-3">
-              <p class="mb-1 small text-muted">Tasa de adopción</p>
-              <div class="progress" style="height: 10px;">
-                <div class="progress-bar bg-primary" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="mt-1 small text-end">80%</p>
-            </div>
           </div>
         </div>
         <div class="col-md-4">
@@ -640,270 +223,246 @@
           </div>
         </div>
       </div>
-      
-      <!-- Nuevo: Alert con llamada a la acción -->
-      <div class="row mt-5">
-        <div class="col-lg-8 mx-auto">
-          <div class="alert alert-primary d-flex align-items-center" role="alert">
-            <i class="bi bi-info-circle-fill me-2 flex-shrink-0 fs-4"></i>
-            <div>
-              <p class="mb-1"><strong>¿Quieres formar parte del cambio?</strong></p>
-              <p class="mb-2">Necesitamos voluntarios para nuestros programas de rescate y cuidado de colonias felinas.</p>
-              <button class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#voluntariosModal">
-                <i class="bi bi-person-check me-1"></i>Hacerme voluntario
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
   
   <!-- Sección Proyectos -->
-  <section id="proyectos" class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center mb-5">
-          <h2 class="section-title">Proyectos Actuales</h2>
+<section id="proyectos" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="section-title">Proyectos Actuales</h2>
+      </div>
+    </div>
+    
+    <!-- Nuevo: Nav tabs para proyectos -->
+    <ul class="nav nav-pills mb-4 justify-content-center" id="proyectosTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="colonias-tab" data-bs-toggle="pill" data-bs-target="#colonias" type="button" role="tab" aria-controls="colonias" aria-selected="true">
+          <i class="bi bi-geo-alt me-1"></i>Colonias
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="educacion-tab" data-bs-toggle="pill" data-bs-target="#educacion" type="button" role="tab" aria-controls="educacion" aria-selected="false">
+          <i class="bi bi-book me-1"></i>Educación
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="adopcion-tab" data-bs-toggle="pill" data-bs-target="#adopcion" type="button" role="tab" aria-controls="adopcion" aria-selected="false">
+          <i class="bi bi-house-heart me-1"></i>Adopción
+        </button>
+      </li>
+    </ul>
+    
+    <!-- Contenido de los tabs -->
+    <div class="tab-content" id="proyectosTabContent">
+      <!-- Tab Colonias -->
+      <div class="tab-pane fade show active" id="colonias" role="tabpanel" aria-labelledby="colonias-tab">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card-custom h-100">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-primary me-2">Activo</span>
+                <h3 class="m-0">Colonia Felina</h3>
+              </div>
+              <p>Control y cuidado de una colonia felina. Un proyecto en colaboración con el Ayuntamiento local.</p>
+              
+              <!-- Accordion para detalles -->
+              <div class="accordion accordion-flush mt-3" id="acordeonColonia">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#detallesColonia" aria-expanded="false" aria-controls="detallesColonia">
+                      Ver detalles del proyecto
+                    </button>
+                  </h2>
+                  <div id="detallesColonia" class="accordion-collapse collapse" data-bs-parent="#acordeonColonia">
+                    <div class="accordion-body">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i>Alimentación diaria programada</li>
+                        <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i>Control sanitario mensual</li>
+                        <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i>Programa de esterilización completo</li>
+                        <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i>Identificación y seguimiento individual</li>
+                      </ul>
+                      <!-- Se ha eliminado el mapa con la ubicación -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <button type="button" class="btn btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalColonia">
+                <i class="bi bi-info-circle me-1"></i>Más información
+              </button>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="card-custom h-100">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-warning text-dark me-2">En desarrollo</span>
+                <h3 class="m-0">Nueva Colonia</h3>
+              </div>
+              <p>Nueva colonia en desarrollo. Actualmente en fase de identificación y preparación para el programa CER.</p>
+              
+              <!-- Progress -->
+              <div class="mt-3">
+                <p class="small text-muted mb-1">Progreso del proyecto</p>
+                <div class="progress mb-3" style="height: 10px;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 45%"></div>
+                </div>
+                <div class="d-flex justify-content-between small text-muted">
+                  <span>Inicio</span>
+                  <span>45%</span>
+                  <span>Completado</span>
+                </div>
+              </div>
+              
+              <div class="mt-3">
+                <button class="btn btn-outline-primary">
+                  <i class="bi bi-info-circle me-1"></i>Saber más
+                </button>
+                <button class="btn btn-outline-success ms-2">
+                  <i class="bi bi-hand-thumbs-up me-1"></i>Apoyar
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
-      <!-- Nuevo: Nav tabs para proyectos -->
-      <ul class="nav nav-pills mb-4 justify-content-center" id="proyectosTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="colonias-tab" data-bs-toggle="pill" data-bs-target="#colonias" type="button" role="tab" aria-controls="colonias" aria-selected="true">
-            <i class="bi bi-geo-alt me-1"></i>Colonias
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="educacion-tab" data-bs-toggle="pill" data-bs-target="#educacion" type="button" role="tab" aria-controls="educacion" aria-selected="false">
-            <i class="bi bi-book me-1"></i>Educación
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="adopcion-tab" data-bs-toggle="pill" data-bs-target="#adopcion" type="button" role="tab" aria-controls="adopcion" aria-selected="false">
-            <i class="bi bi-house-heart me-1"></i>Adopción
-          </button>
-        </li>
-      </ul>
+      <!-- Tab Educación -->
+      <div class="tab-pane fade" id="educacion" role="tabpanel" aria-labelledby="educacion-tab">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card-custom h-100">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-primary me-2">Activo</span>
+                <h3 class="m-0">Educación Escolar</h3>
+              </div>
+              <p>Programa de concienciación sobre el cuidado animal en colegios locales. Visitamos escuelas para enseñar a los niños sobre el respeto y cuidado de los animales.</p>
+              
+              <!-- Lista nueva -->
+              <ul class="list-group list-group-flush mt-3 mb-3">
+                <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
+                  Talleres realizados
+                  <span class="badge bg-primary rounded-pill">12</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
+                  Escuelas participantes
+                  <span class="badge bg-primary rounded-pill">5</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
+                  Niños alcanzados
+                  <span class="badge bg-primary rounded-pill">450+</span>
+                </li>
+              </ul>
+              
+              <button class="btn btn-outline-primary">
+                <i class="bi bi-calendar-check me-1"></i>Próximos talleres
+              </button>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="card-custom h-100">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-info me-2">Nuevo</span>
+                <h3 class="m-0">Guía de Cuidados</h3>
+              </div>
+              <p>Estamos desarrollando una guía completa sobre cuidados felinos para distribuirla entre adoptantes y personas interesadas en el bienestar de los gatos.</p>
+              
+              <!-- Spinners (nuevo componente) -->
+              <div class="alert alert-light d-flex align-items-center mt-3">
+                <div class="spinner-border spinner-border-sm text-primary me-2" role="status">
+                  <span class="visually-hidden">Cargando...</span>
+                </div>
+                <div>
+                  En preparación - Lanzamiento previsto para Junio 2025
+                </div>
+              </div>
+              
+              <button class="btn btn-outline-primary mt-2" data-bs-toggle="collapse" data-bs-target="#guiaPreview">
+                <i class="bi bi-eye me-1"></i>Ver adelanto
+              </button>
+              
+              <div class="collapse mt-3" id="guiaPreview">
+                <div class="card card-body">
+                  <h5>Contenido previsto:</h5>
+                  <ul class="mb-0">
+                    <li>Nutrición felina</li>
+                    <li>Cuidados sanitarios</li>
+                    <li>Comportamiento y enriquecimiento</li>
+                    <li>Problemas comunes y soluciones</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <!-- Contenido de los tabs -->
-      <div class="tab-content" id="proyectosTabContent">
-        <!-- Tab Colonias -->
-        <div class="tab-pane fade show active" id="colonias" role="tabpanel" aria-labelledby="colonias-tab">
-          <div class="row g-4">
-            <div class="col-lg-6">
-              <div class="card-custom h-100">
-                <div class="d-flex align-items-center mb-3">
-                  <span class="badge bg-primary me-2">Activo</span>
-                  <h3 class="m-0">Colonia Paiporta</h3>
-                </div>
-                <p>Control y cuidado de la colonia felina ubicada en la estación de tren de Paiporta. Un proyecto en colaboración con el Ayuntamiento.</p>
-                
-                <!-- Accordion para detalles -->
-                <div class="accordion accordion-flush mt-3" id="acordeonColonia">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#detallesColonia" aria-expanded="false" aria-controls="detallesColonia">
-                        Ver detalles del proyecto
-                      </button>
-                    </h2>
-                    <div id="detallesColonia" class="accordion-collapse collapse" data-bs-parent="#acordeonColonia">
-                      <div class="accordion-body">
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i>Alimentación diaria programada</li>
-                          <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i>Control sanitario mensual</li>
-                          <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i>Programa de esterilización completo</li>
-                          <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i>Identificación y seguimiento individual</li>
-                        </ul>
-                        <div class="map-responsive mt-3">
-                          <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.8266373275303!2d-0.4334616843241231!3d39.41239897948896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6d7cbd17b2b14b%3A0x70b9dbed4e7d4b0!2sPaiporta%2C%20Valencia%2C%20Spain!5e0!3m2!1ses!2ses!4v123456789" 
-                            width="600" 
-                            height="300" 
-                            allowfullscreen="" 
-                            loading="lazy">
-                          </iframe>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <button type="button" class="btn btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalColonia">
-                  <i class="bi bi-info-circle me-1"></i>Más información
-                </button>
+      <!-- Tab Adopción -->
+      <div class="tab-pane fade" id="adopcion" role="tabpanel" aria-labelledby="adopcion-tab">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card-custom h-100">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-success me-2">Destacado</span>
+                <h3 class="m-0">Campañas de Adopción</h3>
               </div>
-            </div>
-            
-            <div class="col-lg-6">
-              <div class="card-custom h-100">
-                <div class="d-flex align-items-center mb-3">
-                  <span class="badge bg-warning text-dark me-2">En desarrollo</span>
-                  <h3 class="m-0">Colonia Benetússer</h3>
-                </div>
-                <p>Nueva colonia en desarrollo en el municipio vecino de Benetússer. Actualmente en fase de identificación y preparación para el programa CER.</p>
-                
-                <!-- Progress -->
-                <div class="mt-3">
-                  <p class="small text-muted mb-1">Progreso del proyecto</p>
-                  <div class="progress mb-3" style="height: 10px;">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 45%"></div>
+              <p>Iniciativas para promover la adopción responsable y encontrar hogar para nuestros felinos. Realizamos eventos mensuales.</p>
+              
+              <!-- Alert para próximo evento -->
+              <div class="alert alert-info mt-3">
+                <div class="d-flex">
+                  <div class="flex-shrink-0">
+                    <i class="bi bi-calendar-event fs-4"></i>
                   </div>
-                  <div class="d-flex justify-content-between small text-muted">
-                    <span>Inicio</span>
-                    <span>45%</span>
-                    <span>Completado</span>
+                  <div class="ms-3">
+                    <h5 class="alert-heading">Próximo evento: 15 de Marzo</h5>
+                    <p class="mb-0">Para más información, contacta con nosotros</p>
                   </div>
-                </div>
-                
-                <div class="mt-3">
-                  <button class="btn btn-outline-primary">
-                    <i class="bi bi-info-circle me-1"></i>Saber más
-                  </button>
-                  <button class="btn btn-outline-success ms-2">
-                    <i class="bi bi-hand-thumbs-up me-1"></i>Apoyar
-                  </button>
                 </div>
               </div>
+              
+              <a href="adoptarGatos.html" class="btn btn-primary mt-2">
+                <i class="bi bi-heart me-1"></i>Ver gatos disponibles
+              </a>
             </div>
           </div>
-        </div>
-        
-        <!-- Tab Educación -->
-        <div class="tab-pane fade" id="educacion" role="tabpanel" aria-labelledby="educacion-tab">
-          <div class="row g-4">
-            <div class="col-lg-6">
-              <div class="card-custom h-100">
-                <div class="d-flex align-items-center mb-3">
-                  <span class="badge bg-primary me-2">Activo</span>
-                  <h3 class="m-0">Educación Escolar</h3>
-                </div>
-                <p>Programa de concienciación sobre el cuidado animal en colegios locales. Visitamos escuelas para enseñar a los niños sobre el respeto y cuidado de los animales.</p>
-                
-                <!-- Lista nueva -->
-                <ul class="list-group list-group-flush mt-3 mb-3">
-                  <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
-                    Talleres realizados
-                    <span class="badge bg-primary rounded-pill">12</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
-                    Escuelas participantes
-                    <span class="badge bg-primary rounded-pill">5</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
-                    Niños alcanzados
-                    <span class="badge bg-primary rounded-pill">450+</span>
-                  </li>
-                </ul>
-                
-                <button class="btn btn-outline-primary">
-                  <i class="bi bi-calendar-check me-1"></i>Próximos talleres
-                </button>
+          
+          <div class="col-lg-6">
+            <div class="card-custom h-100">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-primary me-2">Online</span>
+                <h3 class="m-0">Adopción Virtual</h3>
               </div>
-            </div>
-            
-            <div class="col-lg-6">
-              <div class="card-custom h-100">
-                <div class="d-flex align-items-center mb-3">
-                  <span class="badge bg-info me-2">Nuevo</span>
-                  <h3 class="m-0">Guía de Cuidados</h3>
-                </div>
-                <p>Estamos desarrollando una guía completa sobre cuidados felinos para distribuirla entre adoptantes y personas interesadas en el bienestar de los gatos.</p>
-                
-                <!-- Spinners (nuevo componente) -->
-                <div class="alert alert-light d-flex align-items-center mt-3">
-                  <div class="spinner-border spinner-border-sm text-primary me-2" role="status">
-                    <span class="visually-hidden">Cargando...</span>
-                  </div>
-                  <div>
-                    En preparación - Lanzamiento previsto para Junio 2025
-                  </div>
-                </div>
-                
-                <button class="btn btn-outline-primary mt-2" data-bs-toggle="collapse" data-bs-target="#guiaPreview">
-                  <i class="bi bi-eye me-1"></i>Ver adelanto
-                </button>
-                
-                <div class="collapse mt-3" id="guiaPreview">
-                  <div class="card card-body">
-                    <h5>Contenido previsto:</h5>
-                    <ul class="mb-0">
-                      <li>Nutrición felina</li>
-                      <li>Cuidados sanitarios</li>
-                      <li>Comportamiento y enriquecimiento</li>
-                      <li>Problemas comunes y soluciones</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Tab Adopción -->
-        <div class="tab-pane fade" id="adopcion" role="tabpanel" aria-labelledby="adopcion-tab">
-          <div class="row g-4">
-            <div class="col-lg-6">
-              <div class="card-custom h-100">
-                <div class="d-flex align-items-center mb-3">
-                  <span class="badge bg-success me-2">Destacado</span>
-                  <h3 class="m-0">Campañas de Adopción</h3>
-                </div>
-                <p>Iniciativas para promover la adopción responsable y encontrar hogar para nuestros felinos. Realizamos eventos mensuales en el centro de Paiporta.</p>
-                
-                <!-- Alert para próximo evento -->
-                <div class="alert alert-info mt-3">
-                  <div class="d-flex">
-                    <div class="flex-shrink-0">
-                      <i class="bi bi-calendar-event fs-4"></i>
-                    </div>
-                    <div class="ms-3">
-                      <h5 class="alert-heading">Próximo evento: 15 de Marzo</h5>
-                      <p class="mb-0">Plaza Mayor de Paiporta, de 10:00 a 14:00h</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <a href="adoptarGatos.html" class="btn btn-primary mt-2">
-                  <i class="bi bi-heart me-1"></i>Ver gatos disponibles
+              <p>Programa de adopción a través de nuestra web. Puedes conocer a nuestros gatos, solicitar información y comenzar el proceso desde casa.</p>
+              
+              <!-- Grupo de botones rápidos -->
+              <div class="d-grid gap-2 mt-3">
+                <a href="adoptarGatos.html" class="btn btn-outline-primary">
+                  <i class="bi bi-search me-1"></i>Explorar gatos
                 </a>
-              </div>
-            </div>
-            
-            <div class="col-lg-6">
-              <div class="card-custom h-100">
-                <div class="d-flex align-items-center mb-3">
-                  <span class="badge bg-primary me-2">Online</span>
-                  <h3 class="m-0">Adopción Virtual</h3>
-                </div>
-                <p>Programa de adopción a través de nuestra web. Puedes conocer a nuestros gatos, solicitar información y comenzar el proceso desde casa.</p>
+                <a href="formulario.html" class="btn btn-outline-primary">
+                  <i class="bi bi-file-earmark-text me-1"></i>Solicitar adopción
+                </a>
                 
-                <!-- Grupo de botones rápidos -->
-                <div class="d-grid gap-2 mt-3">
-                  <a href="adoptarGatos.html" class="btn btn-outline-primary">
-                    <i class="bi bi-search me-1"></i>Explorar gatos
-                  </a>
-                  <a href="formulario.html" class="btn btn-outline-primary">
-                    <i class="bi bi-file-earmark-text me-1"></i>Solicitar adopción
-                  </a>
-                  
-                  <!-- Nuevo: Botón con popover -->
-                  <button class="btn btn-outline-info" 
-                          data-bs-toggle="popover" 
-                          data-bs-placement="bottom" 
-                          data-bs-title="¿Sabías que..." 
-                          data-bs-content="Puedes apadrinar a un gato si no puedes adoptarlo permanentemente. ¡Es una gran manera de ayudar!">
-                    <i class="bi bi-question-circle me-1"></i>Información sobre apadrinamiento
-                  </button>
-                </div>
+                <!-- Nuevo: Botón con popover -->
+                <button class="btn btn-outline-info" 
+                        data-bs-toggle="popover" 
+                        data-bs-placement="bottom" 
+                        data-bs-title="¿Sabías que..." 
+                        data-bs-content="Puedes apadrinar a un gato si no puedes adoptarlo permanentemente. ¡Es una gran manera de ayudar!">
+                  <i class="bi bi-question-circle me-1"></i>Información sobre apadrinamiento
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
   
   <!-- Sección Nosotros -->
   <section id="nosotros" class="section section-alt">
@@ -918,141 +477,6 @@
           <p class="lead text-center mb-5">Somos una asociación comprometida con la protección y el bienestar de los gatos en Paiporta. Nuestro objetivo es mejorar la calidad de vida de estos animales a través de rescates, adopciones y programas de esterilización.</p>
         </div>
       </div>
-      
-      <!-- Timeline de nuestra historia (Nuevo) -->
-      <div class="row mb-5">
-        <div class="col-lg-10 mx-auto">
-          <h3 class="text-center mb-4">Nuestra Historia</h3>
-          <div class="position-relative">
-            <!-- Línea vertical central -->
-            <div class="position-absolute h-100" style="width: 2px; background-color: var(--primary); left: 50%; transform: translateX(-50%);"></div>
-            
-            <!-- Punto 1 -->
-            <div class="row mb-4">
-              <div class="col-md-5 text-end">
-                <div class="card-custom">
-                  <h4>2012</h4>
-                  <p class="mb-0">Fundación de la asociación por un grupo de vecinos preocupados por los gatos callejeros.</p>
-                </div>
-              </div>
-              <div class="col-md-2 d-flex justify-content-center align-items-center">
-                <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center" style="width: 50px; height: 50px; z-index: 1;">
-                  <i class="bi bi-stars"></i>
-                </div>
-              </div>
-              <div class="col-md-5"></div>
-            </div>
-            
-            <!-- Punto 2 -->
-            <div class="row mb-4">
-              <div class="col-md-5"></div>
-              <div class="col-md-2 d-flex justify-content-center align-items-center">
-                <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center" style="width: 50px; height: 50px; z-index: 1;">
-                  <i class="bi bi-house-heart"></i>
-                </div>
-              </div>
-              <div class="col-md-5">
-                <div class="card-custom">
-                  <h4>2016</h4>
-                  <p class="mb-0">Inauguración de nuestro primer refugio temporal para gatos rescatados.</p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Punto 3 -->
-            <div class="row mb-4">
-              <div class="col-md-5 text-end">
-                <div class="card-custom">
-                  <h4>2019</h4>
-                  <p class="mb-0">Inicio del programa oficial CER en colaboración con el Ayuntamiento.</p>
-                </div>
-              </div>
-              <div class="col-md-2 d-flex justify-content-center align-items-center">
-                <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center" style="width: 50px; height: 50px; z-index: 1;">
-                  <i class="bi bi-clipboard2-heart"></i>
-                </div>
-              </div>
-              <div class="col-md-5"></div>
-            </div>
-            
-            <!-- Punto 4 -->
-            <div class="row">
-              <div class="col-md-5"></div>
-              <div class="col-md-2 d-flex justify-content-center align-items-center">
-                <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center" style="width: 50px; height: 50px; z-index: 1;">
-                  <i class="bi bi-heart-fill"></i>
-                </div>
-              </div>
-              <div class="col-md-5">
-                <div class="card-custom">
-                  <h4>2025</h4>
-                  <p class="mb-0">Actualmente, seguimos creciendo y ampliando nuestros programas de protección felina.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row mt-5">
-        <div class="col-12 text-center mb-4">
-          <h3>Nuestro Equipo</h3>
-        </div>
-        
-        <div class="col-md-3 team-member">
-          <img src="./img/personal.webp" alt="Juan Pérez">
-          <h4>Juan Pérez</h4>
-          <p class="mb-1">Coordinador</p>
-          <div class="d-flex justify-content-center gap-2 mt-2">
-            <a href="#" class="btn btn-sm btn-outline-primary rounded-circle">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="#" class="btn btn-sm btn-outline-primary rounded-circle">
-              <i class="bi bi-envelope"></i>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-3 team-member">
-          <img src="./img/personal.webp" alt="Ana Gómez">
-          <h4>Ana Gómez</h4>
-          <p class="mb-1">Veterinaria</p>
-          <div class="d-flex justify-content-center gap-2 mt-2">
-            <a href="#" class="btn btn-sm btn-outline-primary rounded-circle">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="#" class="btn btn-sm btn-outline-primary rounded-circle">
-              <i class="bi bi-envelope"></i>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-3 team-member">
-          <img src="./img/personal.webp" alt="Carlos López">
-          <h4>Carlos López</h4>
-          <p class="mb-1">Voluntario</p>
-          <div class="d-flex justify-content-center gap-2 mt-2">
-            <a href="#" class="btn btn-sm btn-outline-primary rounded-circle">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="#" class="btn btn-sm btn-outline-primary rounded-circle">
-              <i class="bi bi-envelope"></i>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-3 team-member">
-          <img src="./img/personal.webp" alt="María Sánchez">
-          <h4>María Sánchez</h4>
-          <p class="mb-1">Comunicación</p>
-          <div class="d-flex justify-content-center gap-2 mt-2">
-            <a href="#" class="btn btn-sm btn-outline-primary rounded-circle">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="#" class="btn btn-sm btn-outline-primary rounded-circle">
-              <i class="bi bi-envelope"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
   
   <!-- Sección Slider Mejorado -->

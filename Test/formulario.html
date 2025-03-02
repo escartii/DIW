@@ -7,262 +7,122 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #7E57C2;
-      --primary-dark: #5E35B1;
-      --accent: #FF9E80;
-      --dark: #37474F;
-      --light: #F9F5FF;
-      --white: #ffffff;
-    }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.7;
-      padding-top: 76px;
-    }
-    /* Navbar */
-    .navbar {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(126,87,194,0.1);
-      padding: 1rem 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-    }
-    .navbar-brand {
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: var(--primary) !important;
-    }
-    .nav-link {
-      font-weight: 500;
-      color: var(--dark);
-      transition: all 0.3s ease;
-    }
-    .nav-link:hover {
-      color: var(--primary);
-      transform: translateY(-2px);
-    }
-    /* Header de la página */
-    .page-header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: var(--white);
-      padding: 5rem 0 4rem;
-      margin-bottom: 4rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .page-header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 15c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm0 4c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6z" fill="rgba(255,255,255,0.1)"/></svg>');
-      opacity: 0.4;
-    }
-    .page-header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--white);
-      text-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .page-header p {
-      font-size: 1.3rem;
-      opacity: 0.95;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    /* Estilos del formulario de adopción */
-    .adoption-form {
-      background: var(--white);
-      padding: 2.5rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      max-width: 650px;
-      margin: 0 auto;
-      position: relative;
-    }
-    .adoption-form::before {
-      content: "";
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 60px;
-      background-color: var(--accent);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 15px rgba(255,158,128,0.3);
-      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 16 16"><path d="M11.5 4a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 1.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm-9 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0-1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM8 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0 11a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>');
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 1;
-    }
-    .form-section-title {
-      text-align: center;
-      margin-bottom: 2rem;
-      padding-top: 1.5rem;
-      color: var(--primary-dark);
-    }
-    .form-label {
-      font-weight: 500;
-      color: var(--dark);
-      margin-bottom: 0.5rem;
-    }
-    .form-control {
-      padding: 0.8rem 1rem;
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-    .form-control:focus {
-      box-shadow: 0 0 0 3px rgba(126,87,194,0.2);
-      border-color: var(--primary);
-    }
-    .input-group-text {
-      background-color: var(--light);
-      border: 1px solid rgba(0,0,0,0.1);
-      color: var(--primary);
-    }
-    .btn-primary {
-      background: var(--primary);
-      border-color: var(--primary);
-      padding: 0.8rem 1.5rem;
-      font-weight: 600;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(126,87,194,0.25);
-    }
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      border-color: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(126,87,194,0.35);
-    }
-    /* Alerta posicionada en la esquina superior derecha */
-    .alert-fixed {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1050;
-      width: auto;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    .alert {
-      border-radius: 10px;
-      border: none;
-      background: rgba(var(--bs-success-rgb), 0.95);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      padding: 1rem 1.5rem;
-    }
-    /* Añadido para agrupar los campos relacionados */
-    .form-section {
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-radius: 10px;
-      background-color: rgba(249, 245, 255, 0.5);
-      border: 1px solid rgba(126,87,194,0.1);
-    }
-    .form-section-header {
-      font-weight: 600;
-      color: var(--primary-dark);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-    }
-    .form-section-header i {
-      margin-right: 0.5rem;
-      color: var(--primary);
-    }
-    /* Estilo para los elementos de radio y checkbox */
-    .form-check-input:checked {
-      background-color: var(--primary);
-      border-color: var(--primary);
-    }
-    /* Animación para el botón */
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(126,87,194,0.4);
-      }
-      70% {
-        box-shadow: 0 0 0 10px rgba(126,87,194,0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(126,87,194,0);
-      }
-    }
-    .btn-animated {
-      animation: pulse 2s infinite;
-    }
-    /* Footer */
-    .footer {
-      background-color: var(--dark);
-      color: var(--light);
-      padding: 2rem 0;
-      margin-top: 4rem;
-    }
-    .footer a {
-      color: var(--white);
-      opacity: 0.8;
-      transition: all 0.3s ease;
-    }
-    .footer a:hover {
-      opacity: 1;
-      color: var(--accent);
-    }
-  </style>
+  <link rel="stylesheet" href="./css/formulario.css">
+  <link rel="icon" href="./img/pet.png" type="image/png">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container d-flex justify-content-between align-items-center">
-      <a class="navbar-brand d-flex align-items-center" href="./index.html">
-        <img src="./img/pet.png" alt="Logo" style="width: 40px; height: 40px;">
-        <span class="ms-2">Alianza Felina Paiporta</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="./index.html#servicios" title="Ver nuestros servicios">
-              <i class="bi bi-heart-fill me-1"></i>Servicios
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./index.html#nosotros" title="Conócenos">
-              <i class="bi bi-people-fill me-1"></i>Nosotros
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./index.html#proyectos" title="Descubre nuestros proyectos">
-              <i class="bi bi-star-fill me-1"></i>Proyectos
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./index.html" title="Inicio">
-              <i class="bi bi-house-fill me-1"></i>Inicio
-            </a>
-          </li>
-        </ul>
+<!-- Barra de Navegación Mejorada -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="./img/pet.png" alt="Logo Alianza Felina" class="me-2" style="height: 40px; width: auto;">
+      <span>Alianza Felina Paiporta</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#servicios" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ver nuestra misión">
+            <i class="bi bi-heart-fill me-1"></i>Misión
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#proyectos" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Descubre nuestros proyectos">
+            <i class="bi bi-star-fill me-1"></i>Proyectos
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#nosotros" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Conócenos">
+            <i class="bi bi-people-fill me-1"></i>Nosotros
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="adoptarGatos.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Adopta un felino">
+            <i class="bi bi-house-heart me-1"></i>Adoptar
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="formulario.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Contacta con nosotros">
+            <i class="bi bi-envelope me-1"></i>Contacto
+          </a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-primary ms-lg-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#donarOffcanvas" aria-controls="donarOffcanvas">
+            <i class="bi bi-hand-heart me-1"></i>Donar
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Offcanvas para donaciones -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="donarOffcanvas" aria-labelledby="donarOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="donarOffcanvasLabel">
+      <i class="bi bi-heart-fill text-danger me-2"></i>
+      Ayuda a nuestros felinos
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>Tu donación ayuda a que podamos seguir con nuestra misión de proteger y cuidar a los gatos de Paiporta.</p>
+    
+    <div class="mb-4">
+      <label for="donationAmount" class="form-label">Cantidad a donar</label>
+      <div class="btn-group d-flex mb-3" role="group">
+        <input type="radio" class="btn-check" name="donationOption" id="option5" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="option5">5€</label>
+        
+        <input type="radio" class="btn-check" name="donationOption" id="option10" autocomplete="off">
+        <label class="btn btn-outline-primary" for="option10">10€</label>
+        
+        <input type="radio" class="btn-check" name="donationOption" id="option20" autocomplete="off">
+        <label class="btn btn-outline-primary" for="option20">20€</label>
+        
+        <input type="radio" class="btn-check" name="donationOption" id="optionCustom" autocomplete="off">
+        <label class="btn btn-outline-primary" for="optionCustom">Otra</label>
+      </div>
+      
+      <div class="input-group mb-3" id="customAmountGroup" style="display: none;">
+        <span class="input-group-text">€</span>
+        <input type="number" class="form-control" id="customAmount" placeholder="Cantidad personalizada">
       </div>
     </div>
-  </nav>
+    
+    <div class="mb-3">
+      <label for="donationMessage" class="form-label">Mensaje (opcional)</label>
+      <textarea class="form-control" id="donationMessage" rows="3" placeholder="Tu mensaje de apoyo..."></textarea>
+    </div>
+    
+    <button type="button" class="btn btn-primary w-100 mb-3">
+      <i class="bi bi-credit-card me-2"></i>Proceder al pago seguro
+    </button>
+    
+    <div class="alert alert-info d-flex align-items-center" role="alert">
+      <i class="bi bi-info-circle-fill me-2 flex-shrink-0"></i>
+      <div>
+        También puedes hacer una transferencia a nuestra cuenta bancaria: ES12 3456 7890 1234 5678
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Header mejorado con buscador -->
+  <header class="page-header">
+    <div class="container text-center">
+      <h1><i class="bi bi-heart-fill me-2"></i>Formulario de Adopción</h1>
+      <p class="mb-4">Encuentra a tu compañero felino perfecto</p>
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="mt-4">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item"><a href="index.html" class="text-white-50">Inicio</a></li>
+          <li class="breadcrumb-item active text-white" aria-current="page">Formulario de Adopción</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
 
   <!-- Alerta (inicialmente oculta) -->
   <div id="alertContainer" class="alert-fixed" style="display: none;">
@@ -271,14 +131,6 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
     </div>
   </div>
-
-  <!-- Header de la página -->
-  <header class="page-header">
-    <div class="container">
-      <h1><i class="bi bi-house-heart me-2"></i>Formulario de Adopción</h1>
-      <p>Completa el siguiente formulario para realizar tu solicitud de adopción. Cada gato merece un hogar lleno de amor y cuidados.</p>
-    </div>
-  </header>
 
   <!-- Contenido principal -->
   <main class="container mb-5">
