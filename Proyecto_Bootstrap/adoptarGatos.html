@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="./css/adoptar.css">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="icon" href="./img/pet.png" type="image/png">
-  <style>
-  </style>
 </head>
 <body>
   <!-- Barra de Navegación Mejorada -->
@@ -27,32 +25,32 @@
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html#servicios" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ver nuestra misión">
+          <a class="nav-link" href="index.html#servicios">
             <i class="bi bi-heart-fill me-1"></i>Misión
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html#proyectos" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Descubre nuestros proyectos">
+          <a class="nav-link" href="index.html#proyectos">
             <i class="bi bi-star-fill me-1"></i>Proyectos
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html#nosotros" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Conócenos">
+          <a class="nav-link" href="index.html#nosotros">
             <i class="bi bi-people-fill me-1"></i>Nosotros
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="adoptarGatos.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Adopta un felino">
+          <a class="nav-link active" href="adoptarGatos.html">
             <i class="bi bi-house-heart me-1"></i>Adoptar
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="formulario.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Contacta con nosotros">
+          <a class="nav-link" href="formulario.html">
             <i class="bi bi-envelope me-1"></i>Contacto
           </a>
         </li>
-        <li class="nav-item">
-          <button class="btn btn-primary ms-lg-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#donarOffcanvas" aria-controls="donarOffcanvas">
+        <li class="nav-item mt-2 mt-lg-0">
+          <button class="btn btn-primary w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#donarOffcanvas" aria-controls="donarOffcanvas">
             <i class="bi bi-hand-heart me-1"></i>Donar
           </button>
         </li>
@@ -75,7 +73,7 @@
     
     <div class="mb-4">
       <label for="donationAmount" class="form-label">Cantidad a donar</label>
-      <div class="btn-group d-flex mb-3" role="group">
+      <div class="btn-group d-flex flex-wrap mb-3" role="group">
         <input type="radio" class="btn-check" name="donationOption" id="option5" autocomplete="off" checked>
         <label class="btn btn-outline-primary" for="option5">5€</label>
         
@@ -136,28 +134,34 @@
   </header>
 
   <!-- Contenido principal -->
-  <main class="container">
+  <main class="container py-4">
     <!-- Información de proceso de adopción -->
-    <div class="alert alert-info d-flex align-items-center mb-4" role="alert">
-      <i class="bi bi-info-circle-fill fs-4 me-3"></i>
-      <div>
-        <h5 class="alert-heading">¿Cómo funciona la adopción?</h5>
-        <p class="mb-0">Nuestro proceso incluye selección del gato, completar un <a href="formulario.html" class="alert-link">formulario</a>, entrevista y seguimiento post-adopción.</p>
+    <div class="alert alert-info mb-4" role="alert">
+      <div class="row align-items-center">
+        <div class="col-auto d-none d-sm-block">
+          <i class="bi bi-info-circle-fill fs-4"></i>
+        </div>
+        <div class="col">
+          <h5 class="alert-heading">¿Cómo funciona la adopción?</h5>
+          <p class="mb-0">Nuestro proceso incluye selección del gato, completar un <a href="formulario.html" class="alert-link">formulario</a>, entrevista y seguimiento post-adopción.</p>
+        </div>
+        <div class="col-md-auto mt-2 mt-md-0">
+          <button type="button" class="btn btn-sm btn-info w-100" data-bs-toggle="modal" data-bs-target="#adoptionProcessModal">
+            Más información
+          </button>
+        </div>
       </div>
-      <button type="button" class="btn btn-sm btn-info ms-auto" data-bs-toggle="modal" data-bs-target="#adoptionProcessModal">
-        Más información
-      </button>
     </div>
     
     <!-- Filtros mejorados -->
-    <div class="filters">
+    <div class="filters p-3 bg-light rounded-3 mb-4">
       <h5 class="filters-title">
         <i class="bi bi-funnel-fill text-primary me-2"></i>
         Filtrar gatos
       </h5>
       
-      <div class="row mb-3">
-        <div class="col-md-6">
+      <div class="row row-cols-1 row-cols-md-2 g-3 mb-3">
+        <div class="col">
           <label class="form-label">Por características</label>
           <div class="btn-group d-flex flex-wrap">
             <button class="filter-btn active" data-filter="all">Todos</button>
@@ -169,7 +173,7 @@
           </div>
         </div>
         
-        <div class="col-md-6">
+        <div class="col">
           <label class="form-label">Por personalidad</label>
           <div class="btn-group d-flex flex-wrap">
             <button class="filter-btn" data-filter="cariñoso">Cariñosos</button>
@@ -181,7 +185,7 @@
       </div>
       
       <!-- Contador de resultados -->
-      <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2">
         <div>
           <span class="badge bg-primary" id="resultCount">8</span> gatos encontrados
         </div>
@@ -204,7 +208,7 @@
     </div>
     
     <!-- Mensaje de sin resultados -->
-    <div id="noResults" class="no-results">
+    <div id="noResults" class="no-results py-5">
       <div class="text-center">
         <i class="bi bi-search fs-1 text-primary mb-3"></i>
         <h3>No se encontraron gatos con estos filtros</h3>
@@ -556,7 +560,7 @@
     
     <!-- Paginación -->
     <nav aria-label="Navegación de páginas" class="mt-5">
-      <ul class="pagination justify-content-center">
+      <ul class="pagination justify-content-center flex-wrap">
         <li class="page-item disabled">
           <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
             <i class="bi bi-chevron-left"></i>
@@ -578,7 +582,7 @@
       <h2 class="text-center mb-4">Testimonios de Adopción</h2>
       
       <div class="row g-4">
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4">
           <div class="card h-100 shadow-sm border-0">
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
@@ -600,7 +604,7 @@
           </div>
         </div>
         
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4">
           <div class="card h-100 shadow-sm border-0">
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
@@ -622,7 +626,7 @@
           </div>
         </div>
         
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4 mx-auto mx-lg-0">
           <div class="card h-100 shadow-sm border-0">
             <div class="card-body">
               <div class="d-flex align-items-center mb-3">
@@ -706,7 +710,7 @@
     </section>
     
     <!-- Botón de llamada a la acción -->
-    <div class="text-center mt-5">
+    <div class="text-center my-5">
       <a href="formulario.html" class="btn btn-primary btn-lg pulse">
         <i class="bi bi-clipboard-heart me-2"></i>Solicitar Adopción
       </a>
@@ -715,27 +719,27 @@
 
   <!-- Footer Mejorado -->
   <footer>
-    <div class="container">
+    <div class="container py-4">
       <div class="row g-4">
         <div class="col-lg-4 col-md-6">
           <h5>Sobre Nosotros</h5>
           <p>Alianza Felina de Paiporta es una asociación sin ánimo de lucro dedicada al bienestar y protección de los gatos.</p>
           <div class="social-links mt-3">
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-twitter"></i></a>
-            <a href="#"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="me-2"><i class="bi bi-youtube"></i></a>
           </div>
         </div>
         
         <div class="col-lg-2 col-md-6">
           <h5>Enlaces</h5>
           <ul class="list-unstyled">
-            <li><a href="index.html#servicios" class="text-decoration-none text-white-50">Nuestra Misión</a></li>
-            <li><a href="index.html#proyectos" class="text-decoration-none text-white-50">Proyectos</a></li>
-            <li><a href="index.html#nosotros" class="text-decoration-none text-white-50">Sobre Nosotros</a></li>
-            <li><a href="adoptarGatos.html" class="text-decoration-none text-white-50">Adoptar</a></li>
-            <li><a href="formulario.html" class="text-decoration-none text-white-50">Contacto</a></li>
+            <li class="mb-2"><a href="index.html#servicios" class="text-decoration-none text-white-50">Nuestra Misión</a></li>
+            <li class="mb-2"><a href="index.html#proyectos" class="text-decoration-none text-white-50">Proyectos</a></li>
+            <li class="mb-2"><a href="index.html#nosotros" class="text-decoration-none text-white-50">Sobre Nosotros</a></li>
+            <li class="mb-2"><a href="adoptarGatos.html" class="text-decoration-none text-white-50">Adoptar</a></li>
+            <li class="mb-2"><a href="formulario.html" class="text-decoration-none text-white-50">Contacto</a></li>
           </ul>
         </div>
         
@@ -774,7 +778,7 @@
       <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
       
       <div class="row">
-        <div class="col-md-6 text-center text-md-start">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
           <p class="mb-0">© 2025 Alianza Felina de Paiporta. Todos los derechos reservados.</p>
         </div>
         <div class="col-md-6 text-center text-md-end">
@@ -790,15 +794,15 @@
   
   <!-- Modal de detalles del gato -->
   <div class="modal fade" id="catDetailsModal" tabindex="-1" aria-labelledby="catDetailsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="catDetailsModalLabel">Detalles de <span class="catDetailName">Gato</span></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div class="row">
-            <div class="col-md-6">
+          <div class="row g-4">
+            <div class="col-lg-6">
               <!-- Carrusel de imágenes -->
               <div id="catPhotoCarousel" class="carousel slide cat-carousel" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -843,15 +847,15 @@
               </div>
             </div>
             
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <h4 class="mb-3 catDetailName">Mía</h4>
               
               <p><strong>Historia:</strong> Mía fue rescatada cuando tenía apenas 2 meses. Fue encontrada cerca de un contenedor junto con sus hermanos. Después de recibir atención veterinaria, está completamente recuperada y lista para encontrar un hogar definitivo.</p>
               
               <div class="mb-3">
                 <h5>Personalidad</h5>
-                <div class="row">
-                  <div class="col-6">
+                <div class="row g-2">
+                  <div class="col-sm-6">
                     <div class="d-flex align-items-center mb-2">
                       <span class="me-2">Energía:</span>
                       <div class="progress flex-grow-1" style="height: 8px;">
@@ -865,7 +869,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-6">
+                  <div class="col-sm-6">
                     <div class="d-flex align-items-center mb-2">
                       <span class="me-2">Social:</span>
                       <div class="progress flex-grow-1" style="height: 8px;">
@@ -895,20 +899,20 @@
               
               <div class="mb-4">
                 <h5>Compatibilidad</h5>
-                <div class="d-flex gap-3">
-                  <div class="text-center">
+                <div class="d-flex gap-3 flex-wrap">
+                  <div class="text-center me-2">
                     <div class="rounded-circle bg-success d-flex align-items-center justify-content-center mx-auto" style="width: 40px; height: 40px;">
                       <i class="bi bi-check-lg text-white"></i>
                     </div>
                     <small>Otros gatos</small>
                   </div>
-                  <div class="text-center">
+                  <div class="text-center me-2">
                     <div class="rounded-circle bg-warning d-flex align-items-center justify-content-center mx-auto" style="width: 40px; height: 40px;">
                       <i class="bi bi-exclamation text-white"></i>
                     </div>
                     <small>Perros</small>
                   </div>
-                  <div class="text-center">
+                  <div class="text-center me-2">
                     <div class="rounded-circle bg-success d-flex align-items-center justify-content-center mx-auto" style="width: 40px; height: 40px;">
                       <i class="bi bi-check-lg text-white"></i>
                     </div>
@@ -931,7 +935,7 @@
   
   <!-- Modal de proceso de adopción -->
   <div class="modal fade" id="adoptionProcessModal" tabindex="-1" aria-labelledby="adoptionProcessModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="adoptionProcessModalLabel">
@@ -1005,6 +1009,63 @@
           <a href="formulario.html" class="btn btn-primary">
             <i class="bi bi-clipboard-heart me-2"></i>Ir al formulario
           </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para adopción (falta en el código original) -->
+  <div class="modal fade" id="catModal" tabindex="-1" aria-labelledby="catModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="catModalLabel">
+            <i class="bi bi-heart-fill text-danger me-2"></i>
+            Adoptar a <span id="catName">Gato</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center mb-4">
+            <img id="catImage" src="" alt="Gato" class="rounded-3 img-fluid mb-3" style="max-height: 200px; object-fit: cover;">
+            <p class="lead">¡Genial que quieras adoptar a <span id="catName2">este gato</span>!</p>
+          </div>
+          
+          <p>Para iniciar el proceso de adopción, necesitamos algunos datos. Puedes completar el formulario completo o solicitar que te contactemos:</p>
+          
+          <div class="d-grid gap-3 mt-4">
+            <a href="formulario.html" class="btn btn-primary">
+              <i class="bi bi-clipboard-heart me-2"></i>Completar formulario de adopción
+            </a>
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#contactCollapse" aria-expanded="false" aria-controls="contactCollapse">
+              <i class="bi bi-telephone me-2"></i>Solicitar que me contacten
+            </button>
+          </div>
+          
+          <div class="collapse mt-3" id="contactCollapse">
+            <div class="card card-body">
+              <form>
+                <div class="mb-3">
+                  <label for="contactName" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="contactName" required>
+                </div>
+                <div class="mb-3">
+                  <label for="contactPhone" class="form-label">Teléfono</label>
+                  <input type="tel" class="form-control" id="contactPhone" required>
+                </div>
+                <div class="mb-3">
+                  <label for="contactEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="contactEmail" required>
+                </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
@@ -1124,6 +1185,7 @@
         const button = event.relatedTarget;
         const catName = button.getAttribute('data-cat-name');
         document.getElementById('catName').textContent = catName;
+        document.getElementById('catName2').textContent = catName;
         document.getElementById('catImage').src = button.closest('.cat-card').querySelector('img').src;
       });
       
@@ -1134,6 +1196,18 @@
         const catName = button.getAttribute('data-cat-name');
         document.querySelectorAll('.catDetailName').forEach(el => {
           el.textContent = catName;
+        });
+      });
+      
+      // Mostrar campo personalizado en donaciones
+      document.getElementById('optionCustom').addEventListener('change', function() {
+        document.getElementById('customAmountGroup').style.display = this.checked ? 'flex' : 'none';
+      });
+      
+      // Ocultar campo personalizado cuando se selecciona otra opción
+      document.querySelectorAll('input[name="donationOption"]:not(#optionCustom)').forEach(input => {
+        input.addEventListener('change', function() {
+          document.getElementById('customAmountGroup').style.display = 'none';
         });
       });
       
@@ -1200,6 +1274,21 @@
         // Reordenar en el DOM
         cards.forEach(card => catsGrid.appendChild(card));
       }
+      
+      // Asegurar que los elementos del navbar se cierren al hacer clic en móvil
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          const navbarCollapse = document.querySelector('.navbar-collapse');
+          if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+            bsCollapse.hide();
+          }
+        });
+      });
+      
+      // Actualizar el contador al cargar la página
+      updateResultCount();
     });
   </script>
 </body>
