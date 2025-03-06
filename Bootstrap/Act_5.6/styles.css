@@ -1,0 +1,84 @@
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #f7f7f7;
+    --accent-color: #ff4d4d;
+    --bg-gradient: linear-gradient(135deg, #ff4d4d, #1a1a1a);
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+  }
+  /* Navbar */
+  .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background 0.3s ease;
+  }
+  .navbar-brand img {
+    margin-right: 10px;
+    filter: brightness(0);
+  }
+  .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  .nav-link:hover {
+    color: var(--accent-color);
+  }
+  /* Carousel */
+  .carousel-item {
+    height: 70vh;
+    min-height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+  .carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26,26,26,0.5);
+  }
+  .carousel-caption {
+    z-index: 2;
+  }
+  /* Cards modernos */
+  .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+  .card-img-top {
+    transition: transform 0.3s ease;
+  }
+  .card:hover .card-img-top {
+    transform: scale(1.05);
+  }
+  /* Formulario */
+  .form-control, .btn {
+    border-radius: 25px;
+  }
+  /* Footer */
+  footer {
+    background: var(--bg-gradient);
+    color: white;
+  }
+  /* Collapses */
+  .collapse .card-body {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
