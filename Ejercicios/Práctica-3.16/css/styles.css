@@ -1,0 +1,179 @@
+/* Estilos generales */
+body {
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 15px;
+    font-size: 1.2em;
+}
+h1,
+h2 {
+    margin: 0.5vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Diseño de la cuadrícula utilizando CSS Grid */
+.contenedor-destacados {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "destacado1 destacado2 destacado4 destacado5"
+        "destacado1 destacado3 destacado4 destacado6";
+    gap: 10px;
+}
+.contenedor-ultimas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "ultima1 ultima2 ultima3 ."
+        "ultima4 ultima5 . ."
+        "ultima6 . . .";
+    gap: 10px;
+}
+/* Estableciendo la posición de cada elemento en la cuadrícula */
+.destacado1 {
+    grid-area: destacado1;
+    position: relative;
+}
+.destacado2 {
+    grid-area: destacado2;
+    position: relative;
+}
+.destacado3 {
+    grid-area: destacado3;
+    position: relative;
+}
+.destacado4 {
+    grid-area: destacado4;
+    position: relative;
+}
+.destacado5 {
+    grid-area: destacado5;
+    position: relative;
+}
+.destacado6 {
+    grid-area: destacado6;
+    position: relative;
+}
+.ultima1 {
+    grid-area: ultima1;
+    position: relative;
+}
+.ultima2 {
+    grid-area: ultima2;
+    position: relative;
+}
+.ultima3 {
+    grid-area: ultima3;
+    position: relative;
+}
+.ultima4 {
+    grid-area: ultima4;
+    position: relative;
+}
+.ultima5 {
+    grid-area: ultima5;
+    position: relative;
+}
+.ultima6 {
+    grid-area: ultima6;
+    position: relative;
+}
+/* Estilos de imágenes */
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+p {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 45%;
+    font-size: 1.5vw;
+    padding: 5px;
+}
+/* Efecto de sombra al pasar el cursor sobre los títulos */
+h1:hover~.contenedor-destacados img,
+h2:hover~.contenedor-ultimas img {
+    box-shadow: 1px 4px 28px 5px rgba(0, 0, 0, 0.75);
+    transition: box-shadow 0.5s ease;
+}
+/* Adaptación responsiva */
+@media (max-width: 700px) {
+    .contenedor-destacados {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "dest1 dest2"
+            "dest1 dest3"
+            "dest5 dest4"
+            "dest6 dest4";
+    }
+    .destacado1 {
+        grid-area: dest1;
+    }
+    .destacado2 {
+        grid-area: dest2;
+    }
+    .destacado3 {
+        grid-area: dest3;
+    }
+    .destacado4 {
+        grid-area: dest4;
+    }
+    .destacado5 {
+        grid-area: dest5;
+    }
+    .destacado6 {
+        grid-area: dest6;
+    }
+    .contenedor-ultimas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "ult1 ult2"
+            "ult3 ult4"
+            "ult5 ult6";
+    }
+    .ultima1 {
+        grid-area: ult1;
+    }
+    .ultima2 {
+        grid-area: ult2;
+    }
+    .ultima3 {
+        grid-area: ult3;
+    }
+    .ultima4 {
+        grid-area: ult4;
+    }
+    .ultima5 {
+        grid-area: ult5;
+    }
+    .ultima6 {
+        grid-area: ult6;
+    }
+}
+@media (max-width: 500px) {
+    .contenedor-destacados,
+    .contenedor-ultimas {
+        display: flex;
+        flex-direction: column;
+    }
+    p {
+        font-size: 2.5vw;
+        width: 30%;
+        left: 0;
+        margin-top: 50%;
+        margin-left: 2%;
+    }
+}
