@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "navbar navbar navbar navbar navbar navbar"
+        "header header header header header header"
+        "banner-a banner-a banner-a banner-a banner-a banner-a"
+        "aside main main main main main"
+        "banner-b banner-b banner-b banner-b banner-b banner-b"
+        "footer footer footer footer footer footer";
+    grid-template-rows: auto auto auto auto auto auto;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar {
+    grid-area: navbar;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: #ccc;
+}
+
+.nav-item {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #aaa;
+}
+
+.header {
+    grid-area: header;
+    background-color: #555;
+    color: #ccc;
+    padding: 20px;
+}
+
+.banner-a {
+    grid-area: banner-a;
+    background-color: #111;
+    color: white;
+    padding: 15px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.aside {
+    grid-area: aside;
+    background-color: #ccc;
+    padding: 15px;
+}
+
+.main {
+    grid-area: main;
+    background-color: #eee;
+    padding: 15px;
+}
+
+.banner-b {
+    grid-area: banner-b;
+    background-color: #888;
+    color: white;
+    padding: 15px;
+}
+
+.footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #555;
+}
+
+.footer-box {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #777;
+    color: white;
+}
+
+/* Media query para dispositivos móviles (CASO B) */
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "navbar navbar navbar"
+            "header header header"
+            "main main main"
+            "aside aside aside"
+            "banner-b banner-b banner-b"
+            "footer footer footer";
+        grid-template-rows: auto auto auto auto auto auto;
+    }
+    
+    .navbar {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+    
+    .banner-a {
+        display: none; /* Se oculta en versión móvil según la imagen */
+    }
+    
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+    
+    /* Botón de menú hamburguesa para la versión móvil */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+}
